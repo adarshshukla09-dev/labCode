@@ -22,9 +22,9 @@ function Icon({ d }: { d: string }) {
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Labs", href: "/projects" },
-  { label: "Analytics", href: "/analytics" },
-  { label: "Settings", href: "/settings" },
+  { label: "Labs", href: "/Labs" },
+  { label: "Analytics", href: "/Analytics" },
+  { label: "Setting", href: "/Setting" },
 ];
 
 export function Navbar() {

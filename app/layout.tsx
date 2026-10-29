@@ -33,10 +33,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "xyzlabs",
+  title: {
+    default: "xyzlabs",
+    template: "%s | xyzlabs",
+  },
   description: "Escape tutorial hell. Learn databases through hands-on labs.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {

@@ -1,5 +1,8 @@
 import { AuthSignupCard } from "@/components/blocks/auth-signup-card";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: 'Login',
+};
 export default function SignupPage() {
   return (
     <main className="h-dvh overflow-hidden">
