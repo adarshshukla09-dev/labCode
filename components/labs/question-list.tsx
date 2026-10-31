@@ -1,31 +1,97 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SchemaViewer from "@/components/blocks/schemaViewer";
 
-export interface Question {
+type TabType = "question" | "schema";
+
+interface CustomQuestionView {
   id: number;
   title: string;
   description: string;
   context: string;
   task: string;
-  hint?: string;
-  difficulty?: "Easy" | "Medium" | "Hard";
+  hint: string;
+  difficulty: "Easy" | "Medium" | "Hard" | "";
 }
 
 interface QuestionSectionProps {
-  question: Question;
+  lessonNumber: number | null;
+  questionData: any;
+  isPending: boolean;
+  error: any;
 }
 
-type TabType = "question" | "schema";
-
 export default function QuestionSection({
-  question,
+  lessonNumber,
+  questionData,
+  isPending,
+  error,
 }: QuestionSectionProps) {
   const [activeTab, setActiveTab] = useState<TabType>("question");
+  const [showHint, setShowHint] = useState(false);
+
+  // Reset hint when changing questions
+  useEffect(() => {
+    setShowHint(false);
+  }, [questionData?.id]);
+
+  if (lessonNumber === null) {
+    return (
+      <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
+        Select a lesson to view its question.
+      </div>
+    );
+  }
+
+  if (isPending) {
+    return (
+      <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
+        Loading question...
+      </div>
+    );
+  }
+
+  if (error || !questionData) {
+    return (
+      <div className="flex h-full items-center justify-center text-sm text-destructive">
+        Failed to load question.
+      </div>
+    );
+  }
+
+  const rawDifficulty = questionData.difficulty ?? "";
+  const formattedDifficulty: "Easy" | "Medium" | "Hard" | "" = rawDifficulty
+    ? ((rawDifficulty.charAt(0).toUpperCase() +
+        rawDifficulty.slice(1).toLowerCase()) as "Easy" | "Medium" | "Hard")
+    : "";
+
+  const question: CustomQuestionView = {
+    id: questionData.id,
+    title: questionData.title,
+    description: questionData.description ?? "",
+
+    context: Array.isArray(questionData.tableContext)
+      ? questionData.tableContext
+          .map(
+            (table: any) =>
+              `Table: ${table.table} (${table.description})\nColumns: ${table.columns.join(", ")}`,
+          )
+          .join("\n\n")
+      : "",
+
+    task: questionData.task,
+
+    hint: Array.isArray(questionData.hints)
+      ? (questionData.hints[0] ?? "")
+      : "",
+
+    difficulty: formattedDifficulty,
+  };
 
   return (
-<section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground">
+    <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground">
+      {/* Header */}
       <header className="flex shrink-0 flex-col border-b border-border bg-muted/20">
         <div className="flex items-center justify-between gap-4 px-5 py-5">
           <div className="flex min-w-0 items-center gap-3">
@@ -42,10 +108,7 @@ export default function QuestionSection({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <path
-                  d="M9 8h6M9 12h6M9 16h4"
-                  strokeLinecap="round"
-                />
+                <path d="M9 8h6M9 12h6M9 16h4" strokeLinecap="round" />
               </svg>
             </div>
 
@@ -60,25 +123,23 @@ export default function QuestionSection({
             </div>
           </div>
 
-          <div className="flex shrink-0 items-center gap-3">
-            {question.difficulty && (
-              <span
-                className={`rounded-md px-2.5 py-1 text-xs font-medium ${
-                  question.difficulty === "Easy"
-                    ? "bg-emerald-500/10 text-emerald-400"
-                    : question.difficulty === "Medium"
-                      ? "bg-yellow-500/10 text-yellow-400"
-                      : "bg-destructive/10 text-destructive"
-                }`}
-              >
-                {question.difficulty}
-              </span>
-            )}
-          </div>
+          {question.difficulty && (
+            <span
+              className={`rounded-md px-2.5 py-1 text-xs font-medium ${
+                question.difficulty === "Easy"
+                  ? "bg-emerald-500/10 text-emerald-400"
+                  : question.difficulty === "Medium"
+                    ? "bg-yellow-500/10 text-yellow-400"
+                    : "bg-destructive/10 text-destructive"
+              }`}
+            >
+              {question.difficulty}
+            </span>
+          )}
         </div>
 
-        {/* Tab Switcher */}
-        <div className="flex border-t border-border px-5 gap-6">
+        {/* Tabs */}
+        <div className="flex gap-6 border-t border-border px-5">
           <button
             type="button"
             onClick={() => setActiveTab("question")}
@@ -105,70 +166,72 @@ export default function QuestionSection({
         </div>
       </header>
 
-     {/* Tab Content Body */}
-<div className="flex-1 min-h-0 overflow-hidden">
+      {/* Content */}
+      <div className="flex-1 min-h-0 overflow-hidden">
+        {activeTab === "question" ? (
+          <div className="h-full min-h-0 space-y-6 overflow-y-auto overscroll-contain p-5">
+            <div>
+              <h3 className="mb-3 font-heading text-sm font-semibold">
+                Problem Description
+              </h3>
 
-  {activeTab === "question" ? (
-    <div className="h-full min-h-0 overflow-y-auto overscroll-contain p-5 space-y-6">
+              <p className="text-sm leading-7 text-muted-foreground">
+                {question.description}
+              </p>
+            </div>
 
-      {/* Description */}
-      <div>
-        <h3 className="mb-3 text-sm font-semibold text-foreground font-heading">
-          Problem Description
-        </h3>
+            {question.context && (
+              <div className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
+                <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-blue-400">
+                  Context
+                </h3>
 
-        <p className="text-sm leading-7 text-muted-foreground">
-          {question.description}
-        </p>
-      </div>
+                <pre className="whitespace-pre-wrap font-sans text-sm leading-6 text-foreground/90">
+                  {question.context}
+                </pre>
+              </div>
+            )}
 
-      {/* Context */}
-      {question.context && (
-        <div className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
-          <div className="mb-2 flex items-center gap-2">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-blue-400">
-              Context
-            </h3>
+            <div className="rounded-xl border border-border bg-muted/30 p-4">
+              <h3 className="mb-3 font-heading text-sm font-semibold">
+                Your Task
+              </h3>
+
+              <p className="text-sm leading-7 text-foreground/90">
+                {question.task}
+              </p>
+            </div>
+
+            {question.hint && (
+              <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
+                <button
+                  type="button"
+                  onClick={() => setShowHint((prev) => !prev)}
+                  className="flex w-full items-center justify-between text-left"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wider text-amber-500">
+                    {showHint ? "Hide Hint" : "Show Hint"}
+                  </span>
+
+                  <span className="text-sm text-amber-500">
+                    {showHint ? "−" : "+"}
+                  </span>
+                </button>
+
+                {showHint && (
+                  <p className="mt-3 text-sm leading-6 text-foreground/90">
+                    {question.hint}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
-
-          <p className="text-sm leading-6 text-foreground/90">
-            {question.context}
-          </p>
-        </div>
-      )}
-
-      {/* Task */}
-      <div className="rounded-xl border border-border bg-muted/30 p-4">
-        <h3 className="mb-3 text-sm font-semibold text-foreground font-heading">
-          Your Task
-        </h3>
-
-        <p className="text-sm leading-7 text-foreground/90">
-          {question.task}
-        </p>
+        ) : (
+          <div className="h-full min-h-0 overflow-y-auto overscroll-contain p-4">
+            <SchemaViewer />
+          </div>
+        )}
       </div>
-
-      {/* Hint */}
-      {question.hint && (
-        <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-amber-500">
-            Hint
-          </h3>
-
-          <p className="text-sm leading-6 text-foreground/90">
-            {question.hint}
-          </p>
-        </div>
-      )}
-
-    </div>
-  ) : (
-    <div className="h-full min-h-0 overflow-y-auto overscroll-contain p-4">
-      <SchemaViewer />
-    </div>
-  )}
-
-</div>
     </section>
   );
 }

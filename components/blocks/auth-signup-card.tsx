@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Lamp } from "@/components/velora/lamp";
+import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 
+type AuthMode = "signup" | "login";
+
 const BRAND = "Acme";
-const TITLE = "Create your account";
-const SUBTITLE = "Start a 14-day free trial. No credit card required.";
-const LINKS = { login: "#", terms: "#", privacy: "#", home: "#" };
+const LINKS = { terms: "#", privacy: "#", home: "#" };
 
 const RULES = [
   { label: "At least 8 characters", test: (value: string) => value.length >= 8 },
@@ -23,12 +24,77 @@ const RULES = [
 
 export function AuthSignupCard() {
   const id = useId();
+  const [mode, setMode] = useState<AuthMode>("signup");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const isSignup = mode === "signup";
   const passed = RULES.filter((rule) => rule.test(password)).length;
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      if (isSignup) {
+        const { error: authError } = await authClient.signUp.email({
+          name,
+          email,
+          password,
+          callbackURL: "/",
+        });
+
+        if (authError) {
+          setError(authError.message || "Unable to create your account.");
+          return;
+        }
+      } else {
+        const { error: authError } = await authClient.signIn.email({
+          email,
+          password,
+          callbackURL: "/",
+        });
+
+        if (authError) {
+          setError(authError.message || "Invalid email or password.");
+          return;
+        }
+      }
+
+      window.location.assign("/");
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleSocialSignIn(provider: "github" | "google") {
+    setLoading(true);
+    setError("");
+
+    try {
+      const { error: authError } = await authClient.signIn.social({
+        provider,
+        callbackURL: "/",
+      });
+
+      if (authError) {
+        setError(authError.message || "Social sign-in failed.");
+        setLoading(false);
+      }
+    } catch {
+      setError("Unable to sign in. Please try again.");
+      setLoading(false);
+    }
   }
 
   return (
@@ -39,7 +105,7 @@ export function AuthSignupCard() {
         </Lamp>
       </div>
 
-      {/* Main Signup Content */}
+      {/* Main Signup/Login Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col justify-center">
         <div className="text-center">
           <a
@@ -49,17 +115,52 @@ export function AuthSignupCard() {
           >
             <LogoMark />
           </a>
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight">{TITLE}</h2>
-          <p className="mt-2 text-pretty text-muted-foreground">{SUBTITLE}</p>
+          <h2 className="mt-6 text-3xl font-semibold tracking-tight">
+            {isSignup ? "Create your account" : "Welcome back"}
+          </h2>
+          <p className="mt-2 text-pretty text-muted-foreground">
+            {isSignup
+              ? "Start a 14-day free trial. No credit card required."
+              : "Log in to continue to your account."}
+          </p>
         </div>
 
         <div className="mt-10 rounded-2xl border bg-card/80 p-6 shadow-xl shadow-brand/5 backdrop-blur sm:p-8">
+          {error && (
+            <div
+              role="alert"
+              className="mb-4 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive"
+            >
+              {error}
+            </div>
+          )}
+
+          {success && (
+            <div role="status" className="mb-4 rounded-lg border p-3 text-sm">
+              {success}
+            </div>
+          )}
+
           <div className="grid grid-cols-2 gap-3">
-            <Button type="button" variant="outline" size="lg" className="h-10">
+            <Button
+              type="button"
+              variant="outline"
+              size="lg"
+              className="h-10"
+              disabled={loading}
+              onClick={() => handleSocialSignIn("github")}
+            >
               <GitHubMark />
               GitHub
             </Button>
-            <Button type="button" variant="outline" size="lg" className="h-10">
+            <Button
+              type="button"
+              variant="outline"
+              size="lg"
+              className="h-10"
+              disabled={loading}
+              onClick={() => handleSocialSignIn("google")}
+            >
               <GoogleMark />
               Google
             </Button>
@@ -67,22 +168,26 @@ export function AuthSignupCard() {
 
           <div className="my-7 flex items-center gap-4 text-xs text-muted-foreground uppercase">
             <span aria-hidden className="h-px flex-1 bg-border" />
-            or with email
+            or continue with email
             <span aria-hidden className="h-px flex-1 bg-border" />
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor={`${id}-name`}>Full name</Label>
-              <Input
-                id={`${id}-name`}
-                name="name"
-                required
-                autoComplete="name"
-                placeholder="Ada Lovelace"
-                className="h-10 px-3"
-              />
-            </div>
+            {isSignup && (
+              <div className="space-y-2">
+                <Label htmlFor={`${id}-name`}>Full name</Label>
+                <Input
+                  id={`${id}-name`}
+                  name="name"
+                  required
+                  autoComplete="name"
+                  placeholder="Ada Lovelace"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="h-10 px-3"
+                />
+              </div>
+            )}
 
             <div className="space-y-2">
               <Label htmlFor={`${id}-email`}>Work email</Label>
@@ -93,6 +198,8 @@ export function AuthSignupCard() {
                 required
                 autoComplete="email"
                 placeholder="you@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="h-10 px-3"
               />
             </div>
@@ -105,18 +212,18 @@ export function AuthSignupCard() {
                   name="password"
                   type={showPassword ? "text" : "password"}
                   required
-                  minLength={8}
-                  autoComplete="new-password"
+                  minLength={isSignup ? 8 : undefined}
+                  autoComplete={isSignup ? "new-password" : "current-password"}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  aria-describedby={`${id}-rules`}
+                  aria-describedby={isSignup ? `${id}-rules` : undefined}
                   className="h-10 pr-11 pl-3"
                 />
                 <Button
                   type="button"
                   variant="ghost"
                   size="icon"
-                  aria-label="Show password"
+                  aria-label={showPassword ? "Hide password" : "Show password"}
                   aria-pressed={showPassword}
                   aria-controls={`${id}-password`}
                   onClick={() => setShowPassword((shown) => !shown)}
@@ -126,83 +233,95 @@ export function AuthSignupCard() {
                 </Button>
               </div>
 
-              <div aria-hidden className="grid grid-cols-4 gap-1.5 pt-1">
-                {RULES.map((rule, i) => (
-                  <span
-                    key={rule.label}
-                    className={cn(
-                      "h-1 rounded-full bg-muted transition-colors",
-                      i < passed && "bg-gradient-to-r from-brand-from to-brand-to"
-                    )}
-                  />
-                ))}
+              {isSignup && (
+                <>
+                  <div aria-hidden className="grid grid-cols-4 gap-1.5 pt-1">
+                    {RULES.map((rule, i) => (
+                      <span
+                        key={rule.label}
+                        className={cn(
+                          "h-1 rounded-full bg-muted transition-colors",
+                          i < passed && "bg-gradient-to-r from-brand-from to-brand-to"
+                        )}
+                      />
+                    ))}
+                  </div>
+
+                  <ul id={`${id}-rules`} className="grid grid-cols-1 gap-x-4 gap-y-1.5 pt-1 text-xs sm:grid-cols-2">
+                    {RULES.map((rule) => {
+                      const met = rule.test(password);
+                      return (
+                        <li
+                          key={rule.label}
+                          className={cn(
+                            "flex items-center gap-1.5 transition-colors",
+                            met ? "text-foreground" : "text-muted-foreground"
+                          )}
+                        >
+                          {met ? (
+                            <CheckIcon aria-hidden className="size-3.5 text-primary" />
+                          ) : (
+                            <CircleIcon aria-hidden className="size-3.5" />
+                          )}
+                          {rule.label}
+                          <span className="sr-only">{met ? " (done)" : " (required)"}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </>
+              )}
+            </div>
+
+            {isSignup && (
+              <div className="flex items-start gap-2.5">
+                <input
+                  id={`${id}-terms`}
+                  name="terms"
+                  type="checkbox"
+                  required
+                  className="mt-0.5 size-4 shrink-0 cursor-pointer accent-primary dark:scheme-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                />
+                <Label htmlFor={`${id}-terms`} className="block leading-snug font-normal text-muted-foreground">
+                  I agree to the{" "}
+                  <a
+                    href={LINKS.terms}
+                    className="rounded-sm font-medium text-foreground underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  >
+                    Terms of Service
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href={LINKS.privacy}
+                    className="rounded-sm font-medium text-foreground underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </Label>
               </div>
+            )}
 
-              <ul id={`${id}-rules`} className="grid grid-cols-1 gap-x-4 gap-y-1.5 pt-1 text-xs sm:grid-cols-2">
-                {RULES.map((rule) => {
-                  const met = rule.test(password);
-                  return (
-                    <li
-                      key={rule.label}
-                      className={cn(
-                        "flex items-center gap-1.5 transition-colors",
-                        met ? "text-foreground" : "text-muted-foreground"
-                      )}
-                    >
-                      {met ? (
-                        <CheckIcon aria-hidden className="size-3.5 text-primary" />
-                      ) : (
-                        <CircleIcon aria-hidden className="size-3.5" />
-                      )}
-                      {rule.label}
-                      <span className="sr-only">{met ? " (done)" : " (required)"}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            <div className="flex items-start gap-2.5">
-              <input
-                id={`${id}-terms`}
-                name="terms"
-                type="checkbox"
-                required
-                className="mt-0.5 size-4 shrink-0 cursor-pointer accent-primary dark:scheme-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              />
-              <Label htmlFor={`${id}-terms`} className="block leading-snug font-normal text-muted-foreground">
-                I agree to the{" "}
-                <a
-                  href={LINKS.terms}
-                  className="rounded-sm font-medium text-foreground underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                >
-                  Terms of Service
-                </a>{" "}
-                and{" "}
-                <a
-                  href={LINKS.privacy}
-                  className="rounded-sm font-medium text-foreground underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                >
-                  Privacy Policy
-                </a>
-                .
-              </Label>
-            </div>
-
-            <Button type="submit" size="lg" className="h-10 w-full">
-              Create account
+            <Button type="submit" size="lg" className="h-10 w-full" disabled={loading}>
+              {loading ? "Please wait..." : isSignup ? "Create account" : "Log in"}
             </Button>
           </form>
         </div>
 
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Already have an account?{" "}
-          <a
-            href={LINKS.login}
+          {isSignup ? "Already have an account? " : "Don't have an account? "}
+          <button
+            type="button"
+            onClick={() => {
+              setMode(isSignup ? "login" : "signup");
+              setError("");
+              setSuccess("");
+              setPassword("");
+            }}
             className="rounded-sm font-medium text-foreground underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
-            Log in
-          </a>
+            {isSignup ? "Log in" : "Create account"}
+          </button>
         </p>
       </div>
     </section>
@@ -227,7 +346,7 @@ function LogoMark() {
 
 function GitHubMark() {
   return (
-    <svg aria-hidden viewBox="0 0 24 24" fill="currentColor">
+    <svg aria-hidden viewBox="0 0 24 24" fill="currentColor" className="size-4">
       <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
     </svg>
   );
@@ -235,7 +354,7 @@ function GitHubMark() {
 
 function GoogleMark() {
   return (
-    <svg aria-hidden viewBox="0 0 24 24" fill="currentColor">
+    <svg aria-hidden viewBox="0 0 24 24" fill="currentColor" className="size-4">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09Z" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23Z" />
       <path d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.43.34-2.1V7.07H2.18A11 11 0 0 0 1 12c0 1.78.43 3.45 1.18 4.93l3.66-2.84Z" />

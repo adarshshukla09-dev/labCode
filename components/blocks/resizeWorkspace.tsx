@@ -2,13 +2,12 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import CodeEditor from "@/components/labs/codeEditor";
-import TestCaseResults, { type TestCase, type QueryResult } from "@/components/labs/testCase";
+import TestCaseResults, { type QueryResult } from "@/components/labs/testCase";
 
 interface ResizableWorkspaceProps {
-  initialQuery?: string;
+  initialQuery?: string | null;
   onRunQuery?: (query: string) => void | Promise<void>;
   isRunning?: boolean;
-  testCases?: TestCase[];
   queryResult?: QueryResult | null;
 }
 
@@ -16,7 +15,6 @@ export default function ResizableWorkspace({
   initialQuery,
   onRunQuery,
   isRunning = false,
-  testCases,
   queryResult,
 }: ResizableWorkspaceProps) {
   const [topHeight, setTopHeight] = useState<number>(60); // Percentage height for the editor (default 60%)
@@ -35,7 +33,7 @@ export default function ResizableWorkspace({
 
     const containerRect = containerRef.current.getBoundingClientRect();
     const containerHeight = containerRect.height;
-    
+
     // Calculate new height percentage based on mouse position relative to container
     const offsetY = e.clientY - containerRect.top;
     const newHeightPercentage = (offsetY / containerHeight) * 100;
@@ -70,9 +68,12 @@ export default function ResizableWorkspace({
       className="flex h-full w-full flex-col overflow-hidden bg-background"
     >
       {/* Top Panel: Code Editor */}
-      <div style={{ height: `${topHeight}%` }} className="min-h-[150px] flex flex-col">
+      <div
+        style={{ height: `${topHeight}%` }}
+        className="min-h-[150px] flex flex-col"
+      >
         <CodeEditor
-          initialQuery={initialQuery}
+          initialQuery={initialQuery ?? ""}
           onRunQuery={onRunQuery}
           isRunning={isRunning}
         />
@@ -92,11 +93,7 @@ export default function ResizableWorkspace({
         style={{ height: `${100 - topHeight}%` }}
         className="min-h-[150px] flex flex-col"
       >
-        <TestCaseResults
-          testCases={testCases}
-          queryResult={queryResult}
-          isRunning={isRunning}
-        />
+        <TestCaseResults queryResult={queryResult} isRunning={isRunning} />
       </div>
     </div>
   );

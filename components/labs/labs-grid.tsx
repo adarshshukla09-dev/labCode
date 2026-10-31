@@ -1,12 +1,7 @@
 "use client";
 
 import {
-  DatabaseIcon,
   TerminalIcon,
-  Code2Icon,
-  Table2Icon,
-  LayersIcon,
-  SearchIcon,
 } from "lucide-react";
 
 import { BlurFade } from "@/components/velora/blur-fade";
@@ -23,63 +18,13 @@ const LABS = [
     topics: ["SELECT & WHERE", "Filtering & Sorting", "Aggregations"],
     href: "/Labs/sql",
   },
-  {
-    title: "PostgreSQL",
-    subtitle: "Work with relational data",
-    description:
-      "Build practical PostgreSQL skills with joins, relationships, and advanced queries.",
-    icon: DatabaseIcon,
-    level: "INTERMEDIATE",
-    topics: ["Joins & Relationships", "CTEs & Subqueries", "Window Functions"],
-    href: "/Labs/postgresql",
-  },
-  {
-    title: "MongoDB",
-    subtitle: "Explore document databases",
-    description:
-      "Learn to query and manipulate flexible document-based data with MongoDB.",
-    icon: LayersIcon,
-    level: "BEGINNER",
-    topics: ["Documents & Collections", "CRUD Operations", "Aggregation"],
-    href: "/Labs/mongodb",
-  },
-  {
-    title: "SQL Joins",
-    subtitle: "Connect related tables",
-    description:
-      "Master INNER JOIN, LEFT JOIN, and other techniques for combining related data.",
-    icon: Table2Icon,
-    level: "INTERMEDIATE",
-    topics: ["INNER JOIN", "LEFT & RIGHT JOIN", "Multi-table Queries"],
-    href: "/Labs/sql-joins",
-  },
-  {
-    title: "Query Challenges",
-    subtitle: "Put your skills to the test",
-    description:
-      "Solve hands-on database problems, test your understanding, and improve your query-writing skills.",
-    icon: Code2Icon,
-    level: "PRACTICE",
-    topics: ["Real-world Problems", "Query Optimization", "Skill Challenges"],
-    href: "/Labs/challenges",
-  },
-  {
-    title: "Data Exploration",
-    subtitle: "Find insights in data",
-    description:
-      "Explore datasets, discover patterns, and answer meaningful questions using database queries.",
-    icon: SearchIcon,
-    level: "PRACTICE",
-    topics: ["Data Filtering", "Grouping & Analysis", "Real-world Datasets"],
-    href: "/Labs/exploration",
-  },
 ];
 
 
 export function LabsGrid() {
   return (
     <section
-      id="labs"
+      id="available-labs"
       className="relative isolate overflow-hidden px-6 py-12 sm:px-8 sm:py-16 lg:px-8"
     >
       <div className="mx-auto max-w-6xl">
@@ -90,22 +35,22 @@ export function LabsGrid() {
               YOUR LEARNING PATH
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               Learn by{" "}
               <span className="bg-gradient-to-r from-primary via-primary to-foreground bg-clip-text text-transparent">
                 doing.
               </span>
-            </h2>
+            </h1>
 
             <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
-              Pick a database, open a lab, and start solving real problems.
-              No endless tutorials. Just hands-on practice.
+              Open the SQL lab and work through query lessons on filtering,
+              joins, and database fundamentals.
             </p>
           </div>
         </BlurFade>
 
-        {/* Three-column rectangular GlareCard grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Available SQL learning lab */}
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-6">
           {LABS.map((lab, index) => {
             const Icon = lab.icon;
 
