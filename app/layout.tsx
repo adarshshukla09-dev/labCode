@@ -7,10 +7,9 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/blocks/navbar";
-import { FooterWordmark } from "@/components/blocks/footer-wordmark";
-import { ThemeProvider } from "@/components/utlis/theme-provider";
 import LayoutContent from "@/components/utlis/layout";
+import { seoConfig } from "@/lib/seo";
+import { SiteJsonLd } from "@/components/seo/site-json-ld";
 
 const spaceGroteskHeading = Space_Grotesk({
   subsets: ["latin"],
@@ -34,10 +33,31 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "xyzlabs",
-    template: "%s | xyzlabs",
+    default: seoConfig.defaultTitle,
+    template: "%s | Labs",
   },
-  description: "Escape tutorial hell. Learn databases through hands-on labs.",
+  description: seoConfig.description,
+  ...(seoConfig.siteUrl ? { metadataBase: new URL(seoConfig.siteUrl) } : {}),
+  applicationName: seoConfig.name,
+  manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    siteName: seoConfig.name,
+    title: seoConfig.defaultTitle,
+    description: seoConfig.description,
+    images: [{ url: "/opengraph-image" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seoConfig.defaultTitle,
+    description: seoConfig.description,
+    images: ["/opengraph-image"],
+  },
+  robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico" }],
+    apple: [{ url: "/apple-icon" }],
+  },
 };
 export default function RootLayout({
   children,
@@ -57,17 +77,10 @@ export default function RootLayout({
   )}
 >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          
-         <LayoutContent>
-           {children}
-          </LayoutContent>
-        </ThemeProvider>
+        <SiteJsonLd />
+        <LayoutContent>
+          {children}
+        </LayoutContent>
       </body>
     </html>
   );

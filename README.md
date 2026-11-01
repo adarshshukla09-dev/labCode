@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## SEO configuration
+
+Set `NEXT_PUBLIC_SITE_URL` to the canonical HTTPS origin in local and production environments. The sitemap, canonical URLs, Open Graph URLs, and JSON-LD use this value. The current production origin is `https://labcode.adarshshukla.cc.cd` (see `.env.example`).
+
 ## Getting Started
 
 First, run the development server:

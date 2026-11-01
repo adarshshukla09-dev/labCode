@@ -1,7 +1,9 @@
 import { AuthSignupCard } from "@/components/blocks/auth-signup-card";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: 'Login',
+  title: "Sign in",
+  description: "Sign in to access your Labs learning account and interactive database practice.",
+  robots: { index: false, follow: false },
 };
 export default function SignupPage() {
   return (

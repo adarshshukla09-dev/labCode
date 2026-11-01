@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   ArrowRightIcon,
   CheckIcon,
   Code2Icon,
-  DatabaseIcon,
-  TerminalIcon,
 } from "lucide-react";
 
 import { BlurFade } from "@/components/velora/blur-fade";
@@ -34,60 +33,10 @@ const LABS = [
       ["Sam Wilson", "Analytics"],
       ["Jamie Lee", "Marketing"],
     ],
-    output: "3 rows returned in 12ms",
-    color: "text-primary",
-  },
-  {
-    value: "postgresql",
-    label: "PostgreSQL",
-    subtitle: "Relational databases",
-    icon: DatabaseIcon,
-    title: "Go deeper with PostgreSQL.",
-    description:
-      "Learn how real relational databases work. Practice joins, aggregations, constraints, indexing, and advanced queries in hands-on exercises.",
-    points: [
-      "Work with relational schemas",
-      "Practice joins and aggregations",
-      "Understand indexes and performance",
-    ],
-    command: "SELECT department,",
-    command2: "       COUNT(*) AS total",
-    command3: "FROM employees GROUP BY department;",
-    result: [
-      ["Engineering", "12"],
-      ["Analytics", "8"],
-      ["Marketing", "6"],
-    ],
-    output: "3 groups returned in 8ms",
-    color: "text-primary",
-  },
-  {
-    value: "mongodb",
-    label: "MongoDB",
-    subtitle: "Document databases",
-    icon: TerminalIcon,
-    title: "Think in documents with MongoDB.",
-    description:
-      "Move beyond relational thinking. Query documents, filter collections, update records, and explore aggregation pipelines through practical labs.",
-    points: [
-      "Query JSON-like documents",
-      "Filter and update collections",
-      "Practice aggregation pipelines",
-    ],
-    command: "db.users.find({",
-    command2: '  role: "developer",',
-    command3: "  active: true",
-    result: [
-      ["Alex Morgan", "developer"],
-      ["Sam Wilson", "developer"],
-      ["Jamie Lee", "developer"],
-    ],
-    output: "3 documents returned",
+    output: "Illustrative sample rows",
     color: "text-primary",
   },
 ] as const;
-
-type Lab = (typeof LABS)[number];
 
 const ANIMATIONS = [
   "lab-enter-top-left",
@@ -112,7 +61,7 @@ export function FeaturesTabs() {
 
   // Automatically cycle through the database labs.
   useEffect(() => {
-    if (paused) return;
+    if (paused || LABS.length < 2) return;
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % LABS.length);
@@ -127,7 +76,7 @@ export function FeaturesTabs() {
 
   return (
     <section
-      id="labs"
+      id="sql-features"
       className="relative overflow-hidden px-6 py-24 sm:py-32 lg:px-8"
     >
       <style>{`
@@ -293,13 +242,13 @@ export function FeaturesTabs() {
                   ))}
                 </ul>
 
-                <a
-                  href={`/labs/${activeLab.value}`}
+                <Link
+                  href="/labs/sql"
                   className="mt-8 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20"
                 >
                   Explore {activeLab.label} labs
                   <ArrowRightIcon className="size-4" />
-                </a>
+                </Link>
 
                 <div className="mt-8 flex items-center gap-2 font-mono text-xs text-muted-foreground">
                   <span className="size-2 rounded-full bg-primary" />
@@ -347,7 +296,7 @@ export function FeaturesTabs() {
                       </span>
                       <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-primary">
                         <CheckIcon className="size-3" />
-                        SUCCESS
+                        EXAMPLE DATA
                       </span>
                     </div>
 
@@ -357,11 +306,7 @@ export function FeaturesTabs() {
                           <tr className="border-b border-border text-muted-foreground">
                             <th className="pb-3 pr-3 font-medium">Result</th>
                             <th className="pb-3 font-medium">
-                              {activeLab.value === "postgresql"
-                                ? "Count"
-                                : activeLab.value === "mongodb"
-                                  ? "Role"
-                                  : "Department"}
+                              Department
                             </th>
                           </tr>
                         </thead>

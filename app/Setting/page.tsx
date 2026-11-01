@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import React from 'react'
 export const metadata: Metadata = {
-  title: 'Setting',
+  title: 'Account settings',
+  description: 'Manage your Labs account settings.',
+  robots: { index: false, follow: false },
 };
 function page() {
   return (

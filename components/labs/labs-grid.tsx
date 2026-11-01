@@ -1,25 +1,30 @@
 "use client";
 
-import {
-  TerminalIcon,
-} from "lucide-react";
+import { Database } from "lucide-react";
 
 import { BlurFade } from "@/components/velora/blur-fade";
 import { GlareCard } from "@/components/velora/glare-card";
 
 const LABS = [
   {
-    title: "SQL Fundamentals",
+    title: "SQL",
     subtitle: "Start querying data",
     description:
       "Learn the foundations of SQL by writing real queries and solving interactive challenges.",
-    icon: TerminalIcon,
-    level: "BEGINNER",
+    icon: Database,
     topics: ["SELECT & WHERE", "Filtering & Sorting", "Aggregations"],
-    href: "/Labs/sql",
+    href: "/labs/sql",
+  },
+  {
+    title: "MongoDB",
+    subtitle: "Start querying documents",
+    description:
+      "Learn NoSQL fundamentals by writing aggregation pipelines and document queries.",
+    icon: Database,
+    topics: ["Find & Projection", "Query Operators", "Aggregation Framework"],
+    href: "/labs/mongodb",
   },
 ];
-
 
 export function LabsGrid() {
   return (
@@ -27,7 +32,7 @@ export function LabsGrid() {
       id="available-labs"
       className="relative isolate overflow-hidden px-6 py-12 sm:px-8 sm:py-16 lg:px-8"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         {/* Section heading */}
         <BlurFade>
           <div className="mb-8 text-center sm:mb-10">
@@ -43,30 +48,26 @@ export function LabsGrid() {
             </h1>
 
             <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
-              Open the SQL lab and work through query lessons on filtering,
-              joins, and database fundamentals.
+              Open the interactive SQL and MongoDB labs to practice queries,
+              document operations, and database fundamentals.
             </p>
           </div>
         </BlurFade>
 
-        {/* Available SQL learning lab */}
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-6">
+        {/* Available learning labs grid */}
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
           {LABS.map((lab, index) => {
             const Icon = lab.icon;
 
             return (
               <BlurFade key={lab.title} delay={0.05 * index}>
-                <GlareCard className="flex h-full w-full max-w-none flex-col justify-between rounded-2xl border border-border/80 bg-gradient-to-br from-primary/10 via-card to-card p-6 shadow-xl shadow-black/10 transition-colors hover:border-primary/40">
-                  <div className="space-y-4">
-                    {/* Header with Icon and Level */}
+                <GlareCard className="flex aspect-square w-full flex-col justify-between rounded-2xl border border-border/85 bg-gradient-to-br from-primary/10 via-card to-card p-6 shadow-xl shadow-black/10 transition-colors hover:border-primary/40">
+                  <div className="space-y-3">
+                    {/* Header with Icon */}
                     <div className="flex items-center justify-between">
-                      <div className="flex size-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary">
+                      <div className="flex size-10 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary">
                         <Icon className="size-5" />
                       </div>
-
-                      <span className="rounded-md border border-border bg-muted/60 px-2 py-1 font-mono text-[10px] tracking-wider text-muted-foreground">
-                        {lab.level}
-                      </span>
                     </div>
 
                     {/* Title and Subtitle */}
@@ -74,23 +75,23 @@ export function LabsGrid() {
                       <h3 className="text-xl font-bold tracking-tight text-foreground">
                         {lab.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         {lab.subtitle}
                       </p>
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground line-clamp-2">
                       {lab.description}
                     </p>
 
                     {/* Topics */}
                     <div>
-                      <p className="mb-2 font-mono text-xs tracking-wider text-foreground">
+                      <p className="mb-1.5 font-mono text-[10px] sm:text-xs tracking-wider text-foreground">
                         WHAT YOU&apos;LL LEARN
                       </p>
 
-                      <ul className="space-y-1.5">
+                      <ul className="space-y-1">
                         {lab.topics.map((topic) => (
                           <li
                             key={topic}
@@ -105,7 +106,7 @@ export function LabsGrid() {
                   </div>
 
                   {/* Action Link */}
-                  <div className="mt-6 pt-2">
+                  <div className="pt-2">
                     <a
                       href={lab.href}
                       className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"

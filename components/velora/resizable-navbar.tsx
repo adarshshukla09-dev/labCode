@@ -32,9 +32,9 @@ interface ResizableNavbarProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 /**
- * Sticky navbar that shrinks into a centred, blurred pill once the page is
- * scrolled. A highlight glides between links on hover and focus; below a
- * 48rem container width the links move into a disclosure menu.
+- Sticky navbar that shrinks into a centred, blurred pill once the page is
+- scrolled. A highlight glides between links on hover and focus; below a
+- 48rem container width the links move into a disclosure menu.
  */
 export function ResizableNavbar({
   items,
@@ -56,6 +56,7 @@ export function ResizableNavbar({
   const id = useId();
   const rootRef = useRef<HTMLElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
   const spring = reduce
     ? { duration: 0 }
     : { type: "spring" as const, stiffness: 300, damping: 30 };
@@ -70,6 +71,20 @@ export function ResizableNavbar({
     return () => target.removeEventListener("scroll", update);
   }, [container, threshold]);
 
+  // Auto-highlight active link on load or when activeHref changes
+  useEffect(() => {
+    if (!listRef.current) return;
+    const activeEl = listRef.current.querySelector<HTMLAnchorElement>('[aria-current="page"]');
+    if (activeEl) {
+      setHover({
+        left: activeEl.offsetLeft,
+        width: activeEl.offsetWidth,
+        on: true,
+        moved: false,
+      });
+    }
+  }, [activeHref, items]);
+
   useEffect(() => {
     if (!menuOpen) return;
     const onPointerDown = (event: PointerEvent) => {
@@ -82,13 +97,30 @@ export function ResizableNavbar({
   // The highlight glides between links; appearing from nothing it fades in place.
   const show = ({ currentTarget: t }: React.SyntheticEvent<HTMLElement>) =>
     setHover((h) => ({ left: t.offsetLeft, width: t.offsetWidth, on: true, moved: h.on }));
-  const hide = () => setHover((h) => ({ ...h, on: false }));
+  
+  const hide = () => {
+    // If there is an active link, snap back to it instead of hiding completely
+    if (listRef.current) {
+      const activeEl = listRef.current.querySelector<HTMLAnchorElement>('[aria-current="page"]');
+      if (activeEl) {
+        setHover({
+          left: activeEl.offsetLeft,
+          width: activeEl.offsetWidth,
+          on: true,
+          moved: true,
+        });
+        return;
+      }
+    }
+    setHover((h) => ({ ...h, on: false }));
+  };
+
   const glide = reduce || !hover.moved ? { duration: 0 } : spring;
 
   const link = (item: NavItem, inMenu: boolean) => (
     <a
       href={item.href}
-      aria-current={item.href === activeHref ? "page" : undefined}
+      aria-current={item.href === activeHref || activeHref?.startsWith(`${item.href}/`) ? "page" : undefined}
       onMouseEnter={inMenu ? undefined : show}
       onFocus={inMenu ? undefined : show}
       onClick={() => setMenuOpen(false)}
@@ -143,7 +175,7 @@ export function ResizableNavbar({
               transition={{ x: glide, width: glide, opacity: { duration: reduce ? 0 : 0.15 } }}
               className="absolute inset-y-0 left-0 rounded-full bg-muted"
             />
-            <ul className="flex items-center gap-1">
+            <ul ref={listRef} className="flex items-center gap-1">
               {items.map((item, i) => (
                 <li key={`${i}-${item.label}`}>{link(item, false)}</li>
               ))}

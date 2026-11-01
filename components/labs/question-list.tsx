@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SchemaViewer from "@/components/blocks/schemaViewer";
+import type { LabSlug } from "@/lib/labs/lab-config";
+import { usePathname } from "next/navigation";
 
 type TabType = "question" | "schema";
 
@@ -17,9 +19,21 @@ interface CustomQuestionView {
 
 interface QuestionSectionProps {
   lessonNumber: number | null;
-  questionData: any;
+  questionData:
+    | {
+        id: number;
+        title: string;
+        description: string | null;
+        task: string;
+        difficulty: string;
+        hints: string[];
+        context?: unknown;
+      }
+    | null
+    | undefined;
   isPending: boolean;
-  error: any;
+  error: unknown;
+  lab: LabSlug;
 }
 
 export default function QuestionSection({
@@ -27,15 +41,11 @@ export default function QuestionSection({
   questionData,
   isPending,
   error,
+  lab,
 }: QuestionSectionProps) {
   const [activeTab, setActiveTab] = useState<TabType>("question");
   const [showHint, setShowHint] = useState(false);
-
-  // Reset hint when changing questions
-  useEffect(() => {
-    setShowHint(false);
-  }, [questionData?.id]);
-
+  const pathname = usePathname();
   if (lessonNumber === null) {
     return (
       <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
@@ -71,12 +81,15 @@ export default function QuestionSection({
     title: questionData.title,
     description: questionData.description ?? "",
 
-    context: Array.isArray(questionData.tableContext)
-      ? questionData.tableContext
-          .map(
-            (table: any) =>
-              `Table: ${table.table} (${table.description})\nColumns: ${table.columns.join(", ")}`,
-          )
+    context: Array.isArray(questionData.context)
+      ? questionData.context
+          .map((entry) => {
+            if (!entry || typeof entry !== "object") return String(entry);
+            const context = entry as Record<string, unknown>;
+            const name = lab === "sql" ? context.table : context.collection;
+            const members = lab === "sql" ? context.columns : context.fields;
+            return `${lab === "sql" ? "Table" : "Collection"}: ${String(name ?? "")} (${String(context.description ?? "")})\n${lab === "sql" ? "Columns" : "Fields"}: ${Array.isArray(members) ? members.join(", ") : ""}`;
+          })
           .join("\n\n")
       : "",
 
@@ -228,7 +241,7 @@ export default function QuestionSection({
           </div>
         ) : (
           <div className="h-full min-h-0 overflow-y-auto overscroll-contain p-4">
-            <SchemaViewer />
+            <SchemaViewer slug={lab} />
           </div>
         )}
       </div>

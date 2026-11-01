@@ -1,25 +1,30 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 interface Lesson {
   lessonNumber: number;
   title: string;
+  chapter: string;
 }
 
 interface ActiveLesson {
   lessonNumber: number;
   title: string;
+  chapter: string;
 }
 
 interface SidebarProps {
   sidebarData: {
     lessonNumber: number;
     title: string;
-    chapters: string[];
+    chapter: string;
   }[];
   activeLessonNumber: number | null;
+  activeChapter: string | null;
   activeLessonTitle: string;
+  labTitle: string;
   onLessonSelect: (lesson: ActiveLesson) => void;
   onClose?: () => void;
 }
@@ -27,7 +32,9 @@ interface SidebarProps {
 export default function Sidebar({
   sidebarData,
   activeLessonNumber,
+  activeChapter,
   activeLessonTitle,
+  labTitle,
   onLessonSelect,
   onClose,
 }: SidebarProps) {
@@ -41,12 +48,11 @@ export default function Sidebar({
   const chaptersSet = new Set<string>();
 
   for (const item of sidebarData) {
-    for (const chapter of item.chapters) {
-      chaptersSet.add(chapter);
-      const existing = chaptersMap.get(chapter) || [];
-      existing.push({ lessonNumber: item.lessonNumber, title: item.title });
-      chaptersMap.set(chapter, existing);
-    }
+    const chapter = item.chapter;
+    chaptersSet.add(chapter);
+    const existing = chaptersMap.get(chapter) || [];
+    existing.push({ lessonNumber: item.lessonNumber, title: item.title });
+    chaptersMap.set(chapter, existing);
   }
 
   const chapters = Array.from(chaptersSet).sort((a, b) => {
@@ -74,11 +80,11 @@ export default function Sidebar({
       <div className="border-b border-sidebar-border px-5 py-5">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary text-sm font-bold">
-            logo
+            <Image src="/favicon.svg" alt="Logo" width={24} height={24} />{" "}
           </div>
 
           <div className="min-w-0">
-            <h1 className="font-heading font-semibold text-sm">SQL practice lab</h1>
+            <h1 className="font-heading font-semibold text-sm">{labTitle}</h1>
 
             <p className="mt-0.5 truncate text-xs text-muted-foreground">
               {activeLessonTitle}
@@ -133,7 +139,9 @@ export default function Sidebar({
               {isExpanded && (
                 <div className="ml-4 space-y-0.5 border-l border-sidebar-border">
                   {chapterLessons.map((lesson) => {
-                    const isActive = activeLessonNumber === lesson.lessonNumber;
+                    const isActive =
+                      activeChapter === chapter &&
+                      activeLessonNumber === lesson.lessonNumber;
 
                     return (
                       <button
@@ -143,6 +151,7 @@ export default function Sidebar({
                           handleLessonClick({
                             lessonNumber: lesson.lessonNumber,
                             title: lesson.title,
+                            chapter,
                           })
                         }
                         className={`group flex w-full items-center gap-2.5 rounded-r-lg py-2 pl-3 pr-2 text-left transition-all ${

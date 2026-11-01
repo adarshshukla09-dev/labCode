@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Editor, { type OnMount } from "@monaco-editor/react";
 import type { editor as MonacoEditor } from "monaco-editor";
 
@@ -16,6 +16,11 @@ export default function CodeEditor({
   isRunning: externalIsRunning,
 }: CodeEditorProps) {
   const [query, setQuery] = useState(initialQuery);
+
+  useEffect(() => {
+    setQuery(initialQuery);
+    setError("");
+  }, [initialQuery]);
   const [internalIsRunning, setInternalIsRunning] = useState(false);
   const [error, setError] = useState("");
 
@@ -37,9 +42,7 @@ export default function CodeEditor({
     try {
       await onRunQuery(query);
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "Failed to execute query."
-      );
+      setError(err instanceof Error ? err.message : "Failed to execute query.");
     } finally {
       setInternalIsRunning(false);
     }

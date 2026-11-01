@@ -12,11 +12,6 @@ const JourneySection = dynamic(
   { loading: () => <p>Loading journey...</p> }
 );
 
-const PricingSinglePlan = dynamic(
-  () => import("@/components/blocks/pricing-single-plan").then((mod) => mod.PricingSinglePlan),
-  { loading: () => <p>Loading pricing...</p> }
-);
-
 const HeroGridMinimal = dynamic(
   () => import("@/components/utlis/hero").then((mod) => mod.HeroGridMinimal),
   { loading: () => <p>Loading hero...</p> }
@@ -32,7 +27,6 @@ export default function LandingPage() {
     <>
       <HeroGridMinimal />
       <FeaturesTabs />
-      <PricingSinglePlan />
       <JourneySection />
       {/* <LogosMarquee /> */}
     </>

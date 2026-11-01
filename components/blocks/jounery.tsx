@@ -17,20 +17,20 @@ import { GridPattern } from "@/components/velora/grid-pattern";
 const JOURNEY = [
   {
     number: "01",
-    title: "Choose your lab",
-    subtitle: "Start with the right database.",
+    title: "Start with SQL",
+    subtitle: "Begin with database fundamentals.",
     description:
-      "Pick a learning track that matches your goals. Explore SQL fundamentals, PostgreSQL, or MongoDB and start building your database knowledge.",
+      "Start with SQL fundamentals and learn how to write queries against relational data through guided lessons.",
     icon: DatabaseIcon,
     tag: "Choose your path",
     points: [
       "Explore SQL fundamentals",
-      "Learn PostgreSQL",
-      "Discover MongoDB",
+      "Learn to filter and group data",
+      "Practice query writing",
     ],
     preview: {
-      label: "AVAILABLE LABS",
-      items: ["SQL", "PostgreSQL", "MongoDB"],
+      label: "SQL LEARNING",
+      items: ["SQL lessons", "Query practice", "Database basics"],
     },
   },
   {
@@ -163,7 +163,7 @@ export function JourneySection() {
 
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
             Your journey with{" "}
-            <span className="text-primary">xyzlabs.</span>
+            <span className="text-primary">Labs.</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base text-pretty text-muted-foreground sm:text-lg">

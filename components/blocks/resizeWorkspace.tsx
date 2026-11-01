@@ -1,10 +1,13 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import CodeEditor from "@/components/labs/codeEditor";
-import TestCaseResults, { type QueryResult } from "@/components/labs/testCase";
+import type { QueryResult } from "@/components/labs/testCase";
+import type { LabSlug } from "@/lib/labs/lab-config";
+import { editorRegistry } from "@/components/labs/editorRegistry";
 
 interface ResizableWorkspaceProps {
+  lab: LabSlug;
+  questionId?: number;
   initialQuery?: string | null;
   onRunQuery?: (query: string) => void | Promise<void>;
   isRunning?: boolean;
@@ -12,11 +15,14 @@ interface ResizableWorkspaceProps {
 }
 
 export default function ResizableWorkspace({
+  lab,
+  questionId,
   initialQuery,
   onRunQuery,
   isRunning = false,
   queryResult,
 }: ResizableWorkspaceProps) {
+  const { Editor: LabEditor, Results } = editorRegistry[lab];
   const [topHeight, setTopHeight] = useState<number>(60); // Percentage height for the editor (default 60%)
   const isDragging = useRef<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -72,7 +78,8 @@ export default function ResizableWorkspace({
         style={{ height: `${topHeight}%` }}
         className="min-h-[150px] flex flex-col"
       >
-        <CodeEditor
+        <LabEditor
+          key={`${lab}-${questionId ?? "none"}`}
           initialQuery={initialQuery ?? ""}
           onRunQuery={onRunQuery}
           isRunning={isRunning}
@@ -93,7 +100,7 @@ export default function ResizableWorkspace({
         style={{ height: `${100 - topHeight}%` }}
         className="min-h-[150px] flex flex-col"
       >
-        <TestCaseResults queryResult={queryResult} isRunning={isRunning} />
+        <Results queryResult={queryResult} isRunning={isRunning} />
       </div>
     </div>
   );
