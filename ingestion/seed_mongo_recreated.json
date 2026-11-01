@@ -1,0 +1,2891 @@
+[
+  {
+    "slug": "find-all-documents",
+    "title": "Find All Documents",
+    "description": "Retrieve every document in a collection with an empty filter.",
+    "question": "Return all employee documents from the employees collection.",
+    "task": "Use db.employees.find() with an empty filter to return every document.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.find({}, { _id: 0 })",
+    "solution_query": "db.employees.find({}, { _id: 0 })",
+    "explanation": "An empty filter object matches every document in the collection. MongoDB returns documents in natural (usually insertion) order.",
+    "hints": [
+      "An empty object {} matches all documents.",
+      "Call find() on the employees collection."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 28,
+      "documents": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "last_name": "Morgan",
+          "email": "ava.morgan@example.com",
+          "department_id": 1,
+          "manager_id": null,
+          "job_title": "Chief Executive Officer",
+          "salary_cents": 24000000,
+          "commission_cents": null,
+          "hire_date": "2015-01-12",
+          "birth_date": "1980-04-15",
+          "employment_status": "Active"
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "email": "mia.chen@example.com",
+          "department_id": 3,
+          "manager_id": 1,
+          "job_title": "Sales Director",
+          "salary_cents": 16500000,
+          "commission_cents": 250000,
+          "hire_date": "2017-06-05",
+          "birth_date": "1985-02-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "last_name": "Garcia",
+          "email": "liam.garcia@example.com",
+          "department_id": 4,
+          "manager_id": 1,
+          "job_title": "Marketing Director",
+          "salary_cents": 15500000,
+          "commission_cents": null,
+          "hire_date": "2018-02-19",
+          "birth_date": "1987-07-24",
+          "employment_status": "Active"
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "last_name": "Brown",
+          "email": "sophia.brown@example.com",
+          "department_id": 5,
+          "manager_id": 1,
+          "job_title": "HR Director",
+          "salary_cents": 14500000,
+          "commission_cents": null,
+          "hire_date": "2018-09-10",
+          "birth_date": "1986-11-30",
+          "employment_status": "Active"
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "last_name": "Wilson",
+          "email": "ethan.wilson@example.com",
+          "department_id": 6,
+          "manager_id": 1,
+          "job_title": "Finance Director",
+          "salary_cents": 16000000,
+          "commission_cents": null,
+          "hire_date": "2017-11-13",
+          "birth_date": "1983-01-08",
+          "employment_status": "Active"
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "last_name": "Kumar",
+          "email": "isabella.kumar@example.com",
+          "department_id": 7,
+          "manager_id": 1,
+          "job_title": "Support Director",
+          "salary_cents": 13000000,
+          "commission_cents": null,
+          "hire_date": "2019-04-01",
+          "birth_date": "1988-03-18",
+          "employment_status": "Active"
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "last_name": "Martin",
+          "email": "lucas.martin@example.com",
+          "department_id": 8,
+          "manager_id": 2,
+          "job_title": "Research Manager",
+          "salary_cents": 14000000,
+          "commission_cents": null,
+          "hire_date": "2019-07-15",
+          "birth_date": "1989-05-12",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "email": "emma.davis@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Software Engineer",
+          "salary_cents": 9800000,
+          "commission_cents": null,
+          "hire_date": "2021-05-17",
+          "birth_date": "1995-12-03",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "email": "charlotte.taylor@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "QA Engineer",
+          "salary_cents": 8500000,
+          "commission_cents": null,
+          "hire_date": "2022-08-08",
+          "birth_date": "1996-10-16",
+          "employment_status": "Active"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "last_name": "Anderson",
+          "email": "elijah.anderson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7600000,
+          "commission_cents": 900000,
+          "hire_date": "2020-06-22",
+          "birth_date": "1992-04-07",
+          "employment_status": "Active"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "last_name": "Thomas",
+          "email": "amelia.thomas@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7200000,
+          "commission_cents": 650000,
+          "hire_date": "2021-09-13",
+          "birth_date": "1993-02-28",
+          "employment_status": "Active"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "last_name": "Jackson",
+          "email": "james.jackson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 5400000,
+          "commission_cents": null,
+          "hire_date": "2023-01-09",
+          "birth_date": "1999-01-19",
+          "employment_status": "Active"
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "last_name": "White",
+          "email": "harper.white@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "Content Strategist",
+          "salary_cents": 7800000,
+          "commission_cents": null,
+          "hire_date": "2020-10-05",
+          "birth_date": "1992-09-25",
+          "employment_status": "Active"
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "last_name": "Harris",
+          "email": "benjamin.harris@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "SEO Specialist",
+          "salary_cents": 6900000,
+          "commission_cents": null,
+          "hire_date": "2022-03-28",
+          "birth_date": "1997-07-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "last_name": "Clark",
+          "email": "evelyn.clark@example.com",
+          "department_id": 5,
+          "manager_id": 5,
+          "job_title": "Recruiter",
+          "salary_cents": 6500000,
+          "commission_cents": null,
+          "hire_date": "2021-04-12",
+          "birth_date": "1994-11-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "last_name": "Lewis",
+          "email": "henry.lewis@example.com",
+          "department_id": 6,
+          "manager_id": 6,
+          "job_title": "Financial Analyst",
+          "salary_cents": 8800000,
+          "commission_cents": null,
+          "hire_date": "2020-08-31",
+          "birth_date": "1990-03-05",
+          "employment_status": "Active"
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "last_name": "Walker",
+          "email": "abigail.walker@example.com",
+          "department_id": 6,
+          "manager_id": 6,
+          "job_title": "Accountant",
+          "salary_cents": 7400000,
+          "commission_cents": null,
+          "hire_date": "2022-06-06",
+          "birth_date": "1995-05-20",
+          "employment_status": "Active"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "last_name": "Hall",
+          "email": "daniel.hall@example.com",
+          "department_id": 7,
+          "manager_id": 7,
+          "job_title": "Support Specialist",
+          "salary_cents": 5100000,
+          "commission_cents": null,
+          "hire_date": "2023-02-20",
+          "birth_date": "2000-12-01",
+          "employment_status": "Active"
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "last_name": "Allen",
+          "email": "ella.allen@example.com",
+          "department_id": 7,
+          "manager_id": 7,
+          "job_title": "Support Specialist",
+          "salary_cents": 5300000,
+          "commission_cents": null,
+          "hire_date": "2022-11-07",
+          "birth_date": "1998-08-14",
+          "employment_status": "On Leave"
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "last_name": "Young",
+          "email": "jack.young@example.com",
+          "department_id": 8,
+          "manager_id": 8,
+          "job_title": "Data Scientist",
+          "salary_cents": 11800000,
+          "commission_cents": null,
+          "hire_date": "2020-02-03",
+          "birth_date": "1991-10-10",
+          "employment_status": "Active"
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "last_name": "King",
+          "email": "grace.king@example.com",
+          "department_id": 8,
+          "manager_id": 8,
+          "job_title": "Research Analyst",
+          "salary_cents": 9100000,
+          "commission_cents": null,
+          "hire_date": "2022-04-18",
+          "birth_date": "1996-01-27",
+          "employment_status": "Active"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null,
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Intern",
+          "salary_cents": 2800000,
+          "commission_cents": null,
+          "hire_date": "2024-01-08",
+          "birth_date": "2002-06-17",
+          "employment_status": "Active"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "last_name": "Green",
+          "email": "zoe.green@example.com",
+          "department_id": null,
+          "manager_id": 1,
+          "job_title": "Consultant",
+          "salary_cents": 6800000,
+          "commission_cents": null,
+          "hire_date": "2023-07-10",
+          "birth_date": "1993-04-22",
+          "employment_status": "Active"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "email": "wyatt.baker@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 4900000,
+          "commission_cents": 300000,
+          "hire_date": "2024-02-12",
+          "birth_date": "2000-09-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "last_name": "Adams",
+          "email": "nora.adams@example.com",
+          "department_id": 9,
+          "manager_id": 1,
+          "job_title": "Legal Counsel",
+          "salary_cents": 13500000,
+          "commission_cents": null,
+          "hire_date": "2021-12-01",
+          "birth_date": "1988-12-12",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Querying Documents",
+    "lesson_number": 1,
+    "sort_order": 1,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. Each document is one employee; department_id references a department."
+      }
+    ]
+  },
+  {
+    "slug": "filter-by-equality",
+    "title": "Filter by Equality",
+    "description": "Match documents whose field equals a given value.",
+    "question": "Find all employees who belong to department 2.",
+    "task": "Return every employee document where department_id is 2.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.find({ department_id: 2 }, { _id: 0 })",
+    "solution_query": "db.employees.find({ department_id: 2 }, { _id: 0 })",
+    "explanation": "A key-value pair in the filter document matches documents where that field equals the value.",
+    "hints": [
+      "Put department_id as a key in the filter.",
+      "Use the number 2, not the string '2'."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 6,
+      "documents": [
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "email": "emma.davis@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Software Engineer",
+          "salary_cents": 9800000,
+          "commission_cents": null,
+          "hire_date": "2021-05-17",
+          "birth_date": "1995-12-03",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "email": "charlotte.taylor@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "QA Engineer",
+          "salary_cents": 8500000,
+          "commission_cents": null,
+          "hire_date": "2022-08-08",
+          "birth_date": "1996-10-16",
+          "employment_status": "Active"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null,
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Intern",
+          "salary_cents": 2800000,
+          "commission_cents": null,
+          "hire_date": "2024-01-08",
+          "birth_date": "2002-06-17",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Querying Documents",
+    "lesson_number": 2,
+    "sort_order": 2,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. Each document is one employee; department_id references a department."
+      }
+    ]
+  },
+  {
+    "slug": "filter-with-comparison-operators",
+    "title": "Comparison Operators",
+    "description": "Use $gt, $gte, $lt, and $lte to compare numeric fields.",
+    "question": "Find employees whose salary is at least 10,000,000 cents.",
+    "task": "Return employee documents where salary_cents is greater than or equal to 10000000.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.find({ salary_cents: { $gte: 10000000 } }, { _id: 0 })",
+    "solution_query": "db.employees.find({ salary_cents: { $gte: 10000000 } }, { _id: 0 })",
+    "explanation": "$gte matches values greater than or equal to the given value. Other comparison operators include $gt, $lt, $lte, and $ne.",
+    "hints": [
+      "Wrap the condition in an object: { $gte: value }.",
+      "Filter on salary_cents."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 12,
+      "documents": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "last_name": "Morgan",
+          "email": "ava.morgan@example.com",
+          "department_id": 1,
+          "manager_id": null,
+          "job_title": "Chief Executive Officer",
+          "salary_cents": 24000000,
+          "commission_cents": null,
+          "hire_date": "2015-01-12",
+          "birth_date": "1980-04-15",
+          "employment_status": "Active"
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "email": "mia.chen@example.com",
+          "department_id": 3,
+          "manager_id": 1,
+          "job_title": "Sales Director",
+          "salary_cents": 16500000,
+          "commission_cents": 250000,
+          "hire_date": "2017-06-05",
+          "birth_date": "1985-02-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "last_name": "Garcia",
+          "email": "liam.garcia@example.com",
+          "department_id": 4,
+          "manager_id": 1,
+          "job_title": "Marketing Director",
+          "salary_cents": 15500000,
+          "commission_cents": null,
+          "hire_date": "2018-02-19",
+          "birth_date": "1987-07-24",
+          "employment_status": "Active"
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "last_name": "Brown",
+          "email": "sophia.brown@example.com",
+          "department_id": 5,
+          "manager_id": 1,
+          "job_title": "HR Director",
+          "salary_cents": 14500000,
+          "commission_cents": null,
+          "hire_date": "2018-09-10",
+          "birth_date": "1986-11-30",
+          "employment_status": "Active"
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "last_name": "Wilson",
+          "email": "ethan.wilson@example.com",
+          "department_id": 6,
+          "manager_id": 1,
+          "job_title": "Finance Director",
+          "salary_cents": 16000000,
+          "commission_cents": null,
+          "hire_date": "2017-11-13",
+          "birth_date": "1983-01-08",
+          "employment_status": "Active"
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "last_name": "Kumar",
+          "email": "isabella.kumar@example.com",
+          "department_id": 7,
+          "manager_id": 1,
+          "job_title": "Support Director",
+          "salary_cents": 13000000,
+          "commission_cents": null,
+          "hire_date": "2019-04-01",
+          "birth_date": "1988-03-18",
+          "employment_status": "Active"
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "last_name": "Martin",
+          "email": "lucas.martin@example.com",
+          "department_id": 8,
+          "manager_id": 2,
+          "job_title": "Research Manager",
+          "salary_cents": 14000000,
+          "commission_cents": null,
+          "hire_date": "2019-07-15",
+          "birth_date": "1989-05-12",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "last_name": "Young",
+          "email": "jack.young@example.com",
+          "department_id": 8,
+          "manager_id": 8,
+          "job_title": "Data Scientist",
+          "salary_cents": 11800000,
+          "commission_cents": null,
+          "hire_date": "2020-02-03",
+          "birth_date": "1991-10-10",
+          "employment_status": "Active"
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "last_name": "Adams",
+          "email": "nora.adams@example.com",
+          "department_id": 9,
+          "manager_id": 1,
+          "job_title": "Legal Counsel",
+          "salary_cents": 13500000,
+          "commission_cents": null,
+          "hire_date": "2021-12-01",
+          "birth_date": "1988-12-12",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Filtering Documents",
+    "lesson_number": 3,
+    "sort_order": 3,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. Salaries are stored as integer cents."
+      }
+    ]
+  },
+  {
+    "slug": "filter-with-in-operator",
+    "title": "The $in Operator",
+    "description": "Match a field against a list of allowed values.",
+    "question": "Find employees in department 3 or department 4.",
+    "task": "Return employee documents where department_id is either 3 or 4.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.find({ department_id: { $in: [3, 4] } }, { _id: 0 })",
+    "solution_query": "db.employees.find({ department_id: { $in: [3, 4] } }, { _id: 0 })",
+    "explanation": "$in matches documents where the field equals any value in the provided array, similar to SQL's IN clause.",
+    "hints": [
+      "Use $in with an array of values.",
+      "The array here is [3, 4]."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 8,
+      "documents": [
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "email": "mia.chen@example.com",
+          "department_id": 3,
+          "manager_id": 1,
+          "job_title": "Sales Director",
+          "salary_cents": 16500000,
+          "commission_cents": 250000,
+          "hire_date": "2017-06-05",
+          "birth_date": "1985-02-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "last_name": "Garcia",
+          "email": "liam.garcia@example.com",
+          "department_id": 4,
+          "manager_id": 1,
+          "job_title": "Marketing Director",
+          "salary_cents": 15500000,
+          "commission_cents": null,
+          "hire_date": "2018-02-19",
+          "birth_date": "1987-07-24",
+          "employment_status": "Active"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "last_name": "Anderson",
+          "email": "elijah.anderson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7600000,
+          "commission_cents": 900000,
+          "hire_date": "2020-06-22",
+          "birth_date": "1992-04-07",
+          "employment_status": "Active"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "last_name": "Thomas",
+          "email": "amelia.thomas@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7200000,
+          "commission_cents": 650000,
+          "hire_date": "2021-09-13",
+          "birth_date": "1993-02-28",
+          "employment_status": "Active"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "last_name": "Jackson",
+          "email": "james.jackson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 5400000,
+          "commission_cents": null,
+          "hire_date": "2023-01-09",
+          "birth_date": "1999-01-19",
+          "employment_status": "Active"
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "last_name": "White",
+          "email": "harper.white@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "Content Strategist",
+          "salary_cents": 7800000,
+          "commission_cents": null,
+          "hire_date": "2020-10-05",
+          "birth_date": "1992-09-25",
+          "employment_status": "Active"
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "last_name": "Harris",
+          "email": "benjamin.harris@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "SEO Specialist",
+          "salary_cents": 6900000,
+          "commission_cents": null,
+          "hire_date": "2022-03-28",
+          "birth_date": "1997-07-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "email": "wyatt.baker@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 4900000,
+          "commission_cents": 300000,
+          "hire_date": "2024-02-12",
+          "birth_date": "2000-09-09",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Filtering Documents",
+    "lesson_number": 4,
+    "sort_order": 4,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. Each document is one employee; department_id references a department."
+      }
+    ]
+  },
+  {
+    "slug": "filter-null-manager",
+    "title": "Matching null Values",
+    "description": "Find documents where a field is null.",
+    "question": "Find employees who do not have a manager.",
+    "task": "Return employee documents where manager_id is null.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({ manager_id: null }, { _id: 0 })",
+    "solution_query": "db.employees.find({ manager_id: null }, { _id: 0 })",
+    "explanation": "Matching null in MongoDB also matches documents where the field is missing, so this returns employees with no manager_id value.",
+    "hints": [
+      "Set the field's value to null in the filter.",
+      "Only the top executive should have no manager."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 1,
+      "documents": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "last_name": "Morgan",
+          "email": "ava.morgan@example.com",
+          "department_id": 1,
+          "manager_id": null,
+          "job_title": "Chief Executive Officer",
+          "salary_cents": 24000000,
+          "commission_cents": null,
+          "hire_date": "2015-01-12",
+          "birth_date": "1980-04-15",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Filtering Documents",
+    "lesson_number": 5,
+    "sort_order": 5,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. manager_id is null for top-level employees."
+      }
+    ]
+  },
+  {
+    "slug": "filter-with-and-conditions",
+    "title": "Combining Conditions with AND",
+    "description": "Combine multiple fields in one filter to require all of them.",
+    "question": "Find employees in department 2 who are still active.",
+    "task": "Return employee documents where department_id is 2 and employment_status is 'Active'.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.find({ department_id: 2, employment_status: \"Active\" }, { _id: 0 })",
+    "solution_query": "db.employees.find({ department_id: 2, employment_status: \"Active\" }, { _id: 0 })",
+    "explanation": "Listing multiple fields in the same filter document combines them with an implicit AND.",
+    "hints": [
+      "Separate the conditions with a comma.",
+      "Status values are case-sensitive."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 6,
+      "documents": [
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "email": "emma.davis@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Software Engineer",
+          "salary_cents": 9800000,
+          "commission_cents": null,
+          "hire_date": "2021-05-17",
+          "birth_date": "1995-12-03",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "email": "charlotte.taylor@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "QA Engineer",
+          "salary_cents": 8500000,
+          "commission_cents": null,
+          "hire_date": "2022-08-08",
+          "birth_date": "1996-10-16",
+          "employment_status": "Active"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null,
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Intern",
+          "salary_cents": 2800000,
+          "commission_cents": null,
+          "hire_date": "2024-01-08",
+          "birth_date": "2002-06-17",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Filtering Documents",
+    "lesson_number": 6,
+    "sort_order": 6,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records with employment_status such as 'Active'."
+      }
+    ]
+  },
+  {
+    "slug": "filter-hired-since-2023",
+    "title": "Filtering Dates Stored as Strings",
+    "description": "Compare ISO-formatted date strings with range operators.",
+    "question": "Find employees hired on or after January 1, 2023.",
+    "task": "Return employee documents where hire_date is on or after '2023-01-01'.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({ hire_date: { $gte: \"2023-01-01\" } }, { _id: 0 })",
+    "solution_query": "db.employees.find({ hire_date: { $gte: \"2023-01-01\" } }, { _id: 0 })",
+    "explanation": "Dates here are stored as YYYY-MM-DD strings. Because that format sorts chronologically, string comparison gives the correct date order.",
+    "hints": [
+      "Use $gte on hire_date.",
+      "Write the date as a string in YYYY-MM-DD format."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 5,
+      "documents": [
+        {
+          "id": 15,
+          "first_name": "James",
+          "last_name": "Jackson",
+          "email": "james.jackson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 5400000,
+          "commission_cents": null,
+          "hire_date": "2023-01-09",
+          "birth_date": "1999-01-19",
+          "employment_status": "Active"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "last_name": "Hall",
+          "email": "daniel.hall@example.com",
+          "department_id": 7,
+          "manager_id": 7,
+          "job_title": "Support Specialist",
+          "salary_cents": 5100000,
+          "commission_cents": null,
+          "hire_date": "2023-02-20",
+          "birth_date": "2000-12-01",
+          "employment_status": "Active"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null,
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Intern",
+          "salary_cents": 2800000,
+          "commission_cents": null,
+          "hire_date": "2024-01-08",
+          "birth_date": "2002-06-17",
+          "employment_status": "Active"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "last_name": "Green",
+          "email": "zoe.green@example.com",
+          "department_id": null,
+          "manager_id": 1,
+          "job_title": "Consultant",
+          "salary_cents": 6800000,
+          "commission_cents": null,
+          "hire_date": "2023-07-10",
+          "birth_date": "1993-04-22",
+          "employment_status": "Active"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "email": "wyatt.baker@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 4900000,
+          "commission_cents": 300000,
+          "hire_date": "2024-02-12",
+          "birth_date": "2000-09-09",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Filtering Documents",
+    "lesson_number": 7,
+    "sort_order": 7,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. hire_date is stored as a YYYY-MM-DD string."
+      }
+    ]
+  },
+  {
+    "slug": "regex-job-title",
+    "title": "Pattern Matching with $regex",
+    "description": "Match string fields against a regular expression.",
+    "question": "Find employees whose job title contains the word 'Engineer'.",
+    "task": "Return employee documents where job_title matches the pattern /Engineer/.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({ job_title: /Engineer/ }, { _id: 0 })",
+    "solution_query": "db.employees.find({ job_title: /Engineer/ }, { _id: 0 })",
+    "explanation": "A regular expression in the filter matches substrings. Use /^Engineer/ to anchor the match to the start of the string.",
+    "hints": [
+      "Use a /pattern/ literal as the value.",
+      "The match is case-sensitive by default."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 5,
+      "documents": [
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "email": "emma.davis@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Software Engineer",
+          "salary_cents": 9800000,
+          "commission_cents": null,
+          "hire_date": "2021-05-17",
+          "birth_date": "1995-12-03",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "email": "charlotte.taylor@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "QA Engineer",
+          "salary_cents": 8500000,
+          "commission_cents": null,
+          "hire_date": "2022-08-08",
+          "birth_date": "1996-10-16",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Filtering Documents",
+    "lesson_number": 8,
+    "sort_order": 8,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. job_title is free text."
+      }
+    ]
+  },
+  {
+    "slug": "projection-select-fields",
+    "title": "Projection",
+    "description": "Return only selected fields from each matching document.",
+    "question": "List the first name, last name, and job title of employees in department 2.",
+    "task": "Find employees in department 2 and return only first_name, last_name, and job_title. Exclude _id.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({ department_id: 2 }, { _id: 0, first_name: 1, last_name: 1, job_title: 1 })",
+    "solution_query": "db.employees.find({ department_id: 2 }, { _id: 0, first_name: 1, last_name: 1, job_title: 1 })",
+    "explanation": "The second argument to find() is a projection. Fields set to 1 are included, and _id is included unless you set it to 0.",
+    "hints": [
+      "The projection is the second argument to find().",
+      "Set _id to 0 to hide it."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 6,
+      "documents": [
+        {
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "job_title": "Engineering Director"
+        },
+        {
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "job_title": "Senior Software Engineer"
+        },
+        {
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "job_title": "Software Engineer"
+        },
+        {
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "job_title": "Software Engineer"
+        },
+        {
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "job_title": "QA Engineer"
+        },
+        {
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "job_title": "Intern"
+        }
+      ]
+    },
+    "chapter": "Querying Documents",
+    "lesson_number": 9,
+    "sort_order": 9,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "sort-and-limit",
+    "title": "Sorting and Limiting Results",
+    "description": "Sort documents and return only the first few.",
+    "question": "Find the three highest-paid employees.",
+    "task": "Return first_name and salary_cents for the top 3 employees by salary, highest first.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({}, { _id: 0, first_name: 1, salary_cents: 1 }).sort({ salary_cents: -1 }).limit(3)",
+    "solution_query": "db.employees.find({}, { _id: 0, first_name: 1, salary_cents: 1 }).sort({ salary_cents: -1 }).limit(3)",
+    "explanation": "sort() with -1 orders values from highest to lowest. limit() caps the number of results.",
+    "hints": [
+      "Chain .sort() after find().",
+      "Use -1 for descending order.",
+      "Chain .limit(3) after the sort."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 3,
+      "documents": [
+        {
+          "first_name": "Ava",
+          "salary_cents": 24000000
+        },
+        {
+          "first_name": "Noah",
+          "salary_cents": 18000000
+        },
+        {
+          "first_name": "Mia",
+          "salary_cents": 16500000
+        }
+      ]
+    },
+    "chapter": "Sorting and Limiting",
+    "lesson_number": 10,
+    "sort_order": 10,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. Salaries are stored as integer cents."
+      }
+    ]
+  },
+  {
+    "slug": "count-documents",
+    "title": "Counting Documents",
+    "description": "Count the documents that match a filter.",
+    "question": "How many employees are currently active?",
+    "task": "Use countDocuments() to count employees where employment_status is 'Active'.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.countDocuments({ employment_status: \"Active\" })",
+    "solution_query": "db.employees.countDocuments({ employment_status: \"Active\" })",
+    "explanation": "countDocuments() returns the number of documents matching the filter. It is the recommended replacement for the deprecated count().",
+    "hints": [
+      "Use countDocuments() instead of find().",
+      "Pass the same filter you would use in find()."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": 27
+    },
+    "chapter": "Sorting and Limiting",
+    "lesson_number": 11,
+    "sort_order": 11,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records with employment_status."
+      }
+    ]
+  },
+  {
+    "slug": "aggregate-headcount-by-department",
+    "title": "Grouping with Aggregation",
+    "description": "Use $group to summarize documents by a field.",
+    "question": "For each department, count the employees and sum their salaries in cents.",
+    "task": "Group employees by department_id and return headcount and total_salary_cents for each group, sorted by department_id.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.aggregate([])",
+    "solution_query": "db.employees.aggregate([\n  { $group: {\n      _id: \"$department_id\",\n      headcount: { $sum: 1 },\n      total_salary_cents: { $sum: \"$salary_cents\" }\n  } },\n  { $sort: { _id: 1 } }\n])",
+    "explanation": "$group collects documents by the _id expression. $sum: 1 counts documents, and $sum on a field adds its values. Use $sort afterward to order the output.",
+    "hints": [
+      "Add a $group stage with _id set to \"$department_id\".",
+      "Use { $sum: 1 } to count documents.",
+      "Finish with a $sort stage on _id."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 10,
+      "documents": [
+        {
+          "_id": null,
+          "headcount": 1,
+          "total_salary_cents": 6800000
+        },
+        {
+          "_id": 1,
+          "headcount": 1,
+          "total_salary_cents": 24000000
+        },
+        {
+          "_id": 2,
+          "headcount": 6,
+          "total_salary_cents": 61800000
+        },
+        {
+          "_id": 3,
+          "headcount": 5,
+          "total_salary_cents": 41600000
+        },
+        {
+          "_id": 4,
+          "headcount": 3,
+          "total_salary_cents": 30200000
+        },
+        {
+          "_id": 5,
+          "headcount": 2,
+          "total_salary_cents": 21000000
+        },
+        {
+          "_id": 6,
+          "headcount": 3,
+          "total_salary_cents": 32200000
+        },
+        {
+          "_id": 7,
+          "headcount": 3,
+          "total_salary_cents": 23400000
+        },
+        {
+          "_id": 8,
+          "headcount": 3,
+          "total_salary_cents": 34900000
+        },
+        {
+          "_id": 9,
+          "headcount": 1,
+          "total_salary_cents": 13500000
+        }
+      ]
+    },
+    "chapter": "Aggregation Pipeline",
+    "lesson_number": 12,
+    "sort_order": 12,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records. Each document is one employee."
+      }
+    ]
+  },
+  {
+    "slug": "aggregate-match-then-group",
+    "title": "Match Then Group",
+    "description": "Filter documents with $match before grouping.",
+    "question": "Count active employees in each department.",
+    "task": "Keep only active employees, group them by department_id, and return the count for each department sorted by department_id.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.aggregate([\n  { $match: { employment_status: \"Active\" } }\n])",
+    "solution_query": "db.employees.aggregate([\n  { $match: { employment_status: \"Active\" } },\n  { $group: { _id: \"$department_id\", active_count: { $sum: 1 } } },\n  { $sort: { _id: 1 } }\n])",
+    "explanation": "$match filters documents early in the pipeline, which lets later stages work on fewer documents. It works like WHERE in SQL.",
+    "hints": [
+      "Start the pipeline with $match.",
+      "Group the matched documents by department_id."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 10,
+      "documents": [
+        {
+          "_id": null,
+          "active_count": 1
+        },
+        {
+          "_id": 1,
+          "active_count": 1
+        },
+        {
+          "_id": 2,
+          "active_count": 6
+        },
+        {
+          "_id": 3,
+          "active_count": 5
+        },
+        {
+          "_id": 4,
+          "active_count": 3
+        },
+        {
+          "_id": 5,
+          "active_count": 2
+        },
+        {
+          "_id": 6,
+          "active_count": 3
+        },
+        {
+          "_id": 7,
+          "active_count": 2
+        },
+        {
+          "_id": 8,
+          "active_count": 3
+        },
+        {
+          "_id": 9,
+          "active_count": 1
+        }
+      ]
+    },
+    "chapter": "Aggregation Pipeline",
+    "lesson_number": 13,
+    "sort_order": 13,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "department_id",
+          "manager_id",
+          "job_title",
+          "salary_cents",
+          "commission_cents",
+          "hire_date",
+          "birth_date",
+          "employment_status"
+        ],
+        "description": "Employee records with employment_status."
+      }
+    ]
+  },
+  {
+    "slug": "logical-or",
+    "title": "Using $or",
+    "description": "Combine conditions with $or so that documents matching any of the criteria are returned.",
+    "question": "Find employees who belong to department 2 or department 3.",
+    "task": "Use db.employees.find() with the $or operator to return employees where department_id is either 2 or 3.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.find({ $or: [{ department_id: 2 }, { department_id: 3 }] }, { _id: 0 })",
+    "solution_query": "db.employees.find({ $or: [{ department_id: 2 }, { department_id: 3 }] }, { _id: 0 })",
+    "explanation": "The $or operator takes an array of expression objects and matches documents that satisfy at least one of them.",
+    "hints": [
+      "Use the $or operator with an array of filter conditions.",
+      "Each condition inside the array is a separate query object."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 11,
+      "documents": [
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "email": "mia.chen@example.com",
+          "department_id": 3,
+          "manager_id": 1,
+          "job_title": "Sales Director",
+          "salary_cents": 16500000,
+          "commission_cents": 250000,
+          "hire_date": "2017-06-05",
+          "birth_date": "1985-02-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "email": "emma.davis@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Software Engineer",
+          "salary_cents": 9800000,
+          "commission_cents": null,
+          "hire_date": "2021-05-17",
+          "birth_date": "1995-12-03",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "email": "charlotte.taylor@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "QA Engineer",
+          "salary_cents": 8500000,
+          "commission_cents": null,
+          "hire_date": "2022-08-08",
+          "birth_date": "1996-10-16",
+          "employment_status": "Active"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "last_name": "Anderson",
+          "email": "elijah.anderson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7600000,
+          "commission_cents": 900000,
+          "hire_date": "2020-06-22",
+          "birth_date": "1992-04-07",
+          "employment_status": "Active"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "last_name": "Thomas",
+          "email": "amelia.thomas@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7200000,
+          "commission_cents": 650000,
+          "hire_date": "2021-09-13",
+          "birth_date": "1993-02-28",
+          "employment_status": "Active"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "last_name": "Jackson",
+          "email": "james.jackson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 5400000,
+          "commission_cents": null,
+          "hire_date": "2023-01-09",
+          "birth_date": "1999-01-19",
+          "employment_status": "Active"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null,
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Intern",
+          "salary_cents": 2800000,
+          "commission_cents": null,
+          "hire_date": "2024-01-08",
+          "birth_date": "2002-06-17",
+          "employment_status": "Active"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "email": "wyatt.baker@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 4900000,
+          "commission_cents": 300000,
+          "hire_date": "2024-02-12",
+          "birth_date": "2000-09-09",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Logical Query Operators",
+    "lesson_number": 14,
+    "sort_order": 14,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "department_id",
+          "salary_cents",
+          "employment_status"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "logical-and",
+    "title": "Using $and",
+    "description": "Combine multiple conditions explicitly using the $and operator.",
+    "question": "Find employees in department 2 who earn more than 10,000,000 cents.",
+    "task": "Use db.employees.find() with $and to evaluate multiple conditions explicitly.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({ $and: [{ department_id: 2 }, { salary_cents: { $gt: 10000000 } }] }, { _id: 0 })",
+    "solution_query": "db.employees.find({ $and: [{ department_id: 2 }, { salary_cents: { $gt: 10000000 } }] }, { _id: 0 })",
+    "explanation": "While implicit AND is common via commas, $and is useful when applying multiple conditions to the same field or grouping complex expressions.",
+    "hints": [
+      "Use $and with an array of query clauses.",
+      "Combine department_id and salary_cents checks."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 3,
+      "documents": [
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Logical Query Operators",
+    "lesson_number": 15,
+    "sort_order": 15,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "department_id",
+          "salary_cents"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "logical-not",
+    "title": "Using $not",
+    "description": "Negate a condition using the $not operator.",
+    "question": "Find employees whose salary is not greater than or equal to 10,000,000 cents.",
+    "task": "Use db.employees.find() with $not to negate a comparison expression on salary_cents.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({ salary_cents: { $not: { $gte: 10000000 } } }, { _id: 0 })",
+    "solution_query": "db.employees.find({ salary_cents: { $not: { $gte: 10000000 } } }, { _id: 0 })",
+    "explanation": "$not checks for the inverse of a given query expression. Note that $not operator affects a specific field expression.",
+    "hints": [
+      "Place $not inside the field condition object.",
+      "Pass an operator expression like { $gte: 10000000 } to be negated."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 16,
+      "documents": [
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "email": "emma.davis@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Software Engineer",
+          "salary_cents": 9800000,
+          "commission_cents": null,
+          "hire_date": "2021-05-17",
+          "birth_date": "1995-12-03",
+          "employment_status": "Active"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "email": "charlotte.taylor@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "QA Engineer",
+          "salary_cents": 8500000,
+          "commission_cents": null,
+          "hire_date": "2022-08-08",
+          "birth_date": "1996-10-16",
+          "employment_status": "Active"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "last_name": "Anderson",
+          "email": "elijah.anderson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7600000,
+          "commission_cents": 900000,
+          "hire_date": "2020-06-22",
+          "birth_date": "1992-04-07",
+          "employment_status": "Active"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "last_name": "Thomas",
+          "email": "amelia.thomas@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7200000,
+          "commission_cents": 650000,
+          "hire_date": "2021-09-13",
+          "birth_date": "1993-02-28",
+          "employment_status": "Active"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "last_name": "Jackson",
+          "email": "james.jackson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 5400000,
+          "commission_cents": null,
+          "hire_date": "2023-01-09",
+          "birth_date": "1999-01-19",
+          "employment_status": "Active"
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "last_name": "White",
+          "email": "harper.white@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "Content Strategist",
+          "salary_cents": 7800000,
+          "commission_cents": null,
+          "hire_date": "2020-10-05",
+          "birth_date": "1992-09-25",
+          "employment_status": "Active"
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "last_name": "Harris",
+          "email": "benjamin.harris@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "SEO Specialist",
+          "salary_cents": 6900000,
+          "commission_cents": null,
+          "hire_date": "2022-03-28",
+          "birth_date": "1997-07-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "last_name": "Clark",
+          "email": "evelyn.clark@example.com",
+          "department_id": 5,
+          "manager_id": 5,
+          "job_title": "Recruiter",
+          "salary_cents": 6500000,
+          "commission_cents": null,
+          "hire_date": "2021-04-12",
+          "birth_date": "1994-11-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "last_name": "Lewis",
+          "email": "henry.lewis@example.com",
+          "department_id": 6,
+          "manager_id": 6,
+          "job_title": "Financial Analyst",
+          "salary_cents": 8800000,
+          "commission_cents": null,
+          "hire_date": "2020-08-31",
+          "birth_date": "1990-03-05",
+          "employment_status": "Active"
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "last_name": "Walker",
+          "email": "abigail.walker@example.com",
+          "department_id": 6,
+          "manager_id": 6,
+          "job_title": "Accountant",
+          "salary_cents": 7400000,
+          "commission_cents": null,
+          "hire_date": "2022-06-06",
+          "birth_date": "1995-05-20",
+          "employment_status": "Active"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "last_name": "Hall",
+          "email": "daniel.hall@example.com",
+          "department_id": 7,
+          "manager_id": 7,
+          "job_title": "Support Specialist",
+          "salary_cents": 5100000,
+          "commission_cents": null,
+          "hire_date": "2023-02-20",
+          "birth_date": "2000-12-01",
+          "employment_status": "Active"
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "last_name": "Allen",
+          "email": "ella.allen@example.com",
+          "department_id": 7,
+          "manager_id": 7,
+          "job_title": "Support Specialist",
+          "salary_cents": 5300000,
+          "commission_cents": null,
+          "hire_date": "2022-11-07",
+          "birth_date": "1998-08-14",
+          "employment_status": "On Leave"
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "last_name": "King",
+          "email": "grace.king@example.com",
+          "department_id": 8,
+          "manager_id": 8,
+          "job_title": "Research Analyst",
+          "salary_cents": 9100000,
+          "commission_cents": null,
+          "hire_date": "2022-04-18",
+          "birth_date": "1996-01-27",
+          "employment_status": "Active"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null,
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Intern",
+          "salary_cents": 2800000,
+          "commission_cents": null,
+          "hire_date": "2024-01-08",
+          "birth_date": "2002-06-17",
+          "employment_status": "Active"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "last_name": "Green",
+          "email": "zoe.green@example.com",
+          "department_id": null,
+          "manager_id": 1,
+          "job_title": "Consultant",
+          "salary_cents": 6800000,
+          "commission_cents": null,
+          "hire_date": "2023-07-10",
+          "birth_date": "1993-04-22",
+          "employment_status": "Active"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "email": "wyatt.baker@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 4900000,
+          "commission_cents": 300000,
+          "hire_date": "2024-02-12",
+          "birth_date": "2000-09-09",
+          "employment_status": "Active"
+        }
+      ]
+    },
+    "chapter": "Logical Query Operators",
+    "lesson_number": 16,
+    "sort_order": 16,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "salary_cents"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "array-element-matching-in",
+    "title": "Using $in with Array Fields",
+    "description": "Match documents where an array field contains any value from a specified list.",
+    "question": "Find employees whose skills array contains either 'Python' or 'MongoDB'.",
+    "task": "Use db.employees.find() with $in to query array fields.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.find({ skills: { $in: [\"Python\", \"MongoDB\"] } }, { _id: 0 })",
+    "solution_query": "db.employees.find({ skills: { $in: [\"Python\", \"MongoDB\"] } }, { _id: 0 })",
+    "explanation": "When applied to an array field, $in matches documents where at least one element of the array matches any value in the $in array.",
+    "hints": [
+      "Query the array field name directly.",
+      "Use { $in: [...] } to specify candidate elements."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 0,
+      "documents": []
+    },
+    "chapter": "Array Queries",
+    "lesson_number": 17,
+    "sort_order": 17,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "skills"
+        ],
+        "description": "Employee records with skills array."
+      }
+    ]
+  },
+  {
+    "slug": "array-all",
+    "title": "Matching All Array Values",
+    "description": "Use the $all operator to match arrays that contain all specified elements.",
+    "question": "Find projects that include both 'Database Migration' and 'Security Audit'.",
+    "task": "Use db.projects.find() with $all to match documents containing all given items in an array field.",
+    "difficulty": "medium",
+    "starter_query": "db.projects.find({ tags: { $all: [\"Database Migration\", \"Security Audit\"] } }, { _id: 0 })",
+    "solution_query": "db.projects.find({ tags: { $all: [\"Database Migration\", \"Security Audit\"] } }, { _id: 0 })",
+    "explanation": "$all selects the documents where the value of a field is an array that contains all the specified elements.",
+    "hints": [
+      "Use the $all operator inside an array field condition.",
+      "Order of elements in the query array does not matter."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 0,
+      "documents": []
+    },
+    "chapter": "Array Queries",
+    "lesson_number": 18,
+    "sort_order": 18,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "projects",
+        "fields": [
+          "id",
+          "name",
+          "tags"
+        ],
+        "description": "Project documents."
+      }
+    ]
+  },
+  {
+    "slug": "update-one-document",
+    "title": "Update One Document",
+    "description": "Modify a single document matching a filter using updateOne().",
+    "question": "Update the job title of employee with id 10 to 'Senior Software Engineer'.",
+    "task": "Use db.employees.updateOne() with $set to update a single record.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.updateOne({ id: 10 }, { $set: { job_title: \"Senior Software Engineer\" } })",
+    "solution_query": "db.employees.updateOne({ id: 10 }, { $set: { job_title: \"Senior Software Engineer\" } })",
+    "explanation": "updateOne() updates the first document that matches the filter criterion. Always use update operators like $set to avoid replacing the whole document.",
+    "hints": [
+      "Pass the filter as the first argument.",
+      "Use the $set update operator in the second argument."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "acknowledged": true,
+        "matchedCount": 1,
+        "modifiedCount": 1
+      }
+    },
+    "chapter": "Updating Documents",
+    "lesson_number": 19,
+    "sort_order": 19,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "job_title"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "update-many-documents",
+    "title": "Update Multiple Documents",
+    "description": "Modify all matching documents using updateMany().",
+    "question": "Set employment_status to 'Active' for all employees in department 7.",
+    "task": "Use db.employees.updateMany() to update multiple documents at once.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.updateMany({ department_id: 7 }, { $set: { employment_status: \"Active\" } })",
+    "solution_query": "db.employees.updateMany({ department_id: 7 }, { $set: { employment_status: \"Active\" } })",
+    "explanation": "updateMany() applies updates to every document matching the filter condition.",
+    "hints": [
+      "Filter by department_id: 7.",
+      "Use $set to change employment_status."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "acknowledged": true,
+        "matchedCount": 3,
+        "modifiedCount": 1
+      }
+    },
+    "chapter": "Updating Documents",
+    "lesson_number": 20,
+    "sort_order": 20,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "department_id",
+          "employment_status"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "increment-numeric-values",
+    "title": "Increment Numeric Values",
+    "description": "Use the $inc operator to increment or decrement numeric fields.",
+    "question": "Give all employees in department 3 a salary increase of 500,000 cents.",
+    "task": "Use updateMany() with $inc on salary_cents for department 3 employees.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.updateMany({ department_id: 3 }, { $inc: { salary_cents: 500000 } })",
+    "solution_query": "db.employees.updateMany({ department_id: 3 }, { $inc: { salary_cents: 500000 } })",
+    "explanation": "$inc increments a field by a specified value. Passing a negative number decrements the field.",
+    "hints": [
+      "Use the $inc operator instead of $set.",
+      "Specify salary_cents and the increment amount."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "acknowledged": true,
+        "matchedCount": 5,
+        "modifiedCount": 5
+      }
+    },
+    "chapter": "Updating Documents",
+    "lesson_number": 21,
+    "sort_order": 21,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "department_id",
+          "salary_cents"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "insert-one-document",
+    "title": "Insert One Document",
+    "description": "Add a new document to a collection using insertOne().",
+    "question": "Insert a new employee record for John Doe into the employees collection.",
+    "task": "Use db.employees.insertOne() to add a new employee document.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.insertOne({ id: 29, first_name: \"John\", last_name: \"Doe\", department_id: 2, job_title: \"Developer\", salary_cents: 9000000, employment_status: \"Active\" })",
+    "solution_query": "db.employees.insertOne({ id: 29, first_name: \"John\", last_name: \"Doe\", department_id: 2, job_title: \"Developer\", salary_cents: 9000000, employment_status: \"Active\" })",
+    "explanation": "insertOne() inserts a single document into the collection and returns an insertion confirmation with the generated _id.",
+    "hints": [
+      "Pass a document object containing employee fields into insertOne()."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "acknowledged": true,
+        "insertedId": "ObjectId(...)"
+      }
+    },
+    "chapter": "Inserting Documents",
+    "lesson_number": 22,
+    "sort_order": 22,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name",
+          "department_id",
+          "job_title",
+          "salary_cents",
+          "employment_status"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "insert-multiple-documents",
+    "title": "Insert Multiple Documents",
+    "description": "Add multiple documents at once using insertMany().",
+    "question": "Insert two new department documents into the departments collection.",
+    "task": "Use db.departments.insertMany() with an array of department documents.",
+    "difficulty": "easy",
+    "starter_query": "db.departments.insertMany([{ id: 10, name: \"Operations\" }, { id: 11, name: \"Security\" }])",
+    "solution_query": "db.departments.insertMany([{ id: 10, name: \"Operations\" }, { id: 11, name: \"Security\" }])",
+    "explanation": "insertMany() takes an array of documents and inserts them in a batch.",
+    "hints": [
+      "Pass an array brackets [] containing multiple JSON objects to insertMany()."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "acknowledged": true,
+        "insertedIds": {
+          "0": "ObjectId(...)",
+          "1": "ObjectId(...)"
+        }
+      }
+    },
+    "chapter": "Inserting Documents",
+    "lesson_number": 23,
+    "sort_order": 23,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "departments",
+        "fields": [
+          "id",
+          "name"
+        ],
+        "description": "Department records."
+      }
+    ]
+  },
+  {
+    "slug": "delete-one-document",
+    "title": "Delete One Document",
+    "description": "Remove a single document matching a filter using deleteOne().",
+    "question": "Delete the employee record where id is 25.",
+    "task": "Use db.employees.deleteOne() to remove a specific employee.",
+    "difficulty": "easy",
+    "starter_query": "db.employees.deleteOne({ id: 25 })",
+    "solution_query": "db.employees.deleteOne({ id: 25 })",
+    "explanation": "deleteOne() deletes the first document that matches the given filter.",
+    "hints": [
+      "Pass { id: 25 } as the filter to deleteOne()."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "acknowledged": true,
+        "deletedCount": 1
+      }
+    },
+    "chapter": "Deleting Documents",
+    "lesson_number": 24,
+    "sort_order": 24,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "last_name"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "delete-multiple-documents",
+    "title": "Delete Multiple Documents",
+    "description": "Remove all documents matching a filter using deleteMany().",
+    "question": "Delete all employees whose employment status is 'On Leave'.",
+    "task": "Use db.employees.deleteMany() to remove all matching documents.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.deleteMany({ employment_status: \"On Leave\" })",
+    "solution_query": "db.employees.deleteMany({ employment_status: \"On Leave\" })",
+    "explanation": "deleteMany() removes all documents matching the filter condition.",
+    "hints": [
+      "Filter by employment_status: 'On Leave'."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "acknowledged": true,
+        "deletedCount": 1
+      }
+    },
+    "chapter": "Deleting Documents",
+    "lesson_number": 25,
+    "sort_order": 25,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "employment_status"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "aggregate-project",
+    "title": "Select Fields with $project",
+    "description": "Reshape documents in an aggregation pipeline using $project.",
+    "question": "Use aggregation to return only the first name and job title of employees.",
+    "task": "Use db.employees.aggregate() with a $project stage to select specific fields and exclude _id.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.aggregate([{ $project: { _id: 0, first_name: 1, job_title: 1 } }])",
+    "solution_query": "db.employees.aggregate([{ $project: { _id: 0, first_name: 1, job_title: 1 } }])",
+    "explanation": "The $project stage specifies which fields to include, exclude, or compute in the output documents of an aggregation pipeline.",
+    "hints": [
+      "Include a { $project: { ... } } stage in the aggregation array.",
+      "Set _id to 0 and desired fields to 1."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 28,
+      "documents": [
+        {
+          "first_name": "Ava",
+          "job_title": "Chief Executive Officer"
+        },
+        {
+          "first_name": "Noah",
+          "job_title": "Engineering Director"
+        }
+      ]
+    },
+    "chapter": "Aggregation Pipeline – Advanced",
+    "lesson_number": 26,
+    "sort_order": 26,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "job_title"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "aggregate-add-fields",
+    "title": "Add Computed Fields",
+    "description": "Create new fields or compute values using $addFields in an aggregation pipeline.",
+    "question": "Add a computed field 'annual_salary_cents' by multiplying salary_cents by 12.",
+    "task": "Use db.employees.aggregate() with $addFields to compute total annual salary.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.aggregate([{ $addFields: { annual_salary_cents: { $multiply: [\"$salary_cents\", 12] } } }])",
+    "solution_query": "db.employees.aggregate([{ $addFields: { annual_salary_cents: { $multiply: [\"$salary_cents\", 12] } } }])",
+    "explanation": "$addFields adds new fields to documents as they pass through the pipeline without modifying the stored collection.",
+    "hints": [
+      "Use $addFields with an expression like $multiply.",
+      "Reference existing fields with a dollar sign prefix, e.g., \"$salary_cents\"."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 28,
+      "documents": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "salary_cents": 24000000,
+          "annual_salary_cents": 288000000
+        }
+      ]
+    },
+    "chapter": "Aggregation Pipeline – Advanced",
+    "lesson_number": 27,
+    "sort_order": 27,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "salary_cents"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "aggregate-unwind",
+    "title": "Expand Arrays",
+    "description": "Deconstruct an array field from the input documents to output a document for each element using $unwind.",
+    "question": "Unwind the skills array from employee documents.",
+    "task": "Use db.employees.aggregate() with $unwind to flatten the skills array.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.aggregate([{ $unwind: \"$skills\" }])",
+    "solution_query": "db.employees.aggregate([{ $unwind: \"$skills\" }])",
+    "explanation": "$unwind transforms a document with an array into multiple documents, one for each element in the array.",
+    "hints": [
+      "Pass the array field name prefixed with '$' to $unwind."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 0,
+      "documents": []
+    },
+    "chapter": "Aggregation Pipeline – Advanced",
+    "lesson_number": 28,
+    "sort_order": 28,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "skills"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "aggregate-lookup-departments",
+    "title": "Join Departments",
+    "description": "Perform a left outer join between employees and departments collections using $lookup.",
+    "question": "Join employee records with their corresponding department documents.",
+    "task": "Use db.employees.aggregate() with $lookup to join the departments collection.",
+    "difficulty": "hard",
+    "starter_query": "db.employees.aggregate([{ $lookup: { from: \"departments\", localField: \"department_id\", foreignField: \"id\", as: \"department_info\" } }])",
+    "solution_query": "db.employees.aggregate([{ $lookup: { from: \"departments\", localField: \"department_id\", foreignField: \"id\", as: \"department_info\" } }])",
+    "explanation": "$lookup performs an equality join between a collection in the same database to retrieve related documents from another collection.",
+    "hints": [
+      "Specify from, localField, foreignField, and as in the $lookup stage object."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 28,
+      "documents": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "department_id": 1,
+          "department_info": [
+            {
+              "id": 1,
+              "name": "Executive"
+            }
+          ]
+        }
+      ]
+    },
+    "chapter": "Joining Collections",
+    "lesson_number": 29,
+    "sort_order": 29,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "id",
+          "first_name",
+          "department_id"
+        ],
+        "description": "Employee records."
+      },
+      {
+        "collection": "departments",
+        "fields": [
+          "id",
+          "name"
+        ],
+        "description": "Department records."
+      }
+    ]
+  },
+  {
+    "slug": "aggregate-lookup-customers-orders",
+    "title": "Join Customers and Orders",
+    "description": "Join customer orders using $lookup in the aggregation pipeline.",
+    "question": "Join orders into customer documents.",
+    "task": "Use db.customers.aggregate() with $lookup to attach orders to each customer.",
+    "difficulty": "hard",
+    "starter_query": "db.customers.aggregate([{ $lookup: { from: \"orders\", localField: \"customer_id\", foreignField: \"customer_id\", as: \"order_list\" } }])",
+    "solution_query": "db.customers.aggregate([{ $lookup: { from: \"orders\", localField: \"customer_id\", foreignField: \"customer_id\", as: \"order_list\" } }])",
+    "explanation": "$lookup allows linking parent documents with child/related documents across different collections.",
+    "hints": [
+      "Match localField to foreignField between customers and orders collections."
+    ],
+    "expected_output": {
+      "type": "documents",
+      "count": 0,
+      "documents": []
+    },
+    "chapter": "Joining Collections",
+    "lesson_number": 30,
+    "sort_order": 30,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "customers",
+        "fields": [
+          "customer_id",
+          "name"
+        ],
+        "description": "Customer records."
+      },
+      {
+        "collection": "orders",
+        "fields": [
+          "order_id",
+          "customer_id",
+          "total"
+        ],
+        "description": "Order records."
+      }
+    ]
+  },
+  {
+    "slug": "create-index",
+    "title": "Create an Index",
+    "description": "Improve query performance by creating an index on a collection field.",
+    "question": "Create an ascending index on the email field of the employees collection.",
+    "task": "Use db.employees.createIndex() to index the email field.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.createIndex({ email: 1 })",
+    "solution_query": "db.employees.createIndex({ email: 1 })",
+    "explanation": "Indexes support the efficient execution of queries in MongoDB by avoiding full collection scans.",
+    "hints": [
+      "Pass { email: 1 } to createIndex() for an ascending index."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": "email_1"
+    },
+    "chapter": "Indexes and Performance",
+    "lesson_number": 31,
+    "sort_order": 31,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "email"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "unique-index",
+    "title": "Unique Indexes",
+    "description": "Ensure uniqueness of field values across documents using a unique index.",
+    "question": "Create a unique index on the email field of the employees collection.",
+    "task": "Use db.employees.createIndex() with unique: true option.",
+    "difficulty": "medium",
+    "starter_query": "db.employees.createIndex({ email: 1 }, { unique: true })",
+    "solution_query": "db.employees.createIndex({ email: 1 }, { unique: true })",
+    "explanation": "A unique index ensures that the indexed fields do not store duplicate values across any documents in the collection.",
+    "hints": [
+      "Pass { unique: true } as the second argument to createIndex()."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": "email_1"
+    },
+    "chapter": "Indexes and Performance",
+    "lesson_number": 32,
+    "sort_order": 32,
+    "points": 10,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "email"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  },
+  {
+    "slug": "data-validation-json-schema",
+    "title": "Validate Document Structure",
+    "description": "Enforce document structure validation rules using $jsonSchema.",
+    "question": "Create a validator rule requiring first_name and salary_cents fields.",
+    "task": "Use collMod or createCollection with validator containing $jsonSchema.",
+    "difficulty": "hard",
+    "starter_query": "db.createCollection(\"employees\", { validator: { $jsonSchema: { bsonType: \"object\", required: [\"first_name\", \"salary_cents\"], properties: { first_name: { bsonType: \"string\" }, salary_cents: { bsonType: \"int\" } } } } })",
+    "solution_query": "db.createCollection(\"employees\", { validator: { $jsonSchema: { bsonType: \"object\", required: [\"first_name\", \"salary_cents\"], properties: { first_name: { bsonType: \"string\" }, salary_cents: { bsonType: \"int\" } } } } })",
+    "explanation": "$jsonSchema validation enables MongoDB to enforce strict schema rules for inserted or updated documents.",
+    "hints": [
+      "Use createCollection with a validator option containing $jsonSchema."
+    ],
+    "expected_output": {
+      "type": "value",
+      "value": {
+        "ok": 1
+      }
+    },
+    "chapter": "Data Validation",
+    "lesson_number": 33,
+    "sort_order": 33,
+    "points": 15,
+    "collection_context": [
+      {
+        "collection": "employees",
+        "fields": [
+          "first_name",
+          "salary_cents"
+        ],
+        "description": "Employee records."
+      }
+    ]
+  }
+]

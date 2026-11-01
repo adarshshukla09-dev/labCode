@@ -10,14 +10,6 @@ import {
   jsonb,
   varchar, // ✅ Fixed: Imported from pg-core instead of mysql-core
 } from "drizzle-orm/pg-core";
-
-// Progress status enum
-export const progressStatusEnum = pgEnum("progress_status", [
-  "not_started",
-  "in_progress",
-  "completed",
-]);
-
 export const questionDialectEnum = pgEnum("question_dialect", [
   "sqlite",
   "postgresql",

@@ -1,0 +1,5072 @@
+[
+  {
+    "slug": "select-all-columns",
+    "starter_query": "SELECT *\nFROM employees;",
+    "solution_query": "SELECT * FROM employees;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "department_id",
+        "manager_id",
+        "job_title",
+        "salary_cents",
+        "commission_cents",
+        "hire_date",
+        "birth_date",
+        "employment_status"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "last_name": "Morgan",
+          "email": "ava.morgan@example.com",
+          "department_id": 1,
+          "manager_id": null,
+          "job_title": "Chief Executive Officer",
+          "salary_cents": 24000000,
+          "commission_cents": null,
+          "hire_date": "2015-01-12",
+          "birth_date": "1980-04-15",
+          "employment_status": "Active"
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "email": "noah.patel@example.com",
+          "department_id": 2,
+          "manager_id": 1,
+          "job_title": "Engineering Director",
+          "salary_cents": 18000000,
+          "commission_cents": null,
+          "hire_date": "2016-03-21",
+          "birth_date": "1984-09-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "email": "mia.chen@example.com",
+          "department_id": 3,
+          "manager_id": 1,
+          "job_title": "Sales Director",
+          "salary_cents": 16500000,
+          "commission_cents": 250000,
+          "hire_date": "2017-06-05",
+          "birth_date": "1985-02-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "last_name": "Garcia",
+          "email": "liam.garcia@example.com",
+          "department_id": 4,
+          "manager_id": 1,
+          "job_title": "Marketing Director",
+          "salary_cents": 15500000,
+          "commission_cents": null,
+          "hire_date": "2018-02-19",
+          "birth_date": "1987-07-24",
+          "employment_status": "Active"
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "last_name": "Brown",
+          "email": "sophia.brown@example.com",
+          "department_id": 5,
+          "manager_id": 1,
+          "job_title": "HR Director",
+          "salary_cents": 14500000,
+          "commission_cents": null,
+          "hire_date": "2018-09-10",
+          "birth_date": "1986-11-30",
+          "employment_status": "Active"
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "last_name": "Wilson",
+          "email": "ethan.wilson@example.com",
+          "department_id": 6,
+          "manager_id": 1,
+          "job_title": "Finance Director",
+          "salary_cents": 16000000,
+          "commission_cents": null,
+          "hire_date": "2017-11-13",
+          "birth_date": "1983-01-08",
+          "employment_status": "Active"
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "last_name": "Kumar",
+          "email": "isabella.kumar@example.com",
+          "department_id": 7,
+          "manager_id": 1,
+          "job_title": "Support Director",
+          "salary_cents": 13000000,
+          "commission_cents": null,
+          "hire_date": "2019-04-01",
+          "birth_date": "1988-03-18",
+          "employment_status": "Active"
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "last_name": "Martin",
+          "email": "lucas.martin@example.com",
+          "department_id": 8,
+          "manager_id": 2,
+          "job_title": "Research Manager",
+          "salary_cents": 14000000,
+          "commission_cents": null,
+          "hire_date": "2019-07-15",
+          "birth_date": "1989-05-12",
+          "employment_status": "Active"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "email": "amir.khan@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Senior Software Engineer",
+          "salary_cents": 12500000,
+          "commission_cents": null,
+          "hire_date": "2020-01-20",
+          "birth_date": "1991-08-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "email": "emma.davis@example.com",
+          "department_id": 2,
+          "manager_id": 2,
+          "job_title": "Software Engineer",
+          "salary_cents": 9800000,
+          "commission_cents": null,
+          "hire_date": "2021-05-17",
+          "birth_date": "1995-12-03",
+          "employment_status": "Active"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "email": "oliver.singh@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Software Engineer",
+          "salary_cents": 10200000,
+          "commission_cents": null,
+          "hire_date": "2022-02-14",
+          "birth_date": "1994-06-21",
+          "employment_status": "Active"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "email": "charlotte.taylor@example.com",
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "QA Engineer",
+          "salary_cents": 8500000,
+          "commission_cents": null,
+          "hire_date": "2022-08-08",
+          "birth_date": "1996-10-16",
+          "employment_status": "Active"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "last_name": "Anderson",
+          "email": "elijah.anderson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7600000,
+          "commission_cents": 900000,
+          "hire_date": "2020-06-22",
+          "birth_date": "1992-04-07",
+          "employment_status": "Active"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "last_name": "Thomas",
+          "email": "amelia.thomas@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Account Executive",
+          "salary_cents": 7200000,
+          "commission_cents": 650000,
+          "hire_date": "2021-09-13",
+          "birth_date": "1993-02-28",
+          "employment_status": "Active"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "last_name": "Jackson",
+          "email": "james.jackson@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 5400000,
+          "commission_cents": null,
+          "hire_date": "2023-01-09",
+          "birth_date": "1999-01-19",
+          "employment_status": "Active"
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "last_name": "White",
+          "email": "harper.white@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "Content Strategist",
+          "salary_cents": 7800000,
+          "commission_cents": null,
+          "hire_date": "2020-10-05",
+          "birth_date": "1992-09-25",
+          "employment_status": "Active"
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "last_name": "Harris",
+          "email": "benjamin.harris@example.com",
+          "department_id": 4,
+          "manager_id": 4,
+          "job_title": "SEO Specialist",
+          "salary_cents": 6900000,
+          "commission_cents": null,
+          "hire_date": "2022-03-28",
+          "birth_date": "1997-07-02",
+          "employment_status": "Active"
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "last_name": "Clark",
+          "email": "evelyn.clark@example.com",
+          "department_id": 5,
+          "manager_id": 5,
+          "job_title": "Recruiter",
+          "salary_cents": 6500000,
+          "commission_cents": null,
+          "hire_date": "2021-04-12",
+          "birth_date": "1994-11-11",
+          "employment_status": "Active"
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "last_name": "Lewis",
+          "email": "henry.lewis@example.com",
+          "department_id": 6,
+          "manager_id": 6,
+          "job_title": "Financial Analyst",
+          "salary_cents": 8800000,
+          "commission_cents": null,
+          "hire_date": "2020-08-31",
+          "birth_date": "1990-03-05",
+          "employment_status": "Active"
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "last_name": "Walker",
+          "email": "abigail.walker@example.com",
+          "department_id": 6,
+          "manager_id": 6,
+          "job_title": "Accountant",
+          "salary_cents": 7400000,
+          "commission_cents": null,
+          "hire_date": "2022-06-06",
+          "birth_date": "1995-05-20",
+          "employment_status": "Active"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "last_name": "Hall",
+          "email": "daniel.hall@example.com",
+          "department_id": 7,
+          "manager_id": 7,
+          "job_title": "Support Specialist",
+          "salary_cents": 5100000,
+          "commission_cents": null,
+          "hire_date": "2023-02-20",
+          "birth_date": "2000-12-01",
+          "employment_status": "Active"
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "last_name": "Allen",
+          "email": "ella.allen@example.com",
+          "department_id": 7,
+          "manager_id": 7,
+          "job_title": "Support Specialist",
+          "salary_cents": 5300000,
+          "commission_cents": null,
+          "hire_date": "2022-11-07",
+          "birth_date": "1998-08-14",
+          "employment_status": "On Leave"
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "last_name": "Young",
+          "email": "jack.young@example.com",
+          "department_id": 8,
+          "manager_id": 8,
+          "job_title": "Data Scientist",
+          "salary_cents": 11800000,
+          "commission_cents": null,
+          "hire_date": "2020-02-03",
+          "birth_date": "1991-10-10",
+          "employment_status": "Active"
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "last_name": "King",
+          "email": "grace.king@example.com",
+          "department_id": 8,
+          "manager_id": 8,
+          "job_title": "Research Analyst",
+          "salary_cents": 9100000,
+          "commission_cents": null,
+          "hire_date": "2022-04-18",
+          "birth_date": "1996-01-27",
+          "employment_status": "Active"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null,
+          "department_id": 2,
+          "manager_id": 9,
+          "job_title": "Intern",
+          "salary_cents": 2800000,
+          "commission_cents": null,
+          "hire_date": "2024-01-08",
+          "birth_date": "2002-06-17",
+          "employment_status": "Active"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "last_name": "Green",
+          "email": "zoe.green@example.com",
+          "department_id": null,
+          "manager_id": 1,
+          "job_title": "Consultant",
+          "salary_cents": 6800000,
+          "commission_cents": null,
+          "hire_date": "2023-07-10",
+          "birth_date": "1993-04-22",
+          "employment_status": "Active"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "email": "wyatt.baker@example.com",
+          "department_id": 3,
+          "manager_id": 3,
+          "job_title": "Sales Associate",
+          "salary_cents": 4900000,
+          "commission_cents": 300000,
+          "hire_date": "2024-02-12",
+          "birth_date": "2000-09-09",
+          "employment_status": "Active"
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "last_name": "Adams",
+          "email": "nora.adams@example.com",
+          "department_id": 9,
+          "manager_id": 1,
+          "job_title": "Legal Counsel",
+          "salary_cents": 13500000,
+          "commission_cents": null,
+          "hire_date": "2021-12-01",
+          "birth_date": "1988-12-12",
+          "employment_status": "Active"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "select-specific-columns",
+    "starter_query": "SELECT first_name, last_name\nFROM employees;\n-- Add job_title to the list",
+    "solution_query": "SELECT first_name, last_name, job_title FROM employees;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "first_name",
+        "last_name",
+        "job_title"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "first_name": "Ava",
+          "last_name": "Morgan",
+          "job_title": "Chief Executive Officer"
+        },
+        {
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "job_title": "Engineering Director"
+        },
+        {
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "job_title": "Sales Director"
+        },
+        {
+          "first_name": "Liam",
+          "last_name": "Garcia",
+          "job_title": "Marketing Director"
+        },
+        {
+          "first_name": "Sophia",
+          "last_name": "Brown",
+          "job_title": "HR Director"
+        },
+        {
+          "first_name": "Ethan",
+          "last_name": "Wilson",
+          "job_title": "Finance Director"
+        },
+        {
+          "first_name": "Isabella",
+          "last_name": "Kumar",
+          "job_title": "Support Director"
+        },
+        {
+          "first_name": "Lucas",
+          "last_name": "Martin",
+          "job_title": "Research Manager"
+        },
+        {
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "job_title": "Senior Software Engineer"
+        },
+        {
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "job_title": "Software Engineer"
+        },
+        {
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "job_title": "Software Engineer"
+        },
+        {
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "job_title": "QA Engineer"
+        },
+        {
+          "first_name": "Elijah",
+          "last_name": "Anderson",
+          "job_title": "Account Executive"
+        },
+        {
+          "first_name": "Amelia",
+          "last_name": "Thomas",
+          "job_title": "Account Executive"
+        },
+        {
+          "first_name": "James",
+          "last_name": "Jackson",
+          "job_title": "Sales Associate"
+        },
+        {
+          "first_name": "Harper",
+          "last_name": "White",
+          "job_title": "Content Strategist"
+        },
+        {
+          "first_name": "Benjamin",
+          "last_name": "Harris",
+          "job_title": "SEO Specialist"
+        },
+        {
+          "first_name": "Evelyn",
+          "last_name": "Clark",
+          "job_title": "Recruiter"
+        },
+        {
+          "first_name": "Henry",
+          "last_name": "Lewis",
+          "job_title": "Financial Analyst"
+        },
+        {
+          "first_name": "Abigail",
+          "last_name": "Walker",
+          "job_title": "Accountant"
+        },
+        {
+          "first_name": "Daniel",
+          "last_name": "Hall",
+          "job_title": "Support Specialist"
+        },
+        {
+          "first_name": "Ella",
+          "last_name": "Allen",
+          "job_title": "Support Specialist"
+        },
+        {
+          "first_name": "Jack",
+          "last_name": "Young",
+          "job_title": "Data Scientist"
+        },
+        {
+          "first_name": "Grace",
+          "last_name": "King",
+          "job_title": "Research Analyst"
+        },
+        {
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "job_title": "Intern"
+        },
+        {
+          "first_name": "Zoe",
+          "last_name": "Green",
+          "job_title": "Consultant"
+        },
+        {
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "job_title": "Sales Associate"
+        },
+        {
+          "first_name": "Nora",
+          "last_name": "Adams",
+          "job_title": "Legal Counsel"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "select-distinct",
+    "starter_query": "SELECT country\nFROM customers;\n-- Add DISTINCT and ORDER BY country",
+    "solution_query": "SELECT DISTINCT country FROM customers ORDER BY country ASC;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "country"
+      ],
+      "row_count": 9,
+      "rows": [
+        {
+          "country": "Brazil"
+        },
+        {
+          "country": "Canada"
+        },
+        {
+          "country": "France"
+        },
+        {
+          "country": "India"
+        },
+        {
+          "country": "Italy"
+        },
+        {
+          "country": "Japan"
+        },
+        {
+          "country": "Spain"
+        },
+        {
+          "country": "UK"
+        },
+        {
+          "country": "USA"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "limit-results",
+    "starter_query": "SELECT id, first_name, last_name\nFROM employees;\n-- Add ORDER BY and LIMIT",
+    "solution_query": "SELECT id, first_name, last_name FROM employees ORDER BY id LIMIT 5;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name"
+      ],
+      "row_count": 5,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "last_name": "Morgan"
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "last_name": "Garcia"
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "last_name": "Brown"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "column-aliases-as",
+    "starter_query": "SELECT first_name, last_name, salary_cents\nFROM employees;\n-- Add AS aliases to each column",
+    "solution_query": "SELECT first_name AS \"First Name\", last_name AS \"Last Name\", salary_cents AS \"Salary Cents\" FROM employees;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "First Name",
+        "Last Name",
+        "Salary Cents"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "First Name": "Ava",
+          "Last Name": "Morgan",
+          "Salary Cents": 24000000
+        },
+        {
+          "First Name": "Noah",
+          "Last Name": "Patel",
+          "Salary Cents": 18000000
+        },
+        {
+          "First Name": "Mia",
+          "Last Name": "Chen",
+          "Salary Cents": 16500000
+        },
+        {
+          "First Name": "Liam",
+          "Last Name": "Garcia",
+          "Salary Cents": 15500000
+        },
+        {
+          "First Name": "Sophia",
+          "Last Name": "Brown",
+          "Salary Cents": 14500000
+        },
+        {
+          "First Name": "Ethan",
+          "Last Name": "Wilson",
+          "Salary Cents": 16000000
+        },
+        {
+          "First Name": "Isabella",
+          "Last Name": "Kumar",
+          "Salary Cents": 13000000
+        },
+        {
+          "First Name": "Lucas",
+          "Last Name": "Martin",
+          "Salary Cents": 14000000
+        },
+        {
+          "First Name": "Amir",
+          "Last Name": "Khan",
+          "Salary Cents": 12500000
+        },
+        {
+          "First Name": "Emma",
+          "Last Name": "Davis",
+          "Salary Cents": 9800000
+        },
+        {
+          "First Name": "Oliver",
+          "Last Name": "Singh",
+          "Salary Cents": 10200000
+        },
+        {
+          "First Name": "Charlotte",
+          "Last Name": "Taylor",
+          "Salary Cents": 8500000
+        },
+        {
+          "First Name": "Elijah",
+          "Last Name": "Anderson",
+          "Salary Cents": 7600000
+        },
+        {
+          "First Name": "Amelia",
+          "Last Name": "Thomas",
+          "Salary Cents": 7200000
+        },
+        {
+          "First Name": "James",
+          "Last Name": "Jackson",
+          "Salary Cents": 5400000
+        },
+        {
+          "First Name": "Harper",
+          "Last Name": "White",
+          "Salary Cents": 7800000
+        },
+        {
+          "First Name": "Benjamin",
+          "Last Name": "Harris",
+          "Salary Cents": 6900000
+        },
+        {
+          "First Name": "Evelyn",
+          "Last Name": "Clark",
+          "Salary Cents": 6500000
+        },
+        {
+          "First Name": "Henry",
+          "Last Name": "Lewis",
+          "Salary Cents": 8800000
+        },
+        {
+          "First Name": "Abigail",
+          "Last Name": "Walker",
+          "Salary Cents": 7400000
+        },
+        {
+          "First Name": "Daniel",
+          "Last Name": "Hall",
+          "Salary Cents": 5100000
+        },
+        {
+          "First Name": "Ella",
+          "Last Name": "Allen",
+          "Salary Cents": 5300000
+        },
+        {
+          "First Name": "Jack",
+          "Last Name": "Young",
+          "Salary Cents": 11800000
+        },
+        {
+          "First Name": "Grace",
+          "Last Name": "King",
+          "Salary Cents": 9100000
+        },
+        {
+          "First Name": "Leo",
+          "Last Name": "Scott",
+          "Salary Cents": 2800000
+        },
+        {
+          "First Name": "Zoe",
+          "Last Name": "Green",
+          "Salary Cents": 6800000
+        },
+        {
+          "First Name": "Wyatt",
+          "Last Name": "Baker",
+          "Salary Cents": 4900000
+        },
+        {
+          "First Name": "Nora",
+          "Last Name": "Adams",
+          "Salary Cents": 13500000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "order-by-ascending",
+    "starter_query": "SELECT product_name, unit_price_cents\nFROM products;\n-- Add ORDER BY",
+    "solution_query": "SELECT product_name, unit_price_cents FROM products ORDER BY unit_price_cents ASC;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "product_name",
+        "unit_price_cents"
+      ],
+      "row_count": 20,
+      "rows": [
+        {
+          "product_name": "Notebook Pack",
+          "unit_price_cents": 899
+        },
+        {
+          "product_name": "Old USB Drive",
+          "unit_price_cents": 999
+        },
+        {
+          "product_name": "Wireless Mouse",
+          "unit_price_cents": 2499
+        },
+        {
+          "product_name": "Gift Card",
+          "unit_price_cents": 2500
+        },
+        {
+          "product_name": "SQL Fundamentals",
+          "unit_price_cents": 2999
+        },
+        {
+          "product_name": "Desk Lamp",
+          "unit_price_cents": 3499
+        },
+        {
+          "product_name": "USB-C Hub",
+          "unit_price_cents": 4599
+        },
+        {
+          "product_name": "Data Engineering Guide",
+          "unit_price_cents": 4599
+        },
+        {
+          "product_name": "Webcam HD",
+          "unit_price_cents": 6999
+        },
+        {
+          "product_name": "Coffee Maker",
+          "unit_price_cents": 7499
+        },
+        {
+          "product_name": "Mechanical Keyboard",
+          "unit_price_cents": 8999
+        },
+        {
+          "product_name": "Office Chair",
+          "unit_price_cents": 15999
+        },
+        {
+          "product_name": "Noise-Cancelling Headphones",
+          "unit_price_cents": 19999
+        },
+        {
+          "product_name": "Monitor 27",
+          "unit_price_cents": 27999
+        },
+        {
+          "product_name": "Standing Desk",
+          "unit_price_cents": 32999
+        },
+        {
+          "product_name": "Tablet Plus",
+          "unit_price_cents": 44999
+        },
+        {
+          "product_name": "Smartphone Mini",
+          "unit_price_cents": 59999
+        },
+        {
+          "product_name": "Smartphone X",
+          "unit_price_cents": 79999
+        },
+        {
+          "product_name": "Laptop Air 13",
+          "unit_price_cents": 99999
+        },
+        {
+          "product_name": "Laptop Pro 14",
+          "unit_price_cents": 129999
+        }
+      ]
+    }
+  },
+  {
+    "slug": "order-by-descending",
+    "starter_query": "SELECT product_name, unit_price_cents\nFROM products;\n-- Sort descending and keep five rows",
+    "solution_query": "SELECT product_name, unit_price_cents FROM products ORDER BY unit_price_cents DESC LIMIT 5;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "product_name",
+        "unit_price_cents"
+      ],
+      "row_count": 5,
+      "rows": [
+        {
+          "product_name": "Laptop Pro 14",
+          "unit_price_cents": 129999
+        },
+        {
+          "product_name": "Laptop Air 13",
+          "unit_price_cents": 99999
+        },
+        {
+          "product_name": "Smartphone X",
+          "unit_price_cents": 79999
+        },
+        {
+          "product_name": "Smartphone Mini",
+          "unit_price_cents": 59999
+        },
+        {
+          "product_name": "Tablet Plus",
+          "unit_price_cents": 44999
+        }
+      ]
+    }
+  },
+  {
+    "slug": "order-by-multiple-columns",
+    "starter_query": "SELECT id, first_name, department_id, salary_cents\nFROM employees;\n-- Add ORDER BY with two columns",
+    "solution_query": "SELECT id, first_name, department_id, salary_cents FROM employees ORDER BY department_id ASC, salary_cents DESC;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "department_id",
+        "salary_cents"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "department_id": null,
+          "salary_cents": 6800000
+        },
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "department_id": 1,
+          "salary_cents": 24000000
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "department_id": 2,
+          "salary_cents": 18000000
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "department_id": 2,
+          "salary_cents": 12500000
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "department_id": 2,
+          "salary_cents": 10200000
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "department_id": 2,
+          "salary_cents": 9800000
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "department_id": 2,
+          "salary_cents": 8500000
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "department_id": 2,
+          "salary_cents": 2800000
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "department_id": 3,
+          "salary_cents": 16500000
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "department_id": 3,
+          "salary_cents": 7600000
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "department_id": 3,
+          "salary_cents": 7200000
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "department_id": 3,
+          "salary_cents": 5400000
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "department_id": 3,
+          "salary_cents": 4900000
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "department_id": 4,
+          "salary_cents": 15500000
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "department_id": 4,
+          "salary_cents": 7800000
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "department_id": 4,
+          "salary_cents": 6900000
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "department_id": 5,
+          "salary_cents": 14500000
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "department_id": 5,
+          "salary_cents": 6500000
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "department_id": 6,
+          "salary_cents": 16000000
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "department_id": 6,
+          "salary_cents": 8800000
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "department_id": 6,
+          "salary_cents": 7400000
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "department_id": 7,
+          "salary_cents": 13000000
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "department_id": 7,
+          "salary_cents": 5300000
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "department_id": 7,
+          "salary_cents": 5100000
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "department_id": 8,
+          "salary_cents": 14000000
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "department_id": 8,
+          "salary_cents": 11800000
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "department_id": 8,
+          "salary_cents": 9100000
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "department_id": 9,
+          "salary_cents": 13500000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "where-clause",
+    "starter_query": "SELECT id, first_name, last_name, department_id\nFROM employees;\n-- Add a WHERE condition",
+    "solution_query": "SELECT id, first_name, last_name, department_id FROM employees WHERE department_id = 2;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "department_id"
+      ],
+      "row_count": 6,
+      "rows": [
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "department_id": 2
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "department_id": 2
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "department_id": 2
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "department_id": 2
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "department_id": 2
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "department_id": 2
+        }
+      ]
+    }
+  },
+  {
+    "slug": "comparison-operators",
+    "starter_query": "SELECT id, first_name, last_name, salary_cents\nFROM employees;\n-- Add a WHERE condition with >",
+    "solution_query": "SELECT id, first_name, last_name, salary_cents FROM employees WHERE salary_cents > 10000000;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "salary_cents"
+      ],
+      "row_count": 12,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "last_name": "Morgan",
+          "salary_cents": 24000000
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "salary_cents": 18000000
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "salary_cents": 16500000
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "last_name": "Garcia",
+          "salary_cents": 15500000
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "last_name": "Brown",
+          "salary_cents": 14500000
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "last_name": "Wilson",
+          "salary_cents": 16000000
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "last_name": "Kumar",
+          "salary_cents": 13000000
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "last_name": "Martin",
+          "salary_cents": 14000000
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "salary_cents": 12500000
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "salary_cents": 10200000
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "last_name": "Young",
+          "salary_cents": 11800000
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "last_name": "Adams",
+          "salary_cents": 13500000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "where-and",
+    "starter_query": "SELECT id, first_name, department_id, salary_cents\nFROM employees\nWHERE department_id = 2;\n-- Add the salary condition with AND",
+    "solution_query": "SELECT id, first_name, department_id, salary_cents FROM employees WHERE department_id = 2 AND salary_cents > 10000000;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "department_id",
+        "salary_cents"
+      ],
+      "row_count": 3,
+      "rows": [
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "department_id": 2,
+          "salary_cents": 18000000
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "department_id": 2,
+          "salary_cents": 12500000
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "department_id": 2,
+          "salary_cents": 10200000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "where-or",
+    "starter_query": "SELECT id, first_name, last_name, country\nFROM customers;\n-- Add a WHERE condition with OR",
+    "solution_query": "SELECT id, first_name, last_name, country FROM customers WHERE country = 'India' OR country = 'Japan';",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "country"
+      ],
+      "row_count": 8,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Arjun",
+          "last_name": "Mehta",
+          "country": "India"
+        },
+        {
+          "id": 2,
+          "first_name": "Priya",
+          "last_name": "Sharma",
+          "country": "India"
+        },
+        {
+          "id": 3,
+          "first_name": "Rohan",
+          "last_name": "Verma",
+          "country": "India"
+        },
+        {
+          "id": 4,
+          "first_name": "Ananya",
+          "last_name": "Rao",
+          "country": "India"
+        },
+        {
+          "id": 5,
+          "first_name": "Kabir",
+          "last_name": "Joshi",
+          "country": "India"
+        },
+        {
+          "id": 21,
+          "first_name": "Unassigned",
+          "last_name": "Customer",
+          "country": "India"
+        },
+        {
+          "id": 14,
+          "first_name": "Hana",
+          "last_name": "Sato",
+          "country": "Japan"
+        },
+        {
+          "id": 15,
+          "first_name": "Kenji",
+          "last_name": "Tanaka",
+          "country": "Japan"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "in-operator",
+    "starter_query": "SELECT id, first_name, last_name, country\nFROM customers;\n-- Add a WHERE ... IN (...) condition",
+    "solution_query": "SELECT id, first_name, last_name, country FROM customers WHERE country IN ('India', 'Japan', 'Canada');",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "country"
+      ],
+      "row_count": 10,
+      "rows": [
+        {
+          "id": 16,
+          "first_name": "Chloe",
+          "last_name": "Martin",
+          "country": "Canada"
+        },
+        {
+          "id": 17,
+          "first_name": "Noah",
+          "last_name": "Wilson",
+          "country": "Canada"
+        },
+        {
+          "id": 1,
+          "first_name": "Arjun",
+          "last_name": "Mehta",
+          "country": "India"
+        },
+        {
+          "id": 2,
+          "first_name": "Priya",
+          "last_name": "Sharma",
+          "country": "India"
+        },
+        {
+          "id": 3,
+          "first_name": "Rohan",
+          "last_name": "Verma",
+          "country": "India"
+        },
+        {
+          "id": 4,
+          "first_name": "Ananya",
+          "last_name": "Rao",
+          "country": "India"
+        },
+        {
+          "id": 5,
+          "first_name": "Kabir",
+          "last_name": "Joshi",
+          "country": "India"
+        },
+        {
+          "id": 21,
+          "first_name": "Unassigned",
+          "last_name": "Customer",
+          "country": "India"
+        },
+        {
+          "id": 14,
+          "first_name": "Hana",
+          "last_name": "Sato",
+          "country": "Japan"
+        },
+        {
+          "id": 15,
+          "first_name": "Kenji",
+          "last_name": "Tanaka",
+          "country": "Japan"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "not-in-operator",
+    "starter_query": "SELECT id, first_name, last_name, country\nFROM customers;\n-- Add a WHERE ... NOT IN (...) condition",
+    "solution_query": "SELECT id, first_name, last_name, country FROM customers WHERE country NOT IN ('India', 'Japan');",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "country"
+      ],
+      "row_count": 13,
+      "rows": [
+        {
+          "id": 6,
+          "first_name": "Emily",
+          "last_name": "Johnson",
+          "country": "USA"
+        },
+        {
+          "id": 7,
+          "first_name": "Michael",
+          "last_name": "Smith",
+          "country": "USA"
+        },
+        {
+          "id": 8,
+          "first_name": "Olivia",
+          "last_name": "Brown",
+          "country": "USA"
+        },
+        {
+          "id": 9,
+          "first_name": "William",
+          "last_name": "Jones",
+          "country": "USA"
+        },
+        {
+          "id": 10,
+          "first_name": "Sofia",
+          "last_name": "Miller",
+          "country": "UK"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Wilson",
+          "country": "UK"
+        },
+        {
+          "id": 12,
+          "first_name": "Amelie",
+          "last_name": "Martin",
+          "country": "France"
+        },
+        {
+          "id": 13,
+          "first_name": "Lucas",
+          "last_name": "Bernard",
+          "country": "France"
+        },
+        {
+          "id": 16,
+          "first_name": "Chloe",
+          "last_name": "Martin",
+          "country": "Canada"
+        },
+        {
+          "id": 17,
+          "first_name": "Noah",
+          "last_name": "Wilson",
+          "country": "Canada"
+        },
+        {
+          "id": 18,
+          "first_name": "Mateo",
+          "last_name": "Garcia",
+          "country": "Spain"
+        },
+        {
+          "id": 19,
+          "first_name": "Valentina",
+          "last_name": "Rossi",
+          "country": "Italy"
+        },
+        {
+          "id": 20,
+          "first_name": "Isabella",
+          "last_name": "Silva",
+          "country": "Brazil"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "between-operator",
+    "starter_query": "SELECT id, product_name, unit_price_cents\nFROM products;\n-- Add BETWEEN and ORDER BY",
+    "solution_query": "SELECT id, product_name, unit_price_cents FROM products WHERE unit_price_cents BETWEEN 2500 AND 10000 ORDER BY unit_price_cents ASC;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "product_name",
+        "unit_price_cents"
+      ],
+      "row_count": 8,
+      "rows": [
+        {
+          "id": 20,
+          "product_name": "Gift Card",
+          "unit_price_cents": 2500
+        },
+        {
+          "id": 11,
+          "product_name": "SQL Fundamentals",
+          "unit_price_cents": 2999
+        },
+        {
+          "id": 9,
+          "product_name": "Desk Lamp",
+          "unit_price_cents": 3499
+        },
+        {
+          "id": 7,
+          "product_name": "USB-C Hub",
+          "unit_price_cents": 4599
+        },
+        {
+          "id": 12,
+          "product_name": "Data Engineering Guide",
+          "unit_price_cents": 4599
+        },
+        {
+          "id": 16,
+          "product_name": "Webcam HD",
+          "unit_price_cents": 6999
+        },
+        {
+          "id": 10,
+          "product_name": "Coffee Maker",
+          "unit_price_cents": 7499
+        },
+        {
+          "id": 4,
+          "product_name": "Mechanical Keyboard",
+          "unit_price_cents": 8999
+        }
+      ]
+    }
+  },
+  {
+    "slug": "like-pattern-matching",
+    "starter_query": "SELECT id, first_name, last_name\nFROM customers;\n-- Add a WHERE ... LIKE condition",
+    "solution_query": "SELECT id, first_name, last_name FROM customers WHERE first_name LIKE 'A%' ORDER BY id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name"
+      ],
+      "row_count": 3,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Arjun",
+          "last_name": "Mehta"
+        },
+        {
+          "id": 4,
+          "first_name": "Ananya",
+          "last_name": "Rao"
+        },
+        {
+          "id": 12,
+          "first_name": "Amelie",
+          "last_name": "Martin"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "is-null",
+    "starter_query": "SELECT id, first_name, last_name, email\nFROM employees;\n-- Add a WHERE condition for missing email",
+    "solution_query": "SELECT id, first_name, last_name, email FROM employees WHERE email IS NULL;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "email"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "email": null
+        }
+      ]
+    }
+  },
+  {
+    "slug": "is-not-null",
+    "starter_query": "SELECT id, first_name, last_name, email\nFROM customers;\n-- Add a WHERE condition for recorded email",
+    "solution_query": "SELECT id, first_name, last_name, email FROM customers WHERE email IS NOT NULL;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "email"
+      ],
+      "row_count": 20,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Arjun",
+          "last_name": "Mehta",
+          "email": "arjun.mehta@example.com"
+        },
+        {
+          "id": 2,
+          "first_name": "Priya",
+          "last_name": "Sharma",
+          "email": "priya.sharma@example.com"
+        },
+        {
+          "id": 3,
+          "first_name": "Rohan",
+          "last_name": "Verma",
+          "email": "rohan.verma@example.com"
+        },
+        {
+          "id": 4,
+          "first_name": "Ananya",
+          "last_name": "Rao",
+          "email": "ananya.rao@example.com"
+        },
+        {
+          "id": 5,
+          "first_name": "Kabir",
+          "last_name": "Joshi",
+          "email": "kabir.joshi@example.com"
+        },
+        {
+          "id": 6,
+          "first_name": "Emily",
+          "last_name": "Johnson",
+          "email": "emily.johnson@example.com"
+        },
+        {
+          "id": 7,
+          "first_name": "Michael",
+          "last_name": "Smith",
+          "email": "michael.smith@example.com"
+        },
+        {
+          "id": 8,
+          "first_name": "Olivia",
+          "last_name": "Brown",
+          "email": "olivia.brown@example.com"
+        },
+        {
+          "id": 9,
+          "first_name": "William",
+          "last_name": "Jones",
+          "email": "william.jones@example.com"
+        },
+        {
+          "id": 10,
+          "first_name": "Sofia",
+          "last_name": "Miller",
+          "email": "sofia.miller@example.com"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Wilson",
+          "email": "oliver.wilson@example.com"
+        },
+        {
+          "id": 12,
+          "first_name": "Amelie",
+          "last_name": "Martin",
+          "email": "amelie.martin@example.com"
+        },
+        {
+          "id": 13,
+          "first_name": "Lucas",
+          "last_name": "Bernard",
+          "email": "lucas.bernard@example.com"
+        },
+        {
+          "id": 14,
+          "first_name": "Hana",
+          "last_name": "Sato",
+          "email": "hana.sato@example.com"
+        },
+        {
+          "id": 15,
+          "first_name": "Kenji",
+          "last_name": "Tanaka",
+          "email": "kenji.tanaka@example.com"
+        },
+        {
+          "id": 16,
+          "first_name": "Chloe",
+          "last_name": "Martin",
+          "email": "chloe.martin@example.com"
+        },
+        {
+          "id": 17,
+          "first_name": "Noah",
+          "last_name": "Wilson",
+          "email": "noah.wilson@example.com"
+        },
+        {
+          "id": 18,
+          "first_name": "Mateo",
+          "last_name": "Garcia",
+          "email": "mateo.garcia@example.com"
+        },
+        {
+          "id": 19,
+          "first_name": "Valentina",
+          "last_name": "Rossi",
+          "email": "valentina.rossi@example.com"
+        },
+        {
+          "id": 20,
+          "first_name": "Isabella",
+          "last_name": "Silva",
+          "email": "isabella.silva@example.com"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "table-aliases",
+    "starter_query": "SELECT e.first_name\nFROM employees AS e;\n-- Join departments AS d and select d.name AS department_name",
+    "solution_query": "SELECT e.first_name, d.name AS department_name FROM employees AS e INNER JOIN departments AS d ON e.department_id = d.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "first_name",
+        "department_name"
+      ],
+      "row_count": 27,
+      "rows": [
+        {
+          "first_name": "Ava",
+          "department_name": "Executive"
+        },
+        {
+          "first_name": "Noah",
+          "department_name": "Engineering"
+        },
+        {
+          "first_name": "Mia",
+          "department_name": "Sales"
+        },
+        {
+          "first_name": "Liam",
+          "department_name": "Marketing"
+        },
+        {
+          "first_name": "Sophia",
+          "department_name": "Human Resources"
+        },
+        {
+          "first_name": "Ethan",
+          "department_name": "Finance"
+        },
+        {
+          "first_name": "Isabella",
+          "department_name": "Customer Support"
+        },
+        {
+          "first_name": "Lucas",
+          "department_name": "Research"
+        },
+        {
+          "first_name": "Amir",
+          "department_name": "Engineering"
+        },
+        {
+          "first_name": "Emma",
+          "department_name": "Engineering"
+        },
+        {
+          "first_name": "Oliver",
+          "department_name": "Engineering"
+        },
+        {
+          "first_name": "Charlotte",
+          "department_name": "Engineering"
+        },
+        {
+          "first_name": "Elijah",
+          "department_name": "Sales"
+        },
+        {
+          "first_name": "Amelia",
+          "department_name": "Sales"
+        },
+        {
+          "first_name": "James",
+          "department_name": "Sales"
+        },
+        {
+          "first_name": "Harper",
+          "department_name": "Marketing"
+        },
+        {
+          "first_name": "Benjamin",
+          "department_name": "Marketing"
+        },
+        {
+          "first_name": "Evelyn",
+          "department_name": "Human Resources"
+        },
+        {
+          "first_name": "Henry",
+          "department_name": "Finance"
+        },
+        {
+          "first_name": "Abigail",
+          "department_name": "Finance"
+        },
+        {
+          "first_name": "Daniel",
+          "department_name": "Customer Support"
+        },
+        {
+          "first_name": "Ella",
+          "department_name": "Customer Support"
+        },
+        {
+          "first_name": "Jack",
+          "department_name": "Research"
+        },
+        {
+          "first_name": "Grace",
+          "department_name": "Research"
+        },
+        {
+          "first_name": "Leo",
+          "department_name": "Engineering"
+        },
+        {
+          "first_name": "Wyatt",
+          "department_name": "Sales"
+        },
+        {
+          "first_name": "Nora",
+          "department_name": "Legal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "inner-join-basics",
+    "starter_query": "SELECT o.id AS order_id, o.order_date\nFROM orders AS o;\n-- Join customers AS c and add the name columns",
+    "solution_query": "SELECT o.id AS order_id, o.order_date, c.first_name, c.last_name FROM orders AS o INNER JOIN customers AS c ON o.customer_id = c.id ORDER BY o.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "order_id",
+        "order_date",
+        "first_name",
+        "last_name"
+      ],
+      "row_count": 25,
+      "rows": [
+        {
+          "order_id": 1,
+          "order_date": "2024-01-03",
+          "first_name": "Arjun",
+          "last_name": "Mehta"
+        },
+        {
+          "order_id": 2,
+          "order_date": "2024-01-08",
+          "first_name": "Priya",
+          "last_name": "Sharma"
+        },
+        {
+          "order_id": 3,
+          "order_date": "2024-01-15",
+          "first_name": "Emily",
+          "last_name": "Johnson"
+        },
+        {
+          "order_id": 4,
+          "order_date": "2024-01-22",
+          "first_name": "Michael",
+          "last_name": "Smith"
+        },
+        {
+          "order_id": 5,
+          "order_date": "2024-02-02",
+          "first_name": "Sofia",
+          "last_name": "Miller"
+        },
+        {
+          "order_id": 6,
+          "order_date": "2024-02-10",
+          "first_name": "Amelie",
+          "last_name": "Martin"
+        },
+        {
+          "order_id": 7,
+          "order_date": "2024-02-19",
+          "first_name": "Hana",
+          "last_name": "Sato"
+        },
+        {
+          "order_id": 8,
+          "order_date": "2024-03-01",
+          "first_name": "Rohan",
+          "last_name": "Verma"
+        },
+        {
+          "order_id": 9,
+          "order_date": "2024-03-11",
+          "first_name": "Olivia",
+          "last_name": "Brown"
+        },
+        {
+          "order_id": 10,
+          "order_date": "2024-03-18",
+          "first_name": "Chloe",
+          "last_name": "Martin"
+        },
+        {
+          "order_id": 11,
+          "order_date": "2024-04-02",
+          "first_name": "Ananya",
+          "last_name": "Rao"
+        },
+        {
+          "order_id": 12,
+          "order_date": "2024-04-17",
+          "first_name": "Oliver",
+          "last_name": "Wilson"
+        },
+        {
+          "order_id": 13,
+          "order_date": "2024-05-03",
+          "first_name": "Kenji",
+          "last_name": "Tanaka"
+        },
+        {
+          "order_id": 14,
+          "order_date": "2024-05-16",
+          "first_name": "Mateo",
+          "last_name": "Garcia"
+        },
+        {
+          "order_id": 15,
+          "order_date": "2024-06-04",
+          "first_name": "Valentina",
+          "last_name": "Rossi"
+        },
+        {
+          "order_id": 16,
+          "order_date": "2024-06-15",
+          "first_name": "Arjun",
+          "last_name": "Mehta"
+        },
+        {
+          "order_id": 17,
+          "order_date": "2024-07-01",
+          "first_name": "Kabir",
+          "last_name": "Joshi"
+        },
+        {
+          "order_id": 18,
+          "order_date": "2024-07-19",
+          "first_name": "William",
+          "last_name": "Jones"
+        },
+        {
+          "order_id": 19,
+          "order_date": "2024-08-08",
+          "first_name": "Noah",
+          "last_name": "Wilson"
+        },
+        {
+          "order_id": 20,
+          "order_date": "2024-08-21",
+          "first_name": "Isabella",
+          "last_name": "Silva"
+        },
+        {
+          "order_id": 21,
+          "order_date": "2024-09-02",
+          "first_name": "Priya",
+          "last_name": "Sharma"
+        },
+        {
+          "order_id": 22,
+          "order_date": "2024-09-14",
+          "first_name": "Emily",
+          "last_name": "Johnson"
+        },
+        {
+          "order_id": 23,
+          "order_date": "2024-10-01",
+          "first_name": "Lucas",
+          "last_name": "Bernard"
+        },
+        {
+          "order_id": 24,
+          "order_date": "2024-10-20",
+          "first_name": "Rohan",
+          "last_name": "Verma"
+        },
+        {
+          "order_id": 25,
+          "order_date": "2024-11-11",
+          "first_name": "Unassigned",
+          "last_name": "Customer"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "left-join-basics",
+    "starter_query": "SELECT e.id, e.first_name, e.last_name, d.name AS department_name\nFROM employees e\n-- Add your LEFT JOIN here\nORDER BY e.id;",
+    "solution_query": "SELECT e.id, e.first_name, e.last_name, d.name AS department_name FROM employees e LEFT JOIN departments d ON e.department_id = d.id ORDER BY e.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "department_name"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "last_name": "Morgan",
+          "department_name": "Executive"
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "last_name": "Patel",
+          "department_name": "Engineering"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "last_name": "Chen",
+          "department_name": "Sales"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "last_name": "Garcia",
+          "department_name": "Marketing"
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "last_name": "Brown",
+          "department_name": "Human Resources"
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "last_name": "Wilson",
+          "department_name": "Finance"
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "last_name": "Kumar",
+          "department_name": "Customer Support"
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "last_name": "Martin",
+          "department_name": "Research"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "last_name": "Khan",
+          "department_name": "Engineering"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "last_name": "Davis",
+          "department_name": "Engineering"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Singh",
+          "department_name": "Engineering"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "last_name": "Taylor",
+          "department_name": "Engineering"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "last_name": "Anderson",
+          "department_name": "Sales"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "last_name": "Thomas",
+          "department_name": "Sales"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "last_name": "Jackson",
+          "department_name": "Sales"
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "last_name": "White",
+          "department_name": "Marketing"
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "last_name": "Harris",
+          "department_name": "Marketing"
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "last_name": "Clark",
+          "department_name": "Human Resources"
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "last_name": "Lewis",
+          "department_name": "Finance"
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "last_name": "Walker",
+          "department_name": "Finance"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "last_name": "Hall",
+          "department_name": "Customer Support"
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "last_name": "Allen",
+          "department_name": "Customer Support"
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "last_name": "Young",
+          "department_name": "Research"
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "last_name": "King",
+          "department_name": "Research"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "last_name": "Scott",
+          "department_name": "Engineering"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "last_name": "Green",
+          "department_name": null
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "last_name": "Baker",
+          "department_name": "Sales"
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "last_name": "Adams",
+          "department_name": "Legal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "right-join-basics",
+    "starter_query": "SELECT d.id AS department_id, d.name AS department_name, e.id AS employee_id\nFROM departments d\n-- Join employees while preserving every department\nORDER BY d.id, e.id;",
+    "solution_query": "SELECT d.id AS department_id, d.name AS department_name, e.id AS employee_id FROM departments d LEFT JOIN employees e ON e.department_id = d.id ORDER BY d.id, e.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "department_id",
+        "department_name",
+        "employee_id"
+      ],
+      "row_count": 27,
+      "rows": [
+        {
+          "department_id": 1,
+          "department_name": "Executive",
+          "employee_id": 1
+        },
+        {
+          "department_id": 2,
+          "department_name": "Engineering",
+          "employee_id": 2
+        },
+        {
+          "department_id": 2,
+          "department_name": "Engineering",
+          "employee_id": 9
+        },
+        {
+          "department_id": 2,
+          "department_name": "Engineering",
+          "employee_id": 10
+        },
+        {
+          "department_id": 2,
+          "department_name": "Engineering",
+          "employee_id": 11
+        },
+        {
+          "department_id": 2,
+          "department_name": "Engineering",
+          "employee_id": 12
+        },
+        {
+          "department_id": 2,
+          "department_name": "Engineering",
+          "employee_id": 25
+        },
+        {
+          "department_id": 3,
+          "department_name": "Sales",
+          "employee_id": 3
+        },
+        {
+          "department_id": 3,
+          "department_name": "Sales",
+          "employee_id": 13
+        },
+        {
+          "department_id": 3,
+          "department_name": "Sales",
+          "employee_id": 14
+        },
+        {
+          "department_id": 3,
+          "department_name": "Sales",
+          "employee_id": 15
+        },
+        {
+          "department_id": 3,
+          "department_name": "Sales",
+          "employee_id": 27
+        },
+        {
+          "department_id": 4,
+          "department_name": "Marketing",
+          "employee_id": 4
+        },
+        {
+          "department_id": 4,
+          "department_name": "Marketing",
+          "employee_id": 16
+        },
+        {
+          "department_id": 4,
+          "department_name": "Marketing",
+          "employee_id": 17
+        },
+        {
+          "department_id": 5,
+          "department_name": "Human Resources",
+          "employee_id": 5
+        },
+        {
+          "department_id": 5,
+          "department_name": "Human Resources",
+          "employee_id": 18
+        },
+        {
+          "department_id": 6,
+          "department_name": "Finance",
+          "employee_id": 6
+        },
+        {
+          "department_id": 6,
+          "department_name": "Finance",
+          "employee_id": 19
+        },
+        {
+          "department_id": 6,
+          "department_name": "Finance",
+          "employee_id": 20
+        },
+        {
+          "department_id": 7,
+          "department_name": "Customer Support",
+          "employee_id": 7
+        },
+        {
+          "department_id": 7,
+          "department_name": "Customer Support",
+          "employee_id": 21
+        },
+        {
+          "department_id": 7,
+          "department_name": "Customer Support",
+          "employee_id": 22
+        },
+        {
+          "department_id": 8,
+          "department_name": "Research",
+          "employee_id": 8
+        },
+        {
+          "department_id": 8,
+          "department_name": "Research",
+          "employee_id": 23
+        },
+        {
+          "department_id": 8,
+          "department_name": "Research",
+          "employee_id": 24
+        },
+        {
+          "department_id": 9,
+          "department_name": "Legal",
+          "employee_id": 28
+        }
+      ]
+    }
+  },
+  {
+    "slug": "self-join-employees",
+    "starter_query": "SELECT e.id, e.first_name AS employee_name, m.first_name AS manager_name\nFROM employees e\n-- Join employees to itself\nORDER BY e.id;",
+    "solution_query": "SELECT e.id, e.first_name AS employee_name, m.first_name AS manager_name FROM employees e LEFT JOIN employees m ON e.manager_id = m.id ORDER BY e.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "employee_name",
+        "manager_name"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 1,
+          "employee_name": "Ava",
+          "manager_name": null
+        },
+        {
+          "id": 2,
+          "employee_name": "Noah",
+          "manager_name": "Ava"
+        },
+        {
+          "id": 3,
+          "employee_name": "Mia",
+          "manager_name": "Ava"
+        },
+        {
+          "id": 4,
+          "employee_name": "Liam",
+          "manager_name": "Ava"
+        },
+        {
+          "id": 5,
+          "employee_name": "Sophia",
+          "manager_name": "Ava"
+        },
+        {
+          "id": 6,
+          "employee_name": "Ethan",
+          "manager_name": "Ava"
+        },
+        {
+          "id": 7,
+          "employee_name": "Isabella",
+          "manager_name": "Ava"
+        },
+        {
+          "id": 8,
+          "employee_name": "Lucas",
+          "manager_name": "Noah"
+        },
+        {
+          "id": 9,
+          "employee_name": "Amir",
+          "manager_name": "Noah"
+        },
+        {
+          "id": 10,
+          "employee_name": "Emma",
+          "manager_name": "Noah"
+        },
+        {
+          "id": 11,
+          "employee_name": "Oliver",
+          "manager_name": "Amir"
+        },
+        {
+          "id": 12,
+          "employee_name": "Charlotte",
+          "manager_name": "Amir"
+        },
+        {
+          "id": 13,
+          "employee_name": "Elijah",
+          "manager_name": "Mia"
+        },
+        {
+          "id": 14,
+          "employee_name": "Amelia",
+          "manager_name": "Mia"
+        },
+        {
+          "id": 15,
+          "employee_name": "James",
+          "manager_name": "Mia"
+        },
+        {
+          "id": 16,
+          "employee_name": "Harper",
+          "manager_name": "Liam"
+        },
+        {
+          "id": 17,
+          "employee_name": "Benjamin",
+          "manager_name": "Liam"
+        },
+        {
+          "id": 18,
+          "employee_name": "Evelyn",
+          "manager_name": "Sophia"
+        },
+        {
+          "id": 19,
+          "employee_name": "Henry",
+          "manager_name": "Ethan"
+        },
+        {
+          "id": 20,
+          "employee_name": "Abigail",
+          "manager_name": "Ethan"
+        },
+        {
+          "id": 21,
+          "employee_name": "Daniel",
+          "manager_name": "Isabella"
+        },
+        {
+          "id": 22,
+          "employee_name": "Ella",
+          "manager_name": "Isabella"
+        },
+        {
+          "id": 23,
+          "employee_name": "Jack",
+          "manager_name": "Lucas"
+        },
+        {
+          "id": 24,
+          "employee_name": "Grace",
+          "manager_name": "Lucas"
+        },
+        {
+          "id": 25,
+          "employee_name": "Leo",
+          "manager_name": "Amir"
+        },
+        {
+          "id": 26,
+          "employee_name": "Zoe",
+          "manager_name": "Ava"
+        },
+        {
+          "id": 27,
+          "employee_name": "Wyatt",
+          "manager_name": "Mia"
+        },
+        {
+          "id": 28,
+          "employee_name": "Nora",
+          "manager_name": "Ava"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "join-multiple-tables",
+    "starter_query": "SELECT o.id AS order_id, o.order_date,\n       c.first_name AS customer_first_name,\n       c.last_name AS customer_last_name,\n       e.first_name AS employee_first_name,\n       e.last_name AS employee_last_name\nFROM orders o\n-- Join customers and employees\nORDER BY o.id;",
+    "solution_query": "SELECT o.id AS order_id, o.order_date, c.first_name AS customer_first_name, c.last_name AS customer_last_name, e.first_name AS employee_first_name, e.last_name AS employee_last_name FROM orders o INNER JOIN customers c ON o.customer_id = c.id INNER JOIN employees e ON o.employee_id = e.id ORDER BY o.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "order_id",
+        "order_date",
+        "customer_first_name",
+        "customer_last_name",
+        "employee_first_name",
+        "employee_last_name"
+      ],
+      "row_count": 24,
+      "rows": [
+        {
+          "order_id": 1,
+          "order_date": "2024-01-03",
+          "customer_first_name": "Arjun",
+          "customer_last_name": "Mehta",
+          "employee_first_name": "Elijah",
+          "employee_last_name": "Anderson"
+        },
+        {
+          "order_id": 2,
+          "order_date": "2024-01-08",
+          "customer_first_name": "Priya",
+          "customer_last_name": "Sharma",
+          "employee_first_name": "Amelia",
+          "employee_last_name": "Thomas"
+        },
+        {
+          "order_id": 3,
+          "order_date": "2024-01-15",
+          "customer_first_name": "Emily",
+          "customer_last_name": "Johnson",
+          "employee_first_name": "Elijah",
+          "employee_last_name": "Anderson"
+        },
+        {
+          "order_id": 4,
+          "order_date": "2024-01-22",
+          "customer_first_name": "Michael",
+          "customer_last_name": "Smith",
+          "employee_first_name": "Wyatt",
+          "employee_last_name": "Baker"
+        },
+        {
+          "order_id": 5,
+          "order_date": "2024-02-02",
+          "customer_first_name": "Sofia",
+          "customer_last_name": "Miller",
+          "employee_first_name": "Amelia",
+          "employee_last_name": "Thomas"
+        },
+        {
+          "order_id": 6,
+          "order_date": "2024-02-10",
+          "customer_first_name": "Amelie",
+          "customer_last_name": "Martin",
+          "employee_first_name": "Elijah",
+          "employee_last_name": "Anderson"
+        },
+        {
+          "order_id": 7,
+          "order_date": "2024-02-19",
+          "customer_first_name": "Hana",
+          "customer_last_name": "Sato",
+          "employee_first_name": "Wyatt",
+          "employee_last_name": "Baker"
+        },
+        {
+          "order_id": 8,
+          "order_date": "2024-03-01",
+          "customer_first_name": "Rohan",
+          "customer_last_name": "Verma",
+          "employee_first_name": "James",
+          "employee_last_name": "Jackson"
+        },
+        {
+          "order_id": 9,
+          "order_date": "2024-03-11",
+          "customer_first_name": "Olivia",
+          "customer_last_name": "Brown",
+          "employee_first_name": "Amelia",
+          "employee_last_name": "Thomas"
+        },
+        {
+          "order_id": 10,
+          "order_date": "2024-03-18",
+          "customer_first_name": "Chloe",
+          "customer_last_name": "Martin",
+          "employee_first_name": "Elijah",
+          "employee_last_name": "Anderson"
+        },
+        {
+          "order_id": 11,
+          "order_date": "2024-04-02",
+          "customer_first_name": "Ananya",
+          "customer_last_name": "Rao",
+          "employee_first_name": "Wyatt",
+          "employee_last_name": "Baker"
+        },
+        {
+          "order_id": 12,
+          "order_date": "2024-04-17",
+          "customer_first_name": "Oliver",
+          "customer_last_name": "Wilson",
+          "employee_first_name": "James",
+          "employee_last_name": "Jackson"
+        },
+        {
+          "order_id": 13,
+          "order_date": "2024-05-03",
+          "customer_first_name": "Kenji",
+          "customer_last_name": "Tanaka",
+          "employee_first_name": "Amelia",
+          "employee_last_name": "Thomas"
+        },
+        {
+          "order_id": 14,
+          "order_date": "2024-05-16",
+          "customer_first_name": "Mateo",
+          "customer_last_name": "Garcia",
+          "employee_first_name": "Elijah",
+          "employee_last_name": "Anderson"
+        },
+        {
+          "order_id": 15,
+          "order_date": "2024-06-04",
+          "customer_first_name": "Valentina",
+          "customer_last_name": "Rossi",
+          "employee_first_name": "Wyatt",
+          "employee_last_name": "Baker"
+        },
+        {
+          "order_id": 16,
+          "order_date": "2024-06-15",
+          "customer_first_name": "Arjun",
+          "customer_last_name": "Mehta",
+          "employee_first_name": "Amelia",
+          "employee_last_name": "Thomas"
+        },
+        {
+          "order_id": 17,
+          "order_date": "2024-07-01",
+          "customer_first_name": "Kabir",
+          "customer_last_name": "Joshi",
+          "employee_first_name": "James",
+          "employee_last_name": "Jackson"
+        },
+        {
+          "order_id": 18,
+          "order_date": "2024-07-19",
+          "customer_first_name": "William",
+          "customer_last_name": "Jones",
+          "employee_first_name": "Elijah",
+          "employee_last_name": "Anderson"
+        },
+        {
+          "order_id": 19,
+          "order_date": "2024-08-08",
+          "customer_first_name": "Noah",
+          "customer_last_name": "Wilson",
+          "employee_first_name": "Amelia",
+          "employee_last_name": "Thomas"
+        },
+        {
+          "order_id": 20,
+          "order_date": "2024-08-21",
+          "customer_first_name": "Isabella",
+          "customer_last_name": "Silva",
+          "employee_first_name": "Wyatt",
+          "employee_last_name": "Baker"
+        },
+        {
+          "order_id": 21,
+          "order_date": "2024-09-02",
+          "customer_first_name": "Priya",
+          "customer_last_name": "Sharma",
+          "employee_first_name": "Elijah",
+          "employee_last_name": "Anderson"
+        },
+        {
+          "order_id": 22,
+          "order_date": "2024-09-14",
+          "customer_first_name": "Emily",
+          "customer_last_name": "Johnson",
+          "employee_first_name": "Amelia",
+          "employee_last_name": "Thomas"
+        },
+        {
+          "order_id": 23,
+          "order_date": "2024-10-01",
+          "customer_first_name": "Lucas",
+          "customer_last_name": "Bernard",
+          "employee_first_name": "James",
+          "employee_last_name": "Jackson"
+        },
+        {
+          "order_id": 24,
+          "order_date": "2024-10-20",
+          "customer_first_name": "Rohan",
+          "customer_last_name": "Verma",
+          "employee_first_name": "Wyatt",
+          "employee_last_name": "Baker"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "join-with-where",
+    "starter_query": "SELECT o.id AS order_id, o.order_date, c.country\nFROM orders o\n-- Join customers and filter by country\nORDER BY o.id;",
+    "solution_query": "SELECT o.id AS order_id, o.order_date, c.country FROM orders o INNER JOIN customers c ON o.customer_id = c.id WHERE c.country = 'India' ORDER BY o.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "order_id",
+        "order_date",
+        "country"
+      ],
+      "row_count": 9,
+      "rows": [
+        {
+          "order_id": 1,
+          "order_date": "2024-01-03",
+          "country": "India"
+        },
+        {
+          "order_id": 2,
+          "order_date": "2024-01-08",
+          "country": "India"
+        },
+        {
+          "order_id": 8,
+          "order_date": "2024-03-01",
+          "country": "India"
+        },
+        {
+          "order_id": 11,
+          "order_date": "2024-04-02",
+          "country": "India"
+        },
+        {
+          "order_id": 16,
+          "order_date": "2024-06-15",
+          "country": "India"
+        },
+        {
+          "order_id": 17,
+          "order_date": "2024-07-01",
+          "country": "India"
+        },
+        {
+          "order_id": 21,
+          "order_date": "2024-09-02",
+          "country": "India"
+        },
+        {
+          "order_id": 24,
+          "order_date": "2024-10-20",
+          "country": "India"
+        },
+        {
+          "order_id": 25,
+          "order_date": "2024-11-11",
+          "country": "India"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "count-function",
+    "starter_query": "SELECT COUNT(*)\nFROM employees;\n-- Alias the result as employee_count",
+    "solution_query": "SELECT COUNT(*) AS employee_count FROM employees;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "employee_count"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "employee_count": 28
+        }
+      ]
+    }
+  },
+  {
+    "slug": "sum-function",
+    "starter_query": "SELECT salary_cents\nFROM employees;\n-- Apply SUM and alias the result as total_salary_cents",
+    "solution_query": "SELECT SUM(salary_cents) AS total_salary_cents FROM employees;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "total_salary_cents"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "total_salary_cents": 289400000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "avg-function",
+    "starter_query": "SELECT salary_cents\nFROM employees;\n-- Apply AVG and alias the result as average_salary_cents",
+    "solution_query": "SELECT AVG(salary_cents) AS average_salary_cents FROM employees;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "average_salary_cents"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "average_salary_cents": 10335714.285714285
+        }
+      ]
+    }
+  },
+  {
+    "slug": "min-max-functions",
+    "starter_query": "SELECT unit_price_cents\nFROM products;\n-- Apply MIN and MAX and alias the results",
+    "solution_query": "SELECT MIN(unit_price_cents) AS min_price_cents, MAX(unit_price_cents) AS max_price_cents FROM products;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "min_price_cents",
+        "max_price_cents"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "min_price_cents": 899,
+          "max_price_cents": 129999
+        }
+      ]
+    }
+  },
+  {
+    "slug": "group-by",
+    "starter_query": "SELECT department_id, COUNT(*) AS employee_count\nFROM employees\n-- Group by department_id\nORDER BY department_id;",
+    "solution_query": "SELECT department_id, COUNT(*) AS employee_count FROM employees GROUP BY department_id ORDER BY department_id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "department_id",
+        "employee_count"
+      ],
+      "row_count": 10,
+      "rows": [
+        {
+          "department_id": null,
+          "employee_count": 1
+        },
+        {
+          "department_id": 1,
+          "employee_count": 1
+        },
+        {
+          "department_id": 2,
+          "employee_count": 6
+        },
+        {
+          "department_id": 3,
+          "employee_count": 5
+        },
+        {
+          "department_id": 4,
+          "employee_count": 3
+        },
+        {
+          "department_id": 5,
+          "employee_count": 2
+        },
+        {
+          "department_id": 6,
+          "employee_count": 3
+        },
+        {
+          "department_id": 7,
+          "employee_count": 3
+        },
+        {
+          "department_id": 8,
+          "employee_count": 3
+        },
+        {
+          "department_id": 9,
+          "employee_count": 1
+        }
+      ]
+    }
+  },
+  {
+    "slug": "having-clause",
+    "starter_query": "SELECT department_id, COUNT(*) AS employee_count\nFROM employees\nGROUP BY department_id\n-- Filter groups with more than five employees\nORDER BY department_id;",
+    "solution_query": "SELECT department_id, COUNT(*) AS employee_count FROM employees GROUP BY department_id HAVING COUNT(*) > 5 ORDER BY department_id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "department_id",
+        "employee_count"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "department_id": 2,
+          "employee_count": 6
+        }
+      ]
+    }
+  },
+  {
+    "slug": "subquery-in-where",
+    "starter_query": "SELECT id, first_name, salary_cents\nFROM employees\n-- Add WHERE salary_cents > (a subquery for the average salary)\nORDER BY id;",
+    "solution_query": "SELECT id, first_name, salary_cents FROM employees WHERE salary_cents > (SELECT AVG(salary_cents) FROM employees) ORDER BY id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "salary_cents"
+      ],
+      "row_count": 11,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "salary_cents": 24000000
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "salary_cents": 18000000
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "salary_cents": 16500000
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "salary_cents": 15500000
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "salary_cents": 14500000
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "salary_cents": 16000000
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "salary_cents": 13000000
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "salary_cents": 14000000
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "salary_cents": 12500000
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "salary_cents": 11800000
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "salary_cents": 13500000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "subquery-in-from",
+    "starter_query": "SELECT department_id, COUNT(*) AS employee_count\nFROM employees\nGROUP BY department_id;\n-- Wrap this in a subquery and average employee_count",
+    "solution_query": "SELECT AVG(employee_count) AS average_employees_per_department FROM (SELECT department_id, COUNT(*) AS employee_count FROM employees WHERE department_id IS NOT NULL GROUP BY department_id) AS department_counts;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "average_employees_per_department"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "average_employees_per_department": 3.0
+        }
+      ]
+    }
+  },
+  {
+    "slug": "exists-operator",
+    "starter_query": "SELECT id, first_name, last_name\nFROM customers;\n-- Add WHERE EXISTS with a subquery on orders",
+    "solution_query": "SELECT c.id, c.first_name, c.last_name FROM customers c WHERE EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.id) ORDER BY c.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name"
+      ],
+      "row_count": 21,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Arjun",
+          "last_name": "Mehta"
+        },
+        {
+          "id": 2,
+          "first_name": "Priya",
+          "last_name": "Sharma"
+        },
+        {
+          "id": 3,
+          "first_name": "Rohan",
+          "last_name": "Verma"
+        },
+        {
+          "id": 4,
+          "first_name": "Ananya",
+          "last_name": "Rao"
+        },
+        {
+          "id": 5,
+          "first_name": "Kabir",
+          "last_name": "Joshi"
+        },
+        {
+          "id": 6,
+          "first_name": "Emily",
+          "last_name": "Johnson"
+        },
+        {
+          "id": 7,
+          "first_name": "Michael",
+          "last_name": "Smith"
+        },
+        {
+          "id": 8,
+          "first_name": "Olivia",
+          "last_name": "Brown"
+        },
+        {
+          "id": 9,
+          "first_name": "William",
+          "last_name": "Jones"
+        },
+        {
+          "id": 10,
+          "first_name": "Sofia",
+          "last_name": "Miller"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "last_name": "Wilson"
+        },
+        {
+          "id": 12,
+          "first_name": "Amelie",
+          "last_name": "Martin"
+        },
+        {
+          "id": 13,
+          "first_name": "Lucas",
+          "last_name": "Bernard"
+        },
+        {
+          "id": 14,
+          "first_name": "Hana",
+          "last_name": "Sato"
+        },
+        {
+          "id": 15,
+          "first_name": "Kenji",
+          "last_name": "Tanaka"
+        },
+        {
+          "id": 16,
+          "first_name": "Chloe",
+          "last_name": "Martin"
+        },
+        {
+          "id": 17,
+          "first_name": "Noah",
+          "last_name": "Wilson"
+        },
+        {
+          "id": 18,
+          "first_name": "Mateo",
+          "last_name": "Garcia"
+        },
+        {
+          "id": 19,
+          "first_name": "Valentina",
+          "last_name": "Rossi"
+        },
+        {
+          "id": 20,
+          "first_name": "Isabella",
+          "last_name": "Silva"
+        },
+        {
+          "id": 21,
+          "first_name": "Unassigned",
+          "last_name": "Customer"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "union",
+    "starter_query": "SELECT first_name\nFROM customers;\n-- Combine with employees using UNION, then ORDER BY first_name",
+    "solution_query": "SELECT first_name FROM customers UNION SELECT first_name FROM employees ORDER BY first_name;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "first_name"
+      ],
+      "row_count": 45,
+      "rows": [
+        {
+          "first_name": "Abigail"
+        },
+        {
+          "first_name": "Amelia"
+        },
+        {
+          "first_name": "Amelie"
+        },
+        {
+          "first_name": "Amir"
+        },
+        {
+          "first_name": "Ananya"
+        },
+        {
+          "first_name": "Arjun"
+        },
+        {
+          "first_name": "Ava"
+        },
+        {
+          "first_name": "Benjamin"
+        },
+        {
+          "first_name": "Charlotte"
+        },
+        {
+          "first_name": "Chloe"
+        },
+        {
+          "first_name": "Daniel"
+        },
+        {
+          "first_name": "Elijah"
+        },
+        {
+          "first_name": "Ella"
+        },
+        {
+          "first_name": "Emily"
+        },
+        {
+          "first_name": "Emma"
+        },
+        {
+          "first_name": "Ethan"
+        },
+        {
+          "first_name": "Evelyn"
+        },
+        {
+          "first_name": "Grace"
+        },
+        {
+          "first_name": "Hana"
+        },
+        {
+          "first_name": "Harper"
+        },
+        {
+          "first_name": "Henry"
+        },
+        {
+          "first_name": "Isabella"
+        },
+        {
+          "first_name": "Jack"
+        },
+        {
+          "first_name": "James"
+        },
+        {
+          "first_name": "Kabir"
+        },
+        {
+          "first_name": "Kenji"
+        },
+        {
+          "first_name": "Leo"
+        },
+        {
+          "first_name": "Liam"
+        },
+        {
+          "first_name": "Lucas"
+        },
+        {
+          "first_name": "Mateo"
+        },
+        {
+          "first_name": "Mia"
+        },
+        {
+          "first_name": "Michael"
+        },
+        {
+          "first_name": "Noah"
+        },
+        {
+          "first_name": "Nora"
+        },
+        {
+          "first_name": "Oliver"
+        },
+        {
+          "first_name": "Olivia"
+        },
+        {
+          "first_name": "Priya"
+        },
+        {
+          "first_name": "Rohan"
+        },
+        {
+          "first_name": "Sofia"
+        },
+        {
+          "first_name": "Sophia"
+        },
+        {
+          "first_name": "Unassigned"
+        },
+        {
+          "first_name": "Valentina"
+        },
+        {
+          "first_name": "William"
+        },
+        {
+          "first_name": "Wyatt"
+        },
+        {
+          "first_name": "Zoe"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "union-all",
+    "starter_query": "SELECT first_name\nFROM customers;\n-- Combine with employees using UNION ALL, then ORDER BY first_name",
+    "solution_query": "SELECT first_name FROM customers UNION ALL SELECT first_name FROM employees ORDER BY first_name;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "first_name"
+      ],
+      "row_count": 49,
+      "rows": [
+        {
+          "first_name": "Abigail"
+        },
+        {
+          "first_name": "Amelia"
+        },
+        {
+          "first_name": "Amelie"
+        },
+        {
+          "first_name": "Amir"
+        },
+        {
+          "first_name": "Ananya"
+        },
+        {
+          "first_name": "Arjun"
+        },
+        {
+          "first_name": "Ava"
+        },
+        {
+          "first_name": "Benjamin"
+        },
+        {
+          "first_name": "Charlotte"
+        },
+        {
+          "first_name": "Chloe"
+        },
+        {
+          "first_name": "Daniel"
+        },
+        {
+          "first_name": "Elijah"
+        },
+        {
+          "first_name": "Ella"
+        },
+        {
+          "first_name": "Emily"
+        },
+        {
+          "first_name": "Emma"
+        },
+        {
+          "first_name": "Ethan"
+        },
+        {
+          "first_name": "Evelyn"
+        },
+        {
+          "first_name": "Grace"
+        },
+        {
+          "first_name": "Hana"
+        },
+        {
+          "first_name": "Harper"
+        },
+        {
+          "first_name": "Henry"
+        },
+        {
+          "first_name": "Isabella"
+        },
+        {
+          "first_name": "Isabella"
+        },
+        {
+          "first_name": "Jack"
+        },
+        {
+          "first_name": "James"
+        },
+        {
+          "first_name": "Kabir"
+        },
+        {
+          "first_name": "Kenji"
+        },
+        {
+          "first_name": "Leo"
+        },
+        {
+          "first_name": "Liam"
+        },
+        {
+          "first_name": "Lucas"
+        },
+        {
+          "first_name": "Lucas"
+        },
+        {
+          "first_name": "Mateo"
+        },
+        {
+          "first_name": "Mia"
+        },
+        {
+          "first_name": "Michael"
+        },
+        {
+          "first_name": "Noah"
+        },
+        {
+          "first_name": "Noah"
+        },
+        {
+          "first_name": "Nora"
+        },
+        {
+          "first_name": "Oliver"
+        },
+        {
+          "first_name": "Oliver"
+        },
+        {
+          "first_name": "Olivia"
+        },
+        {
+          "first_name": "Priya"
+        },
+        {
+          "first_name": "Rohan"
+        },
+        {
+          "first_name": "Sofia"
+        },
+        {
+          "first_name": "Sophia"
+        },
+        {
+          "first_name": "Unassigned"
+        },
+        {
+          "first_name": "Valentina"
+        },
+        {
+          "first_name": "William"
+        },
+        {
+          "first_name": "Wyatt"
+        },
+        {
+          "first_name": "Zoe"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "insert-single-row",
+    "starter_query": "INSERT INTO products (product_name, unit_price_cents, created_date)\nVALUES ('SQL Notebook', 1500, '2024-12-01');",
+    "solution_query": "INSERT INTO products (product_name, unit_price_cents, created_date) VALUES ('SQL Notebook', 1500, '2024-12-01');",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 1,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "insert-multiple-rows",
+    "starter_query": "INSERT INTO products (product_name, unit_price_cents, created_date)\nVALUES ('SQL Flashcards', 800, '2024-12-01');\n-- Add SQL Workbook in the same statement",
+    "solution_query": "INSERT INTO products (product_name, unit_price_cents, created_date) VALUES ('SQL Flashcards', 800, '2024-12-01'), ('SQL Workbook', 1200, '2024-12-01');",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 2,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "insert-specific-columns",
+    "starter_query": "INSERT INTO customers (first_name, last_name, country, signup_date)\nVALUES ('Maya', 'Sharma', 'India', '2024-12-01');\n-- Add the email column and its value",
+    "solution_query": "INSERT INTO customers (first_name, last_name, country, email, signup_date) VALUES ('Maya', 'Sharma', 'India', 'maya.sharma@example.com', '2024-12-01');",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 1,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "update-single-column",
+    "starter_query": "UPDATE products\n-- Set unit_price_cents to 2500\nWHERE id = 1;",
+    "solution_query": "UPDATE products SET unit_price_cents = 2500 WHERE id = 1;",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 1,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "update-multiple-columns",
+    "starter_query": "UPDATE employees\nSET job_title = 'Senior Analyst'\nWHERE id = 1;\n-- Also set department_id to 2",
+    "solution_query": "UPDATE employees SET job_title = 'Senior Analyst', department_id = 2 WHERE id = 1;",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 1,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "update-with-where",
+    "starter_query": "UPDATE employees\nSET salary_cents = salary_cents + 50000\n-- Add a WHERE condition for department 2",
+    "solution_query": "UPDATE employees SET salary_cents = salary_cents + 50000 WHERE department_id = 2;",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 6,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "update-with-join",
+    "starter_query": "UPDATE employees\nSET employment_status = 'Active'\n-- Add a WHERE with a subquery on departments named Sales",
+    "solution_query": "UPDATE employees SET employment_status = 'Active' WHERE department_id IN (SELECT id FROM departments WHERE name = 'Sales');",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 5,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "delete-with-where",
+    "starter_query": "DELETE FROM products\n-- Add a WHERE condition for ID 1",
+    "solution_query": "DELETE FROM products WHERE id = 1;",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 1,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "delete-with-join",
+    "starter_query": "DELETE FROM orders\n-- Add a WHERE with a subquery for customers in India",
+    "solution_query": "DELETE FROM orders WHERE customer_id IN (SELECT id FROM customers WHERE country = 'India');",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 9,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "insert-into-select",
+    "starter_query": "INSERT INTO indian_customers (id, first_name, last_name, country, email)\n-- Add a SELECT from customers where country is India",
+    "solution_query": "INSERT INTO indian_customers (id, first_name, last_name, country, email) SELECT id, first_name, last_name, country, email FROM customers WHERE country = 'India';",
+    "expected_output": {
+      "type": "dml",
+      "rows_affected": 6,
+      "note": "Data change; no result set. Verify by re-running a SELECT on the affected table."
+    }
+  },
+  {
+    "slug": "basic-cte-with",
+    "starter_query": "WITH high_earners AS (\n  -- Select id, first_name, salary_cents where salary is above 10000000\n)\nSELECT id, first_name, salary_cents FROM high_earners ORDER BY id;",
+    "solution_query": "WITH high_earners AS (SELECT id, first_name, salary_cents FROM employees WHERE salary_cents > 10000000) SELECT id, first_name, salary_cents FROM high_earners ORDER BY id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "salary_cents"
+      ],
+      "row_count": 12,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "salary_cents": 24000000
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "salary_cents": 18000000
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "salary_cents": 16500000
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "salary_cents": 15500000
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "salary_cents": 14500000
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "salary_cents": 16000000
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "salary_cents": 13000000
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "salary_cents": 14000000
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "salary_cents": 12500000
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "salary_cents": 10200000
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "salary_cents": 11800000
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "salary_cents": 13500000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "multiple-ctes",
+    "starter_query": "WITH employee_counts AS (\n  -- Count employees per department\n),\nsalary_totals AS (\n  -- Sum salary_cents per department\n)\n-- Join the two CTEs on department_id",
+    "solution_query": "WITH employee_counts AS (SELECT department_id, COUNT(*) AS employee_count FROM employees GROUP BY department_id), salary_totals AS (SELECT department_id, SUM(salary_cents) AS total_salary_cents FROM employees GROUP BY department_id) SELECT ec.department_id, ec.employee_count, st.total_salary_cents FROM employee_counts ec INNER JOIN salary_totals st ON ec.department_id = st.department_id ORDER BY ec.department_id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "department_id",
+        "employee_count",
+        "total_salary_cents"
+      ],
+      "row_count": 9,
+      "rows": [
+        {
+          "department_id": 1,
+          "employee_count": 1,
+          "total_salary_cents": 24000000
+        },
+        {
+          "department_id": 2,
+          "employee_count": 6,
+          "total_salary_cents": 61800000
+        },
+        {
+          "department_id": 3,
+          "employee_count": 5,
+          "total_salary_cents": 41600000
+        },
+        {
+          "department_id": 4,
+          "employee_count": 3,
+          "total_salary_cents": 30200000
+        },
+        {
+          "department_id": 5,
+          "employee_count": 2,
+          "total_salary_cents": 21000000
+        },
+        {
+          "department_id": 6,
+          "employee_count": 3,
+          "total_salary_cents": 32200000
+        },
+        {
+          "department_id": 7,
+          "employee_count": 3,
+          "total_salary_cents": 23400000
+        },
+        {
+          "department_id": 8,
+          "employee_count": 3,
+          "total_salary_cents": 34900000
+        },
+        {
+          "department_id": 9,
+          "employee_count": 1,
+          "total_salary_cents": 13500000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "cte-complex-aggregation",
+    "starter_query": "WITH department_salaries AS (\n  -- Sum salary_cents per department\n)\n-- Select departments whose total exceeds 50000000",
+    "solution_query": "WITH department_salaries AS (SELECT department_id, SUM(salary_cents) AS total_salary_cents FROM employees GROUP BY department_id) SELECT department_id, total_salary_cents FROM department_salaries WHERE total_salary_cents > 50000000 ORDER BY department_id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "department_id",
+        "total_salary_cents"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "department_id": 2,
+          "total_salary_cents": 61800000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "recursive-cte",
+    "starter_query": "WITH RECURSIVE numbers(number) AS (\n  -- Anchor: start at 1\n  -- Recursive term: add 1 while below 10\n)\nSELECT number FROM numbers ORDER BY number;",
+    "solution_query": "WITH RECURSIVE numbers(number) AS (SELECT 1 UNION ALL SELECT number + 1 FROM numbers WHERE number < 10) SELECT number FROM numbers ORDER BY number;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "number"
+      ],
+      "row_count": 10,
+      "rows": [
+        {
+          "number": 1
+        },
+        {
+          "number": 2
+        },
+        {
+          "number": 3
+        },
+        {
+          "number": 4
+        },
+        {
+          "number": 5
+        },
+        {
+          "number": 6
+        },
+        {
+          "number": 7
+        },
+        {
+          "number": 8
+        },
+        {
+          "number": 9
+        },
+        {
+          "number": 10
+        }
+      ]
+    }
+  },
+  {
+    "slug": "row-number-window-function",
+    "starter_query": "SELECT id, first_name, department_id, salary_cents\nFROM employees;\n-- Add ROW_NUMBER() OVER (...) AS row_num",
+    "solution_query": "SELECT id, first_name, department_id, salary_cents, ROW_NUMBER() OVER (PARTITION BY department_id ORDER BY salary_cents DESC, id) AS row_num FROM employees ORDER BY department_id, row_num;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "department_id",
+        "salary_cents",
+        "row_num"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "department_id": null,
+          "salary_cents": 6800000,
+          "row_num": 1
+        },
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "department_id": 1,
+          "salary_cents": 24000000,
+          "row_num": 1
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "department_id": 2,
+          "salary_cents": 18000000,
+          "row_num": 1
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "department_id": 2,
+          "salary_cents": 12500000,
+          "row_num": 2
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "department_id": 2,
+          "salary_cents": 10200000,
+          "row_num": 3
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "department_id": 2,
+          "salary_cents": 9800000,
+          "row_num": 4
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "department_id": 2,
+          "salary_cents": 8500000,
+          "row_num": 5
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "department_id": 2,
+          "salary_cents": 2800000,
+          "row_num": 6
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "department_id": 3,
+          "salary_cents": 16500000,
+          "row_num": 1
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "department_id": 3,
+          "salary_cents": 7600000,
+          "row_num": 2
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "department_id": 3,
+          "salary_cents": 7200000,
+          "row_num": 3
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "department_id": 3,
+          "salary_cents": 5400000,
+          "row_num": 4
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "department_id": 3,
+          "salary_cents": 4900000,
+          "row_num": 5
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "department_id": 4,
+          "salary_cents": 15500000,
+          "row_num": 1
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "department_id": 4,
+          "salary_cents": 7800000,
+          "row_num": 2
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "department_id": 4,
+          "salary_cents": 6900000,
+          "row_num": 3
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "department_id": 5,
+          "salary_cents": 14500000,
+          "row_num": 1
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "department_id": 5,
+          "salary_cents": 6500000,
+          "row_num": 2
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "department_id": 6,
+          "salary_cents": 16000000,
+          "row_num": 1
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "department_id": 6,
+          "salary_cents": 8800000,
+          "row_num": 2
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "department_id": 6,
+          "salary_cents": 7400000,
+          "row_num": 3
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "department_id": 7,
+          "salary_cents": 13000000,
+          "row_num": 1
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "department_id": 7,
+          "salary_cents": 5300000,
+          "row_num": 2
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "department_id": 7,
+          "salary_cents": 5100000,
+          "row_num": 3
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "department_id": 8,
+          "salary_cents": 14000000,
+          "row_num": 1
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "department_id": 8,
+          "salary_cents": 11800000,
+          "row_num": 2
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "department_id": 8,
+          "salary_cents": 9100000,
+          "row_num": 3
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "department_id": 9,
+          "salary_cents": 13500000,
+          "row_num": 1
+        }
+      ]
+    }
+  },
+  {
+    "slug": "rank-window-function",
+    "starter_query": "SELECT id, first_name, department_id, salary_cents\nFROM employees;\n-- Add RANK() OVER (...) AS salary_rank",
+    "solution_query": "SELECT id, first_name, department_id, salary_cents, RANK() OVER (PARTITION BY department_id ORDER BY salary_cents DESC) AS salary_rank FROM employees ORDER BY department_id, salary_rank, id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "department_id",
+        "salary_cents",
+        "salary_rank"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "department_id": null,
+          "salary_cents": 6800000,
+          "salary_rank": 1
+        },
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "department_id": 1,
+          "salary_cents": 24000000,
+          "salary_rank": 1
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "department_id": 2,
+          "salary_cents": 18000000,
+          "salary_rank": 1
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "department_id": 2,
+          "salary_cents": 12500000,
+          "salary_rank": 2
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "department_id": 2,
+          "salary_cents": 10200000,
+          "salary_rank": 3
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "department_id": 2,
+          "salary_cents": 9800000,
+          "salary_rank": 4
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "department_id": 2,
+          "salary_cents": 8500000,
+          "salary_rank": 5
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "department_id": 2,
+          "salary_cents": 2800000,
+          "salary_rank": 6
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "department_id": 3,
+          "salary_cents": 16500000,
+          "salary_rank": 1
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "department_id": 3,
+          "salary_cents": 7600000,
+          "salary_rank": 2
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "department_id": 3,
+          "salary_cents": 7200000,
+          "salary_rank": 3
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "department_id": 3,
+          "salary_cents": 5400000,
+          "salary_rank": 4
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "department_id": 3,
+          "salary_cents": 4900000,
+          "salary_rank": 5
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "department_id": 4,
+          "salary_cents": 15500000,
+          "salary_rank": 1
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "department_id": 4,
+          "salary_cents": 7800000,
+          "salary_rank": 2
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "department_id": 4,
+          "salary_cents": 6900000,
+          "salary_rank": 3
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "department_id": 5,
+          "salary_cents": 14500000,
+          "salary_rank": 1
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "department_id": 5,
+          "salary_cents": 6500000,
+          "salary_rank": 2
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "department_id": 6,
+          "salary_cents": 16000000,
+          "salary_rank": 1
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "department_id": 6,
+          "salary_cents": 8800000,
+          "salary_rank": 2
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "department_id": 6,
+          "salary_cents": 7400000,
+          "salary_rank": 3
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "department_id": 7,
+          "salary_cents": 13000000,
+          "salary_rank": 1
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "department_id": 7,
+          "salary_cents": 5300000,
+          "salary_rank": 2
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "department_id": 7,
+          "salary_cents": 5100000,
+          "salary_rank": 3
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "department_id": 8,
+          "salary_cents": 14000000,
+          "salary_rank": 1
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "department_id": 8,
+          "salary_cents": 11800000,
+          "salary_rank": 2
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "department_id": 8,
+          "salary_cents": 9100000,
+          "salary_rank": 3
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "department_id": 9,
+          "salary_cents": 13500000,
+          "salary_rank": 1
+        }
+      ]
+    }
+  },
+  {
+    "slug": "case-expression",
+    "starter_query": "SELECT id, first_name, salary_cents\nFROM employees;\n-- Add a CASE expression AS salary_category",
+    "solution_query": "SELECT id, first_name, salary_cents, CASE WHEN salary_cents >= 10000000 THEN 'High' WHEN salary_cents >= 5000000 THEN 'Medium' ELSE 'Low' END AS salary_category FROM employees ORDER BY id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "salary_cents",
+        "salary_category"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "salary_cents": 24000000,
+          "salary_category": "High"
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "salary_cents": 18000000,
+          "salary_category": "High"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "salary_cents": 16500000,
+          "salary_category": "High"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "salary_cents": 15500000,
+          "salary_category": "High"
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "salary_cents": 14500000,
+          "salary_category": "High"
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "salary_cents": 16000000,
+          "salary_category": "High"
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "salary_cents": 13000000,
+          "salary_category": "High"
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "salary_cents": 14000000,
+          "salary_category": "High"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "salary_cents": 12500000,
+          "salary_category": "High"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "salary_cents": 9800000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "salary_cents": 10200000,
+          "salary_category": "High"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "salary_cents": 8500000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "salary_cents": 7600000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "salary_cents": 7200000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "salary_cents": 5400000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "salary_cents": 7800000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "salary_cents": 6900000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "salary_cents": 6500000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "salary_cents": 8800000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "salary_cents": 7400000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "salary_cents": 5100000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "salary_cents": 5300000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "salary_cents": 11800000,
+          "salary_category": "High"
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "salary_cents": 9100000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "salary_cents": 2800000,
+          "salary_category": "Low"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "salary_cents": 6800000,
+          "salary_category": "Medium"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "salary_cents": 4900000,
+          "salary_category": "Low"
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "salary_cents": 13500000,
+          "salary_category": "High"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "coalesce-function",
+    "starter_query": "SELECT id, first_name, email\nFROM employees;\n-- Replace NULL emails using COALESCE",
+    "solution_query": "SELECT id, first_name, COALESCE(email, 'Not Provided') AS email_display FROM employees ORDER BY id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "email_display"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "email_display": "ava.morgan@example.com"
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "email_display": "noah.patel@example.com"
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "email_display": "mia.chen@example.com"
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "email_display": "liam.garcia@example.com"
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "email_display": "sophia.brown@example.com"
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "email_display": "ethan.wilson@example.com"
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "email_display": "isabella.kumar@example.com"
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "email_display": "lucas.martin@example.com"
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "email_display": "amir.khan@example.com"
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "email_display": "emma.davis@example.com"
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "email_display": "oliver.singh@example.com"
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "email_display": "charlotte.taylor@example.com"
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "email_display": "elijah.anderson@example.com"
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "email_display": "amelia.thomas@example.com"
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "email_display": "james.jackson@example.com"
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "email_display": "harper.white@example.com"
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "email_display": "benjamin.harris@example.com"
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "email_display": "evelyn.clark@example.com"
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "email_display": "henry.lewis@example.com"
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "email_display": "abigail.walker@example.com"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "email_display": "daniel.hall@example.com"
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "email_display": "ella.allen@example.com"
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "email_display": "jack.young@example.com"
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "email_display": "grace.king@example.com"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "email_display": "Not Provided"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "email_display": "zoe.green@example.com"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "email_display": "wyatt.baker@example.com"
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "email_display": "nora.adams@example.com"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "group-by-rollup",
+    "starter_query": "SELECT department_id, SUM(salary_cents) AS total_salary_cents\nFROM employees\nGROUP BY department_id;\n-- Add the grand-total row using UNION ALL",
+    "solution_query": "SELECT department_id, SUM(salary_cents) AS total_salary_cents FROM employees GROUP BY department_id UNION ALL SELECT NULL AS department_id, SUM(salary_cents) AS total_salary_cents FROM employees ORDER BY department_id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "department_id",
+        "total_salary_cents"
+      ],
+      "row_count": 11,
+      "rows": [
+        {
+          "department_id": null,
+          "total_salary_cents": 6800000
+        },
+        {
+          "department_id": null,
+          "total_salary_cents": 289400000
+        },
+        {
+          "department_id": 1,
+          "total_salary_cents": 24000000
+        },
+        {
+          "department_id": 2,
+          "total_salary_cents": 61800000
+        },
+        {
+          "department_id": 3,
+          "total_salary_cents": 41600000
+        },
+        {
+          "department_id": 4,
+          "total_salary_cents": 30200000
+        },
+        {
+          "department_id": 5,
+          "total_salary_cents": 21000000
+        },
+        {
+          "department_id": 6,
+          "total_salary_cents": 32200000
+        },
+        {
+          "department_id": 7,
+          "total_salary_cents": 23400000
+        },
+        {
+          "department_id": 8,
+          "total_salary_cents": 34900000
+        },
+        {
+          "department_id": 9,
+          "total_salary_cents": 13500000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "lag-window-function",
+    "starter_query": "SELECT id, first_name, hire_date, salary_cents\nFROM employees;\n-- Add LAG(salary_cents) OVER (...) AS previous_salary_cents",
+    "solution_query": "SELECT id, first_name, hire_date, salary_cents, LAG(salary_cents) OVER (ORDER BY hire_date, id) AS previous_salary_cents FROM employees ORDER BY hire_date, id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "hire_date",
+        "salary_cents",
+        "previous_salary_cents"
+      ],
+      "row_count": 28,
+      "rows": [
+        {
+          "id": 1,
+          "first_name": "Ava",
+          "hire_date": "2015-01-12",
+          "salary_cents": 24000000,
+          "previous_salary_cents": null
+        },
+        {
+          "id": 2,
+          "first_name": "Noah",
+          "hire_date": "2016-03-21",
+          "salary_cents": 18000000,
+          "previous_salary_cents": 24000000
+        },
+        {
+          "id": 3,
+          "first_name": "Mia",
+          "hire_date": "2017-06-05",
+          "salary_cents": 16500000,
+          "previous_salary_cents": 18000000
+        },
+        {
+          "id": 6,
+          "first_name": "Ethan",
+          "hire_date": "2017-11-13",
+          "salary_cents": 16000000,
+          "previous_salary_cents": 16500000
+        },
+        {
+          "id": 4,
+          "first_name": "Liam",
+          "hire_date": "2018-02-19",
+          "salary_cents": 15500000,
+          "previous_salary_cents": 16000000
+        },
+        {
+          "id": 5,
+          "first_name": "Sophia",
+          "hire_date": "2018-09-10",
+          "salary_cents": 14500000,
+          "previous_salary_cents": 15500000
+        },
+        {
+          "id": 7,
+          "first_name": "Isabella",
+          "hire_date": "2019-04-01",
+          "salary_cents": 13000000,
+          "previous_salary_cents": 14500000
+        },
+        {
+          "id": 8,
+          "first_name": "Lucas",
+          "hire_date": "2019-07-15",
+          "salary_cents": 14000000,
+          "previous_salary_cents": 13000000
+        },
+        {
+          "id": 9,
+          "first_name": "Amir",
+          "hire_date": "2020-01-20",
+          "salary_cents": 12500000,
+          "previous_salary_cents": 14000000
+        },
+        {
+          "id": 23,
+          "first_name": "Jack",
+          "hire_date": "2020-02-03",
+          "salary_cents": 11800000,
+          "previous_salary_cents": 12500000
+        },
+        {
+          "id": 13,
+          "first_name": "Elijah",
+          "hire_date": "2020-06-22",
+          "salary_cents": 7600000,
+          "previous_salary_cents": 11800000
+        },
+        {
+          "id": 19,
+          "first_name": "Henry",
+          "hire_date": "2020-08-31",
+          "salary_cents": 8800000,
+          "previous_salary_cents": 7600000
+        },
+        {
+          "id": 16,
+          "first_name": "Harper",
+          "hire_date": "2020-10-05",
+          "salary_cents": 7800000,
+          "previous_salary_cents": 8800000
+        },
+        {
+          "id": 18,
+          "first_name": "Evelyn",
+          "hire_date": "2021-04-12",
+          "salary_cents": 6500000,
+          "previous_salary_cents": 7800000
+        },
+        {
+          "id": 10,
+          "first_name": "Emma",
+          "hire_date": "2021-05-17",
+          "salary_cents": 9800000,
+          "previous_salary_cents": 6500000
+        },
+        {
+          "id": 14,
+          "first_name": "Amelia",
+          "hire_date": "2021-09-13",
+          "salary_cents": 7200000,
+          "previous_salary_cents": 9800000
+        },
+        {
+          "id": 28,
+          "first_name": "Nora",
+          "hire_date": "2021-12-01",
+          "salary_cents": 13500000,
+          "previous_salary_cents": 7200000
+        },
+        {
+          "id": 11,
+          "first_name": "Oliver",
+          "hire_date": "2022-02-14",
+          "salary_cents": 10200000,
+          "previous_salary_cents": 13500000
+        },
+        {
+          "id": 17,
+          "first_name": "Benjamin",
+          "hire_date": "2022-03-28",
+          "salary_cents": 6900000,
+          "previous_salary_cents": 10200000
+        },
+        {
+          "id": 24,
+          "first_name": "Grace",
+          "hire_date": "2022-04-18",
+          "salary_cents": 9100000,
+          "previous_salary_cents": 6900000
+        },
+        {
+          "id": 20,
+          "first_name": "Abigail",
+          "hire_date": "2022-06-06",
+          "salary_cents": 7400000,
+          "previous_salary_cents": 9100000
+        },
+        {
+          "id": 12,
+          "first_name": "Charlotte",
+          "hire_date": "2022-08-08",
+          "salary_cents": 8500000,
+          "previous_salary_cents": 7400000
+        },
+        {
+          "id": 22,
+          "first_name": "Ella",
+          "hire_date": "2022-11-07",
+          "salary_cents": 5300000,
+          "previous_salary_cents": 8500000
+        },
+        {
+          "id": 15,
+          "first_name": "James",
+          "hire_date": "2023-01-09",
+          "salary_cents": 5400000,
+          "previous_salary_cents": 5300000
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "hire_date": "2023-02-20",
+          "salary_cents": 5100000,
+          "previous_salary_cents": 5400000
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "hire_date": "2023-07-10",
+          "salary_cents": 6800000,
+          "previous_salary_cents": 5100000
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "hire_date": "2024-01-08",
+          "salary_cents": 2800000,
+          "previous_salary_cents": 6800000
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "hire_date": "2024-02-12",
+          "salary_cents": 4900000,
+          "previous_salary_cents": 2800000
+        }
+      ]
+    }
+  },
+  {
+    "slug": "understanding-integer-types",
+    "starter_query": "SELECT quantity\nFROM order_items;\n-- Apply an aggregate and alias it as total_quantity",
+    "solution_query": "SELECT SUM(quantity) AS total_quantity FROM order_items;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "total_quantity"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "total_quantity": 67
+        }
+      ]
+    }
+  },
+  {
+    "slug": "understanding-varchar-vs-text",
+    "starter_query": "SELECT id, first_name, last_name\nFROM customers;\n-- Add full_name and name_length columns",
+    "solution_query": "SELECT id, first_name || ' ' || last_name AS full_name, LENGTH(first_name || ' ' || last_name) AS name_length FROM customers ORDER BY id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "full_name",
+        "name_length"
+      ],
+      "row_count": 21,
+      "rows": [
+        {
+          "id": 1,
+          "full_name": "Arjun Mehta",
+          "name_length": 11
+        },
+        {
+          "id": 2,
+          "full_name": "Priya Sharma",
+          "name_length": 12
+        },
+        {
+          "id": 3,
+          "full_name": "Rohan Verma",
+          "name_length": 11
+        },
+        {
+          "id": 4,
+          "full_name": "Ananya Rao",
+          "name_length": 10
+        },
+        {
+          "id": 5,
+          "full_name": "Kabir Joshi",
+          "name_length": 11
+        },
+        {
+          "id": 6,
+          "full_name": "Emily Johnson",
+          "name_length": 13
+        },
+        {
+          "id": 7,
+          "full_name": "Michael Smith",
+          "name_length": 13
+        },
+        {
+          "id": 8,
+          "full_name": "Olivia Brown",
+          "name_length": 12
+        },
+        {
+          "id": 9,
+          "full_name": "William Jones",
+          "name_length": 13
+        },
+        {
+          "id": 10,
+          "full_name": "Sofia Miller",
+          "name_length": 12
+        },
+        {
+          "id": 11,
+          "full_name": "Oliver Wilson",
+          "name_length": 13
+        },
+        {
+          "id": 12,
+          "full_name": "Amelie Martin",
+          "name_length": 13
+        },
+        {
+          "id": 13,
+          "full_name": "Lucas Bernard",
+          "name_length": 13
+        },
+        {
+          "id": 14,
+          "full_name": "Hana Sato",
+          "name_length": 9
+        },
+        {
+          "id": 15,
+          "full_name": "Kenji Tanaka",
+          "name_length": 12
+        },
+        {
+          "id": 16,
+          "full_name": "Chloe Martin",
+          "name_length": 12
+        },
+        {
+          "id": 17,
+          "full_name": "Noah Wilson",
+          "name_length": 11
+        },
+        {
+          "id": 18,
+          "full_name": "Mateo Garcia",
+          "name_length": 12
+        },
+        {
+          "id": 19,
+          "full_name": "Valentina Rossi",
+          "name_length": 15
+        },
+        {
+          "id": 20,
+          "full_name": "Isabella Silva",
+          "name_length": 14
+        },
+        {
+          "id": 21,
+          "full_name": "Unassigned Customer",
+          "name_length": 19
+        }
+      ]
+    }
+  },
+  {
+    "slug": "understanding-decimal-for-money",
+    "starter_query": "SELECT unit_price_cents\nFROM products;\n-- Apply an aggregate and alias it as total_product_value_cents",
+    "solution_query": "SELECT SUM(unit_price_cents) AS total_product_value_cents FROM products;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "total_product_value_cents"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "total_product_value_cents": 558081
+        }
+      ]
+    }
+  },
+  {
+    "slug": "understanding-date-types",
+    "starter_query": "SELECT id, first_name, hire_date\nFROM employees;\n-- Add a WHERE condition on hire_date",
+    "solution_query": "SELECT id, first_name, hire_date FROM employees WHERE hire_date >= '2023-01-01' ORDER BY hire_date, id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "first_name",
+        "hire_date"
+      ],
+      "row_count": 5,
+      "rows": [
+        {
+          "id": 15,
+          "first_name": "James",
+          "hire_date": "2023-01-09"
+        },
+        {
+          "id": 21,
+          "first_name": "Daniel",
+          "hire_date": "2023-02-20"
+        },
+        {
+          "id": 26,
+          "first_name": "Zoe",
+          "hire_date": "2023-07-10"
+        },
+        {
+          "id": 25,
+          "first_name": "Leo",
+          "hire_date": "2024-01-08"
+        },
+        {
+          "id": 27,
+          "first_name": "Wyatt",
+          "hire_date": "2024-02-12"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "primary-key-constraint",
+    "starter_query": "SELECT id\nFROM employees;\n-- Group by id and keep groups with more than one row",
+    "solution_query": "SELECT id, COUNT(*) AS duplicate_count FROM employees GROUP BY id HAVING COUNT(*) > 1 ORDER BY id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "duplicate_count"
+      ],
+      "row_count": 0,
+      "rows": []
+    }
+  },
+  {
+    "slug": "foreign-key-constraint",
+    "starter_query": "SELECT e.id, e.department_id\nFROM employees e;\n-- LEFT JOIN departments d and find unmatched rows",
+    "solution_query": "SELECT e.id, e.department_id FROM employees e LEFT JOIN departments d ON e.department_id = d.id WHERE e.department_id IS NOT NULL AND d.id IS NULL ORDER BY e.id;",
+    "expected_output": {
+      "type": "rows",
+      "columns": [
+        "id",
+        "department_id"
+      ],
+      "row_count": 0,
+      "rows": []
+    }
+  }
+]

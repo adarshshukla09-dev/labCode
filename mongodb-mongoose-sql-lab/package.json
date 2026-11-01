@@ -1,0 +1,14 @@
+{
+  "name": "sql-lab-mongoose",
+  "version": "1.0.0",
+  "description": "MongoDB/Mongoose version of SQL Lab Master Database",
+  "main": "seed.js",
+  "scripts": {
+    "seed": "node seed.js",
+    "test": "node test/seed.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.9.5"
+  }
+}

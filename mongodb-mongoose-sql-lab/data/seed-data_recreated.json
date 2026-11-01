@@ -1,0 +1,1544 @@
+{
+  "regions": [
+    {
+      "id": 1,
+      "region_name": "North America"
+    },
+    {
+      "id": 2,
+      "region_name": "Europe"
+    },
+    {
+      "id": 3,
+      "region_name": "Asia Pacific"
+    },
+    {
+      "id": 4,
+      "region_name": "South America"
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Executive",
+      "region_id": 1,
+      "budget_cents": 50000000
+    },
+    {
+      "id": 2,
+      "name": "Engineering",
+      "region_id": 3,
+      "budget_cents": 180000000
+    },
+    {
+      "id": 3,
+      "name": "Sales",
+      "region_id": 1,
+      "budget_cents": 90000000
+    },
+    {
+      "id": 4,
+      "name": "Marketing",
+      "region_id": 2,
+      "budget_cents": 65000000
+    },
+    {
+      "id": 5,
+      "name": "Human Resources",
+      "region_id": 2,
+      "budget_cents": 40000000
+    },
+    {
+      "id": 6,
+      "name": "Finance",
+      "region_id": 1,
+      "budget_cents": 70000000
+    },
+    {
+      "id": 7,
+      "name": "Customer Support",
+      "region_id": 3,
+      "budget_cents": 55000000
+    },
+    {
+      "id": 8,
+      "name": "Research",
+      "region_id": 3,
+      "budget_cents": 120000000
+    },
+    {
+      "id": 9,
+      "name": "Legal",
+      "region_id": null,
+      "budget_cents": 30000000
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Ava",
+      "last_name": "Morgan",
+      "email": "ava.morgan@example.com",
+      "department_id": 1,
+      "manager_id": null,
+      "job_title": "Chief Executive Officer",
+      "salary_cents": 24000000,
+      "commission_cents": null,
+      "hire_date": "2015-01-12",
+      "birth_date": "1980-04-15",
+      "employment_status": "Active"
+    },
+    {
+      "id": 2,
+      "first_name": "Noah",
+      "last_name": "Patel",
+      "email": "noah.patel@example.com",
+      "department_id": 2,
+      "manager_id": 1,
+      "job_title": "Engineering Director",
+      "salary_cents": 18000000,
+      "commission_cents": null,
+      "hire_date": "2016-03-21",
+      "birth_date": "1984-09-02",
+      "employment_status": "Active"
+    },
+    {
+      "id": 3,
+      "first_name": "Mia",
+      "last_name": "Chen",
+      "email": "mia.chen@example.com",
+      "department_id": 3,
+      "manager_id": 1,
+      "job_title": "Sales Director",
+      "salary_cents": 16500000,
+      "commission_cents": 250000,
+      "hire_date": "2017-06-05",
+      "birth_date": "1985-02-11",
+      "employment_status": "Active"
+    },
+    {
+      "id": 4,
+      "first_name": "Liam",
+      "last_name": "Garcia",
+      "email": "liam.garcia@example.com",
+      "department_id": 4,
+      "manager_id": 1,
+      "job_title": "Marketing Director",
+      "salary_cents": 15500000,
+      "commission_cents": null,
+      "hire_date": "2018-02-19",
+      "birth_date": "1987-07-24",
+      "employment_status": "Active"
+    },
+    {
+      "id": 5,
+      "first_name": "Sophia",
+      "last_name": "Brown",
+      "email": "sophia.brown@example.com",
+      "department_id": 5,
+      "manager_id": 1,
+      "job_title": "HR Director",
+      "salary_cents": 14500000,
+      "commission_cents": null,
+      "hire_date": "2018-09-10",
+      "birth_date": "1986-11-30",
+      "employment_status": "Active"
+    },
+    {
+      "id": 6,
+      "first_name": "Ethan",
+      "last_name": "Wilson",
+      "email": "ethan.wilson@example.com",
+      "department_id": 6,
+      "manager_id": 1,
+      "job_title": "Finance Director",
+      "salary_cents": 16000000,
+      "commission_cents": null,
+      "hire_date": "2017-11-13",
+      "birth_date": "1983-01-08",
+      "employment_status": "Active"
+    },
+    {
+      "id": 7,
+      "first_name": "Isabella",
+      "last_name": "Kumar",
+      "email": "isabella.kumar@example.com",
+      "department_id": 7,
+      "manager_id": 1,
+      "job_title": "Support Director",
+      "salary_cents": 13000000,
+      "commission_cents": null,
+      "hire_date": "2019-04-01",
+      "birth_date": "1988-03-18",
+      "employment_status": "Active"
+    },
+    {
+      "id": 8,
+      "first_name": "Lucas",
+      "last_name": "Martin",
+      "email": "lucas.martin@example.com",
+      "department_id": 8,
+      "manager_id": 2,
+      "job_title": "Research Manager",
+      "salary_cents": 14000000,
+      "commission_cents": null,
+      "hire_date": "2019-07-15",
+      "birth_date": "1989-05-12",
+      "employment_status": "Active"
+    },
+    {
+      "id": 9,
+      "first_name": "Amir",
+      "last_name": "Khan",
+      "email": "amir.khan@example.com",
+      "department_id": 2,
+      "manager_id": 2,
+      "job_title": "Senior Software Engineer",
+      "salary_cents": 12500000,
+      "commission_cents": null,
+      "hire_date": "2020-01-20",
+      "birth_date": "1991-08-09",
+      "employment_status": "Active"
+    },
+    {
+      "id": 10,
+      "first_name": "Emma",
+      "last_name": "Davis",
+      "email": "emma.davis@example.com",
+      "department_id": 2,
+      "manager_id": 2,
+      "job_title": "Software Engineer",
+      "salary_cents": 9800000,
+      "commission_cents": null,
+      "hire_date": "2021-05-17",
+      "birth_date": "1995-12-03",
+      "employment_status": "Active"
+    },
+    {
+      "id": 11,
+      "first_name": "Oliver",
+      "last_name": "Singh",
+      "email": "oliver.singh@example.com",
+      "department_id": 2,
+      "manager_id": 9,
+      "job_title": "Software Engineer",
+      "salary_cents": 10200000,
+      "commission_cents": null,
+      "hire_date": "2022-02-14",
+      "birth_date": "1994-06-21",
+      "employment_status": "Active"
+    },
+    {
+      "id": 12,
+      "first_name": "Charlotte",
+      "last_name": "Taylor",
+      "email": "charlotte.taylor@example.com",
+      "department_id": 2,
+      "manager_id": 9,
+      "job_title": "QA Engineer",
+      "salary_cents": 8500000,
+      "commission_cents": null,
+      "hire_date": "2022-08-08",
+      "birth_date": "1996-10-16",
+      "employment_status": "Active"
+    },
+    {
+      "id": 13,
+      "first_name": "Elijah",
+      "last_name": "Anderson",
+      "email": "elijah.anderson@example.com",
+      "department_id": 3,
+      "manager_id": 3,
+      "job_title": "Account Executive",
+      "salary_cents": 7600000,
+      "commission_cents": 900000,
+      "hire_date": "2020-06-22",
+      "birth_date": "1992-04-07",
+      "employment_status": "Active"
+    },
+    {
+      "id": 14,
+      "first_name": "Amelia",
+      "last_name": "Thomas",
+      "email": "amelia.thomas@example.com",
+      "department_id": 3,
+      "manager_id": 3,
+      "job_title": "Account Executive",
+      "salary_cents": 7200000,
+      "commission_cents": 650000,
+      "hire_date": "2021-09-13",
+      "birth_date": "1993-02-28",
+      "employment_status": "Active"
+    },
+    {
+      "id": 15,
+      "first_name": "James",
+      "last_name": "Jackson",
+      "email": "james.jackson@example.com",
+      "department_id": 3,
+      "manager_id": 3,
+      "job_title": "Sales Associate",
+      "salary_cents": 5400000,
+      "commission_cents": null,
+      "hire_date": "2023-01-09",
+      "birth_date": "1999-01-19",
+      "employment_status": "Active"
+    },
+    {
+      "id": 16,
+      "first_name": "Harper",
+      "last_name": "White",
+      "email": "harper.white@example.com",
+      "department_id": 4,
+      "manager_id": 4,
+      "job_title": "Content Strategist",
+      "salary_cents": 7800000,
+      "commission_cents": null,
+      "hire_date": "2020-10-05",
+      "birth_date": "1992-09-25",
+      "employment_status": "Active"
+    },
+    {
+      "id": 17,
+      "first_name": "Benjamin",
+      "last_name": "Harris",
+      "email": "benjamin.harris@example.com",
+      "department_id": 4,
+      "manager_id": 4,
+      "job_title": "SEO Specialist",
+      "salary_cents": 6900000,
+      "commission_cents": null,
+      "hire_date": "2022-03-28",
+      "birth_date": "1997-07-02",
+      "employment_status": "Active"
+    },
+    {
+      "id": 18,
+      "first_name": "Evelyn",
+      "last_name": "Clark",
+      "email": "evelyn.clark@example.com",
+      "department_id": 5,
+      "manager_id": 5,
+      "job_title": "Recruiter",
+      "salary_cents": 6500000,
+      "commission_cents": null,
+      "hire_date": "2021-04-12",
+      "birth_date": "1994-11-11",
+      "employment_status": "Active"
+    },
+    {
+      "id": 19,
+      "first_name": "Henry",
+      "last_name": "Lewis",
+      "email": "henry.lewis@example.com",
+      "department_id": 6,
+      "manager_id": 6,
+      "job_title": "Financial Analyst",
+      "salary_cents": 8800000,
+      "commission_cents": null,
+      "hire_date": "2020-08-31",
+      "birth_date": "1990-03-05",
+      "employment_status": "Active"
+    },
+    {
+      "id": 20,
+      "first_name": "Abigail",
+      "last_name": "Walker",
+      "email": "abigail.walker@example.com",
+      "department_id": 6,
+      "manager_id": 6,
+      "job_title": "Accountant",
+      "salary_cents": 7400000,
+      "commission_cents": null,
+      "hire_date": "2022-06-06",
+      "birth_date": "1995-05-20",
+      "employment_status": "Active"
+    },
+    {
+      "id": 21,
+      "first_name": "Daniel",
+      "last_name": "Hall",
+      "email": "daniel.hall@example.com",
+      "department_id": 7,
+      "manager_id": 7,
+      "job_title": "Support Specialist",
+      "salary_cents": 5100000,
+      "commission_cents": null,
+      "hire_date": "2023-02-20",
+      "birth_date": "2000-12-01",
+      "employment_status": "Active"
+    },
+    {
+      "id": 22,
+      "first_name": "Ella",
+      "last_name": "Allen",
+      "email": "ella.allen@example.com",
+      "department_id": 7,
+      "manager_id": 7,
+      "job_title": "Support Specialist",
+      "salary_cents": 5300000,
+      "commission_cents": null,
+      "hire_date": "2022-11-07",
+      "birth_date": "1998-08-14",
+      "employment_status": "On Leave"
+    },
+    {
+      "id": 23,
+      "first_name": "Jack",
+      "last_name": "Young",
+      "email": "jack.young@example.com",
+      "department_id": 8,
+      "manager_id": 8,
+      "job_title": "Data Scientist",
+      "salary_cents": 11800000,
+      "commission_cents": null,
+      "hire_date": "2020-02-03",
+      "birth_date": "1991-10-10",
+      "employment_status": "Active"
+    },
+    {
+      "id": 24,
+      "first_name": "Grace",
+      "last_name": "King",
+      "email": "grace.king@example.com",
+      "department_id": 8,
+      "manager_id": 8,
+      "job_title": "Research Analyst",
+      "salary_cents": 9100000,
+      "commission_cents": null,
+      "hire_date": "2022-04-18",
+      "birth_date": "1996-01-27",
+      "employment_status": "Active"
+    },
+    {
+      "id": 25,
+      "first_name": "Leo",
+      "last_name": "Scott",
+      "email": null,
+      "department_id": 2,
+      "manager_id": 9,
+      "job_title": "Intern",
+      "salary_cents": 2800000,
+      "commission_cents": null,
+      "hire_date": "2024-01-08",
+      "birth_date": "2002-06-17",
+      "employment_status": "Active"
+    },
+    {
+      "id": 26,
+      "first_name": "Zoe",
+      "last_name": "Green",
+      "email": "zoe.green@example.com",
+      "department_id": null,
+      "manager_id": 1,
+      "job_title": "Consultant",
+      "salary_cents": 6800000,
+      "commission_cents": null,
+      "hire_date": "2023-07-10",
+      "birth_date": "1993-04-22",
+      "employment_status": "Active"
+    },
+    {
+      "id": 27,
+      "first_name": "Wyatt",
+      "last_name": "Baker",
+      "email": "wyatt.baker@example.com",
+      "department_id": 3,
+      "manager_id": 3,
+      "job_title": "Sales Associate",
+      "salary_cents": 4900000,
+      "commission_cents": 300000,
+      "hire_date": "2024-02-12",
+      "birth_date": "2000-09-09",
+      "employment_status": "Active"
+    },
+    {
+      "id": 28,
+      "first_name": "Nora",
+      "last_name": "Adams",
+      "email": "nora.adams@example.com",
+      "department_id": 9,
+      "manager_id": 1,
+      "job_title": "Legal Counsel",
+      "salary_cents": 13500000,
+      "commission_cents": null,
+      "hire_date": "2021-12-01",
+      "birth_date": "1988-12-12",
+      "employment_status": "Active"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "first_name": "Arjun",
+      "last_name": "Mehta",
+      "email": "arjun.mehta@example.com",
+      "city": "Mumbai",
+      "country": "India",
+      "signup_date": "2023-01-12",
+      "referred_by": null
+    },
+    {
+      "id": 2,
+      "first_name": "Priya",
+      "last_name": "Sharma",
+      "email": "priya.sharma@example.com",
+      "city": "Pune",
+      "country": "India",
+      "signup_date": "2023-02-18",
+      "referred_by": 1
+    },
+    {
+      "id": 3,
+      "first_name": "Rohan",
+      "last_name": "Verma",
+      "email": "rohan.verma@example.com",
+      "city": "Delhi",
+      "country": "India",
+      "signup_date": "2023-03-05",
+      "referred_by": 1
+    },
+    {
+      "id": 4,
+      "first_name": "Ananya",
+      "last_name": "Rao",
+      "email": "ananya.rao@example.com",
+      "city": "Bengaluru",
+      "country": "India",
+      "signup_date": "2023-04-22",
+      "referred_by": 2
+    },
+    {
+      "id": 5,
+      "first_name": "Kabir",
+      "last_name": "Joshi",
+      "email": "kabir.joshi@example.com",
+      "city": "Hyderabad",
+      "country": "India",
+      "signup_date": "2023-05-09",
+      "referred_by": null
+    },
+    {
+      "id": 6,
+      "first_name": "Emily",
+      "last_name": "Johnson",
+      "email": "emily.johnson@example.com",
+      "city": "New York",
+      "country": "USA",
+      "signup_date": "2023-01-28",
+      "referred_by": null
+    },
+    {
+      "id": 7,
+      "first_name": "Michael",
+      "last_name": "Smith",
+      "email": "michael.smith@example.com",
+      "city": "Chicago",
+      "country": "USA",
+      "signup_date": "2023-02-14",
+      "referred_by": 6
+    },
+    {
+      "id": 8,
+      "first_name": "Olivia",
+      "last_name": "Brown",
+      "email": "olivia.brown@example.com",
+      "city": "Austin",
+      "country": "USA",
+      "signup_date": "2023-06-11",
+      "referred_by": 6
+    },
+    {
+      "id": 9,
+      "first_name": "William",
+      "last_name": "Jones",
+      "email": "william.jones@example.com",
+      "city": "Seattle",
+      "country": "USA",
+      "signup_date": "2023-07-19",
+      "referred_by": null
+    },
+    {
+      "id": 10,
+      "first_name": "Sofia",
+      "last_name": "Miller",
+      "email": "sofia.miller@example.com",
+      "city": "London",
+      "country": "UK",
+      "signup_date": "2023-03-16",
+      "referred_by": null
+    },
+    {
+      "id": 11,
+      "first_name": "Oliver",
+      "last_name": "Wilson",
+      "email": "oliver.wilson@example.com",
+      "city": "Manchester",
+      "country": "UK",
+      "signup_date": "2023-08-02",
+      "referred_by": 10
+    },
+    {
+      "id": 12,
+      "first_name": "Amelie",
+      "last_name": "Martin",
+      "email": "amelie.martin@example.com",
+      "city": "Paris",
+      "country": "France",
+      "signup_date": "2023-04-03",
+      "referred_by": null
+    },
+    {
+      "id": 13,
+      "first_name": "Lucas",
+      "last_name": "Bernard",
+      "email": "lucas.bernard@example.com",
+      "city": "Lyon",
+      "country": "France",
+      "signup_date": "2023-09-14",
+      "referred_by": 12
+    },
+    {
+      "id": 14,
+      "first_name": "Hana",
+      "last_name": "Sato",
+      "email": "hana.sato@example.com",
+      "city": "Tokyo",
+      "country": "Japan",
+      "signup_date": "2023-05-26",
+      "referred_by": null
+    },
+    {
+      "id": 15,
+      "first_name": "Kenji",
+      "last_name": "Tanaka",
+      "email": "kenji.tanaka@example.com",
+      "city": "Osaka",
+      "country": "Japan",
+      "signup_date": "2023-10-01",
+      "referred_by": 14
+    },
+    {
+      "id": 16,
+      "first_name": "Chloe",
+      "last_name": "Martin",
+      "email": "chloe.martin@example.com",
+      "city": "Toronto",
+      "country": "Canada",
+      "signup_date": "2023-06-30",
+      "referred_by": null
+    },
+    {
+      "id": 17,
+      "first_name": "Noah",
+      "last_name": "Wilson",
+      "email": "noah.wilson@example.com",
+      "city": "Vancouver",
+      "country": "Canada",
+      "signup_date": "2023-11-07",
+      "referred_by": 16
+    },
+    {
+      "id": 18,
+      "first_name": "Mateo",
+      "last_name": "Garcia",
+      "email": "mateo.garcia@example.com",
+      "city": "Madrid",
+      "country": "Spain",
+      "signup_date": "2023-07-12",
+      "referred_by": null
+    },
+    {
+      "id": 19,
+      "first_name": "Valentina",
+      "last_name": "Rossi",
+      "email": "valentina.rossi@example.com",
+      "city": "Rome",
+      "country": "Italy",
+      "signup_date": "2023-12-05",
+      "referred_by": null
+    },
+    {
+      "id": 20,
+      "first_name": "Isabella",
+      "last_name": "Silva",
+      "email": "isabella.silva@example.com",
+      "city": "Sao Paulo",
+      "country": "Brazil",
+      "signup_date": "2024-01-17",
+      "referred_by": null
+    },
+    {
+      "id": 21,
+      "first_name": "Unassigned",
+      "last_name": "Customer",
+      "email": null,
+      "city": null,
+      "country": "India",
+      "signup_date": "2024-02-01",
+      "referred_by": null
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics",
+      "parent_id": null,
+      "description": "Electronic devices and accessories"
+    },
+    {
+      "id": 2,
+      "name": "Computers",
+      "parent_id": 1,
+      "description": "Computers and computing devices"
+    },
+    {
+      "id": 3,
+      "name": "Phones",
+      "parent_id": 1,
+      "description": "Mobile phones and accessories"
+    },
+    {
+      "id": 4,
+      "name": "Home",
+      "parent_id": null,
+      "description": "Home and kitchen products"
+    },
+    {
+      "id": 5,
+      "name": "Books",
+      "parent_id": null,
+      "description": "Printed and digital books"
+    },
+    {
+      "id": 6,
+      "name": "Office",
+      "parent_id": null,
+      "description": "Office supplies"
+    },
+    {
+      "id": 7,
+      "name": "Laptops",
+      "parent_id": 2,
+      "description": "Portable computers"
+    },
+    {
+      "id": 8,
+      "name": "Accessories",
+      "parent_id": 2,
+      "description": "Computer accessories"
+    },
+    {
+      "id": 9,
+      "name": "Clearance",
+      "parent_id": null,
+      "description": "Clearance items with no current products"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Laptop Pro 14",
+      "category_id": 7,
+      "unit_price_cents": 129999,
+      "stock_quantity": 25,
+      "discontinued": 0,
+      "created_date": "2023-01-15"
+    },
+    {
+      "id": 2,
+      "product_name": "Laptop Air 13",
+      "category_id": 7,
+      "unit_price_cents": 99999,
+      "stock_quantity": 40,
+      "discontinued": 0,
+      "created_date": "2023-02-10"
+    },
+    {
+      "id": 3,
+      "product_name": "Wireless Mouse",
+      "category_id": 8,
+      "unit_price_cents": 2499,
+      "stock_quantity": 150,
+      "discontinued": 0,
+      "created_date": "2023-02-18"
+    },
+    {
+      "id": 4,
+      "product_name": "Mechanical Keyboard",
+      "category_id": 8,
+      "unit_price_cents": 8999,
+      "stock_quantity": 75,
+      "discontinued": 0,
+      "created_date": "2023-03-02"
+    },
+    {
+      "id": 5,
+      "product_name": "Smartphone X",
+      "category_id": 3,
+      "unit_price_cents": 79999,
+      "stock_quantity": 35,
+      "discontinued": 0,
+      "created_date": "2023-03-20"
+    },
+    {
+      "id": 6,
+      "product_name": "Smartphone Mini",
+      "category_id": 3,
+      "unit_price_cents": 59999,
+      "stock_quantity": 50,
+      "discontinued": 0,
+      "created_date": "2023-04-01"
+    },
+    {
+      "id": 7,
+      "product_name": "USB-C Hub",
+      "category_id": 8,
+      "unit_price_cents": 4599,
+      "stock_quantity": 90,
+      "discontinued": 0,
+      "created_date": "2023-04-14"
+    },
+    {
+      "id": 8,
+      "product_name": "Noise-Cancelling Headphones",
+      "category_id": 1,
+      "unit_price_cents": 19999,
+      "stock_quantity": 45,
+      "discontinued": 0,
+      "created_date": "2023-05-05"
+    },
+    {
+      "id": 9,
+      "product_name": "Desk Lamp",
+      "category_id": 4,
+      "unit_price_cents": 3499,
+      "stock_quantity": 60,
+      "discontinued": 0,
+      "created_date": "2023-05-22"
+    },
+    {
+      "id": 10,
+      "product_name": "Coffee Maker",
+      "category_id": 4,
+      "unit_price_cents": 7499,
+      "stock_quantity": 30,
+      "discontinued": 0,
+      "created_date": "2023-06-11"
+    },
+    {
+      "id": 11,
+      "product_name": "SQL Fundamentals",
+      "category_id": 5,
+      "unit_price_cents": 2999,
+      "stock_quantity": 200,
+      "discontinued": 0,
+      "created_date": "2023-06-25"
+    },
+    {
+      "id": 12,
+      "product_name": "Data Engineering Guide",
+      "category_id": 5,
+      "unit_price_cents": 4599,
+      "stock_quantity": 120,
+      "discontinued": 0,
+      "created_date": "2023-07-08"
+    },
+    {
+      "id": 13,
+      "product_name": "Notebook Pack",
+      "category_id": 6,
+      "unit_price_cents": 899,
+      "stock_quantity": 300,
+      "discontinued": 0,
+      "created_date": "2023-07-19"
+    },
+    {
+      "id": 14,
+      "product_name": "Office Chair",
+      "category_id": 4,
+      "unit_price_cents": 15999,
+      "stock_quantity": 18,
+      "discontinued": 0,
+      "created_date": "2023-08-02"
+    },
+    {
+      "id": 15,
+      "product_name": "Old USB Drive",
+      "category_id": 8,
+      "unit_price_cents": 999,
+      "stock_quantity": 0,
+      "discontinued": 1,
+      "created_date": "2022-09-01"
+    },
+    {
+      "id": 16,
+      "product_name": "Webcam HD",
+      "category_id": 1,
+      "unit_price_cents": 6999,
+      "stock_quantity": 55,
+      "discontinued": 0,
+      "created_date": "2023-09-14"
+    },
+    {
+      "id": 17,
+      "product_name": "Monitor 27",
+      "category_id": 2,
+      "unit_price_cents": 27999,
+      "stock_quantity": 22,
+      "discontinued": 0,
+      "created_date": "2023-10-03"
+    },
+    {
+      "id": 18,
+      "product_name": "Tablet Plus",
+      "category_id": 1,
+      "unit_price_cents": 44999,
+      "stock_quantity": 28,
+      "discontinued": 0,
+      "created_date": "2023-10-29"
+    },
+    {
+      "id": 19,
+      "product_name": "Standing Desk",
+      "category_id": 4,
+      "unit_price_cents": 32999,
+      "stock_quantity": 12,
+      "discontinued": 0,
+      "created_date": "2023-11-12"
+    },
+    {
+      "id": 20,
+      "product_name": "Gift Card",
+      "category_id": null,
+      "unit_price_cents": 2500,
+      "stock_quantity": 999,
+      "discontinued": 0,
+      "created_date": "2023-12-01"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "customer_id": 1,
+      "employee_id": 13,
+      "order_date": "2024-01-03",
+      "shipped_date": "2024-01-05",
+      "status": "Delivered",
+      "ship_city": "Mumbai",
+      "ship_country": "India",
+      "notes": null
+    },
+    {
+      "id": 2,
+      "customer_id": 2,
+      "employee_id": 14,
+      "order_date": "2024-01-08",
+      "shipped_date": "2024-01-10",
+      "status": "Delivered",
+      "ship_city": "Pune",
+      "ship_country": "India",
+      "notes": "Gift wrap"
+    },
+    {
+      "id": 3,
+      "customer_id": 6,
+      "employee_id": 13,
+      "order_date": "2024-01-15",
+      "shipped_date": "2024-01-18",
+      "status": "Shipped",
+      "ship_city": "New York",
+      "ship_country": "USA",
+      "notes": null
+    },
+    {
+      "id": 4,
+      "customer_id": 7,
+      "employee_id": 27,
+      "order_date": "2024-01-22",
+      "shipped_date": null,
+      "status": "Processing",
+      "ship_city": "Chicago",
+      "ship_country": "USA",
+      "notes": null
+    },
+    {
+      "id": 5,
+      "customer_id": 10,
+      "employee_id": 14,
+      "order_date": "2024-02-02",
+      "shipped_date": "2024-02-06",
+      "status": "Delivered",
+      "ship_city": "London",
+      "ship_country": "UK",
+      "notes": null
+    },
+    {
+      "id": 6,
+      "customer_id": 12,
+      "employee_id": 13,
+      "order_date": "2024-02-10",
+      "shipped_date": "2024-02-12",
+      "status": "Delivered",
+      "ship_city": "Paris",
+      "ship_country": "France",
+      "notes": null
+    },
+    {
+      "id": 7,
+      "customer_id": 14,
+      "employee_id": 27,
+      "order_date": "2024-02-19",
+      "shipped_date": null,
+      "status": "Pending",
+      "ship_city": "Tokyo",
+      "ship_country": "Japan",
+      "notes": "Call before delivery"
+    },
+    {
+      "id": 8,
+      "customer_id": 3,
+      "employee_id": 15,
+      "order_date": "2024-03-01",
+      "shipped_date": "2024-03-04",
+      "status": "Delivered",
+      "ship_city": "Delhi",
+      "ship_country": "India",
+      "notes": null
+    },
+    {
+      "id": 9,
+      "customer_id": 8,
+      "employee_id": 14,
+      "order_date": "2024-03-11",
+      "shipped_date": "2024-03-14",
+      "status": "Shipped",
+      "ship_city": "Austin",
+      "ship_country": "USA",
+      "notes": null
+    },
+    {
+      "id": 10,
+      "customer_id": 16,
+      "employee_id": 13,
+      "order_date": "2024-03-18",
+      "shipped_date": null,
+      "status": "Cancelled",
+      "ship_city": "Toronto",
+      "ship_country": "Canada",
+      "notes": "Customer cancelled"
+    },
+    {
+      "id": 11,
+      "customer_id": 4,
+      "employee_id": 27,
+      "order_date": "2024-04-02",
+      "shipped_date": "2024-04-05",
+      "status": "Delivered",
+      "ship_city": "Bengaluru",
+      "ship_country": "India",
+      "notes": null
+    },
+    {
+      "id": 12,
+      "customer_id": 11,
+      "employee_id": 15,
+      "order_date": "2024-04-17",
+      "shipped_date": "2024-04-20",
+      "status": "Delivered",
+      "ship_city": "Manchester",
+      "ship_country": "UK",
+      "notes": null
+    },
+    {
+      "id": 13,
+      "customer_id": 15,
+      "employee_id": 14,
+      "order_date": "2024-05-03",
+      "shipped_date": null,
+      "status": "Processing",
+      "ship_city": "Osaka",
+      "ship_country": "Japan",
+      "notes": null
+    },
+    {
+      "id": 14,
+      "customer_id": 18,
+      "employee_id": 13,
+      "order_date": "2024-05-16",
+      "shipped_date": "2024-05-19",
+      "status": "Delivered",
+      "ship_city": "Madrid",
+      "ship_country": "Spain",
+      "notes": null
+    },
+    {
+      "id": 15,
+      "customer_id": 19,
+      "employee_id": 27,
+      "order_date": "2024-06-04",
+      "shipped_date": null,
+      "status": "Pending",
+      "ship_city": "Rome",
+      "ship_country": "Italy",
+      "notes": null
+    },
+    {
+      "id": 16,
+      "customer_id": 1,
+      "employee_id": 14,
+      "order_date": "2024-06-15",
+      "shipped_date": "2024-06-18",
+      "status": "Delivered",
+      "ship_city": "Mumbai",
+      "ship_country": "India",
+      "notes": "Repeat customer"
+    },
+    {
+      "id": 17,
+      "customer_id": 5,
+      "employee_id": 15,
+      "order_date": "2024-07-01",
+      "shipped_date": "2024-07-03",
+      "status": "Delivered",
+      "ship_city": "Hyderabad",
+      "ship_country": "India",
+      "notes": null
+    },
+    {
+      "id": 18,
+      "customer_id": 9,
+      "employee_id": 13,
+      "order_date": "2024-07-19",
+      "shipped_date": null,
+      "status": "Processing",
+      "ship_city": "Seattle",
+      "ship_country": "USA",
+      "notes": null
+    },
+    {
+      "id": 19,
+      "customer_id": 17,
+      "employee_id": 14,
+      "order_date": "2024-08-08",
+      "shipped_date": "2024-08-11",
+      "status": "Delivered",
+      "ship_city": "Vancouver",
+      "ship_country": "Canada",
+      "notes": null
+    },
+    {
+      "id": 20,
+      "customer_id": 20,
+      "employee_id": 27,
+      "order_date": "2024-08-21",
+      "shipped_date": null,
+      "status": "Pending",
+      "ship_city": "Sao Paulo",
+      "ship_country": "Brazil",
+      "notes": null
+    },
+    {
+      "id": 21,
+      "customer_id": 2,
+      "employee_id": 13,
+      "order_date": "2024-09-02",
+      "shipped_date": "2024-09-05",
+      "status": "Delivered",
+      "ship_city": "Pune",
+      "ship_country": "India",
+      "notes": null
+    },
+    {
+      "id": 22,
+      "customer_id": 6,
+      "employee_id": 14,
+      "order_date": "2024-09-14",
+      "shipped_date": null,
+      "status": "Cancelled",
+      "ship_city": "New York",
+      "ship_country": "USA",
+      "notes": null
+    },
+    {
+      "id": 23,
+      "customer_id": 13,
+      "employee_id": 15,
+      "order_date": "2024-10-01",
+      "shipped_date": "2024-10-04",
+      "status": "Delivered",
+      "ship_city": "Lyon",
+      "ship_country": "France",
+      "notes": null
+    },
+    {
+      "id": 24,
+      "customer_id": 3,
+      "employee_id": 27,
+      "order_date": "2024-10-20",
+      "shipped_date": null,
+      "status": "Processing",
+      "ship_city": "Delhi",
+      "ship_country": "India",
+      "notes": null
+    },
+    {
+      "id": 25,
+      "customer_id": 21,
+      "employee_id": null,
+      "order_date": "2024-11-11",
+      "shipped_date": null,
+      "status": "Pending",
+      "ship_city": null,
+      "ship_country": "India",
+      "notes": "Missing shipping city is intentional"
+    }
+  ],
+  "order_items": [
+    {
+      "id": 1,
+      "order_id": 1,
+      "product_id": 1,
+      "quantity": 1,
+      "unit_price_cents": 129999,
+      "discount_percent": 0
+    },
+    {
+      "id": 2,
+      "order_id": 1,
+      "product_id": 3,
+      "quantity": 2,
+      "unit_price_cents": 2499,
+      "discount_percent": 0
+    },
+    {
+      "id": 3,
+      "order_id": 2,
+      "product_id": 11,
+      "quantity": 2,
+      "unit_price_cents": 2999,
+      "discount_percent": 10
+    },
+    {
+      "id": 4,
+      "order_id": 2,
+      "product_id": 13,
+      "quantity": 5,
+      "unit_price_cents": 899,
+      "discount_percent": 0
+    },
+    {
+      "id": 5,
+      "order_id": 3,
+      "product_id": 5,
+      "quantity": 1,
+      "unit_price_cents": 79999,
+      "discount_percent": 5
+    },
+    {
+      "id": 6,
+      "order_id": 3,
+      "product_id": 8,
+      "quantity": 1,
+      "unit_price_cents": 19999,
+      "discount_percent": 0
+    },
+    {
+      "id": 7,
+      "order_id": 4,
+      "product_id": 4,
+      "quantity": 1,
+      "unit_price_cents": 8999,
+      "discount_percent": 0
+    },
+    {
+      "id": 8,
+      "order_id": 4,
+      "product_id": 7,
+      "quantity": 2,
+      "unit_price_cents": 4599,
+      "discount_percent": 0
+    },
+    {
+      "id": 9,
+      "order_id": 5,
+      "product_id": 2,
+      "quantity": 1,
+      "unit_price_cents": 99999,
+      "discount_percent": 0
+    },
+    {
+      "id": 10,
+      "order_id": 5,
+      "product_id": 3,
+      "quantity": 1,
+      "unit_price_cents": 2499,
+      "discount_percent": 0
+    },
+    {
+      "id": 11,
+      "order_id": 6,
+      "product_id": 12,
+      "quantity": 1,
+      "unit_price_cents": 4599,
+      "discount_percent": 0
+    },
+    {
+      "id": 12,
+      "order_id": 6,
+      "product_id": 11,
+      "quantity": 1,
+      "unit_price_cents": 2999,
+      "discount_percent": 0
+    },
+    {
+      "id": 13,
+      "order_id": 7,
+      "product_id": 6,
+      "quantity": 1,
+      "unit_price_cents": 59999,
+      "discount_percent": 0
+    },
+    {
+      "id": 14,
+      "order_id": 8,
+      "product_id": 14,
+      "quantity": 1,
+      "unit_price_cents": 15999,
+      "discount_percent": 15
+    },
+    {
+      "id": 15,
+      "order_id": 8,
+      "product_id": 9,
+      "quantity": 2,
+      "unit_price_cents": 3499,
+      "discount_percent": 0
+    },
+    {
+      "id": 16,
+      "order_id": 9,
+      "product_id": 8,
+      "quantity": 1,
+      "unit_price_cents": 19999,
+      "discount_percent": 0
+    },
+    {
+      "id": 17,
+      "order_id": 9,
+      "product_id": 16,
+      "quantity": 1,
+      "unit_price_cents": 6999,
+      "discount_percent": 0
+    },
+    {
+      "id": 18,
+      "order_id": 10,
+      "product_id": 17,
+      "quantity": 1,
+      "unit_price_cents": 27999,
+      "discount_percent": 0
+    },
+    {
+      "id": 19,
+      "order_id": 11,
+      "product_id": 18,
+      "quantity": 1,
+      "unit_price_cents": 44999,
+      "discount_percent": 0
+    },
+    {
+      "id": 20,
+      "order_id": 11,
+      "product_id": 7,
+      "quantity": 1,
+      "unit_price_cents": 4599,
+      "discount_percent": 0
+    },
+    {
+      "id": 21,
+      "order_id": 12,
+      "product_id": 10,
+      "quantity": 1,
+      "unit_price_cents": 7499,
+      "discount_percent": 0
+    },
+    {
+      "id": 22,
+      "order_id": 12,
+      "product_id": 9,
+      "quantity": 1,
+      "unit_price_cents": 3499,
+      "discount_percent": 0
+    },
+    {
+      "id": 23,
+      "order_id": 13,
+      "product_id": 1,
+      "quantity": 1,
+      "unit_price_cents": 129999,
+      "discount_percent": 10
+    },
+    {
+      "id": 24,
+      "order_id": 13,
+      "product_id": 4,
+      "quantity": 1,
+      "unit_price_cents": 8999,
+      "discount_percent": 0
+    },
+    {
+      "id": 25,
+      "order_id": 14,
+      "product_id": 19,
+      "quantity": 1,
+      "unit_price_cents": 32999,
+      "discount_percent": 0
+    },
+    {
+      "id": 26,
+      "order_id": 14,
+      "product_id": 13,
+      "quantity": 10,
+      "unit_price_cents": 899,
+      "discount_percent": 0
+    },
+    {
+      "id": 27,
+      "order_id": 15,
+      "product_id": 5,
+      "quantity": 2,
+      "unit_price_cents": 79999,
+      "discount_percent": 10
+    },
+    {
+      "id": 28,
+      "order_id": 16,
+      "product_id": 2,
+      "quantity": 1,
+      "unit_price_cents": 99999,
+      "discount_percent": 0
+    },
+    {
+      "id": 29,
+      "order_id": 16,
+      "product_id": 3,
+      "quantity": 1,
+      "unit_price_cents": 2499,
+      "discount_percent": 0
+    },
+    {
+      "id": 30,
+      "order_id": 17,
+      "product_id": 11,
+      "quantity": 3,
+      "unit_price_cents": 2999,
+      "discount_percent": 0
+    },
+    {
+      "id": 31,
+      "order_id": 17,
+      "product_id": 12,
+      "quantity": 1,
+      "unit_price_cents": 4599,
+      "discount_percent": 5
+    },
+    {
+      "id": 32,
+      "order_id": 18,
+      "product_id": 17,
+      "quantity": 2,
+      "unit_price_cents": 27999,
+      "discount_percent": 0
+    },
+    {
+      "id": 33,
+      "order_id": 19,
+      "product_id": 6,
+      "quantity": 1,
+      "unit_price_cents": 59999,
+      "discount_percent": 0
+    },
+    {
+      "id": 34,
+      "order_id": 19,
+      "product_id": 8,
+      "quantity": 1,
+      "unit_price_cents": 19999,
+      "discount_percent": 10
+    },
+    {
+      "id": 35,
+      "order_id": 20,
+      "product_id": 20,
+      "quantity": 2,
+      "unit_price_cents": 2500,
+      "discount_percent": 0
+    },
+    {
+      "id": 36,
+      "order_id": 21,
+      "product_id": 14,
+      "quantity": 1,
+      "unit_price_cents": 15999,
+      "discount_percent": 0
+    },
+    {
+      "id": 37,
+      "order_id": 21,
+      "product_id": 9,
+      "quantity": 1,
+      "unit_price_cents": 3499,
+      "discount_percent": 0
+    },
+    {
+      "id": 38,
+      "order_id": 22,
+      "product_id": 18,
+      "quantity": 1,
+      "unit_price_cents": 44999,
+      "discount_percent": 0
+    },
+    {
+      "id": 39,
+      "order_id": 23,
+      "product_id": 12,
+      "quantity": 2,
+      "unit_price_cents": 4599,
+      "discount_percent": 0
+    },
+    {
+      "id": 40,
+      "order_id": 23,
+      "product_id": 11,
+      "quantity": 1,
+      "unit_price_cents": 2999,
+      "discount_percent": 0
+    },
+    {
+      "id": 41,
+      "order_id": 24,
+      "product_id": 5,
+      "quantity": 1,
+      "unit_price_cents": 79999,
+      "discount_percent": 0
+    },
+    {
+      "id": 42,
+      "order_id": 24,
+      "product_id": 16,
+      "quantity": 1,
+      "unit_price_cents": 6999,
+      "discount_percent": 0
+    },
+    {
+      "id": 43,
+      "order_id": 25,
+      "product_id": 13,
+      "quantity": 2,
+      "unit_price_cents": 899,
+      "discount_percent": 0
+    }
+  ],
+  "projects": []
+}

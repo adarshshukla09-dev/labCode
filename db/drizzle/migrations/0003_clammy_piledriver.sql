@@ -1,0 +1,1 @@
+DROP TYPE "public"."progress_status";
