@@ -243,7 +243,7 @@ export function FeaturesTabs() {
                 </ul>
 
                 <Link
-                  href="/labs/sql"
+                  href="/lab/sql"
                   className="mt-8 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20"
                 >
                   Explore {activeLab.label} labs

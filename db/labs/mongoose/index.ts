@@ -1,4 +1,6 @@
-import "dotenv/config";
 import mongoose from "mongoose";
 
-export const mongooseDb = mongoose.createConnection(process.env.MONGO_DB_URL!);
+export const mongooseDb = mongoose.createConnection(
+  process.env.MONGO_URL! ||
+    "mongodb://root:mongo123@labcode-mongodb:27017/sqllab?authSource=admin",
+);

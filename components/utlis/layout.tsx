@@ -21,7 +21,7 @@ const FooterWordmark = dynamic(
 
 function LayoutContentInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isLoginPage = pathname === "/login" || pathname?.startsWith("/labs/");
+  const isLoginPage = pathname === "/login" || pathname?.startsWith("/lab/");
 
   return (
     <>

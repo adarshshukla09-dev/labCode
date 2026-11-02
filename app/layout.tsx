@@ -32,6 +32,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "QQ6t17h92GJoLoZDPuq15Z5mw8YqG6vECZg220UigJA",
+  },
   title: {
     default: seoConfig.defaultTitle,
     template: "%s | Labs",
@@ -55,7 +58,10 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico" }],
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
     apple: [{ url: "/apple-icon" }],
   },
 };
@@ -63,24 +69,22 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-   <html
-  lang="en"
-  suppressHydrationWarning
-  className={cn(
-    "h-full",
-    "antialiased",
-    geistSans.variable,
-    geistMono.variable,
-    "font-sans",
-    ibmPlexSans.variable,
-    spaceGroteskHeading.variable
-  )}
->
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        ibmPlexSans.variable,
+        spaceGroteskHeading.variable,
+      )}
+    >
       <body className="min-h-full flex flex-col">
         <SiteJsonLd />
-        <LayoutContent>
-          {children}
-        </LayoutContent>
+        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );

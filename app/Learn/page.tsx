@@ -29,7 +29,7 @@ export default function LearnPage() {
             Beginner-friendly notes, comparisons, and exercises for learning SQL, MongoDB, DBMS concepts, and relational and document databases.
             These foundations can support students in BCA, MCA, B.Tech, B.Sc IT, and other computer science courses; follow your institution’s syllabus for course-specific requirements.
           </p>
-          <Link href="/labs/sql" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
+          <Link href="/lab/sql" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
             Explore SQL and MongoDB Labs <ArrowRight aria-hidden="true" className="size-4" />
           </Link>
         </header>
@@ -43,8 +43,8 @@ export default function LearnPage() {
         </nav>
 
         <div className="mb-12 flex flex-wrap justify-center gap-3">
-          <Link href="/labs/sql" className="rounded-lg border border-border px-4 py-2 text-sm font-medium hover:border-primary/50">Open SQL lab</Link>
-          <Link href="/labs/mongodb" className="rounded-lg border border-border px-4 py-2 text-sm font-medium hover:border-primary/50">Open MongoDB lab</Link>
+          <Link href="/lab/sql" className="rounded-lg border border-border px-4 py-2 text-sm font-medium hover:border-primary/50">Open SQL lab</Link>
+          <Link href="/lab/mongodb" className="rounded-lg border border-border px-4 py-2 text-sm font-medium hover:border-primary/50">Open MongoDB lab</Link>
         </div>
 
         <div className="space-y-14">
@@ -78,8 +78,8 @@ export default function LearnPage() {
           <h2 className="text-xl font-semibold">Ready for hands-on practice?</h2>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">Switch from reading to writing SQL queries or MongoDB document operations in the interactive Labs.</p>
           <div className="mt-5 flex flex-wrap gap-5">
-            <Link href="/labs/sql" className="inline-flex items-center gap-2 font-medium text-primary hover:underline">Open SQL lab <ArrowRight aria-hidden="true" className="size-4" /></Link>
-            <Link href="/labs/mongodb" className="inline-flex items-center gap-2 font-medium text-primary hover:underline">Open MongoDB lab <ArrowRight aria-hidden="true" className="size-4" /></Link>
+            <Link href="/lab/sql" className="inline-flex items-center gap-2 font-medium text-primary hover:underline">Open SQL lab <ArrowRight aria-hidden="true" className="size-4" /></Link>
+            <Link href="/lab/mongodb" className="inline-flex items-center gap-2 font-medium text-primary hover:underline">Open MongoDB lab <ArrowRight aria-hidden="true" className="size-4" /></Link>
           </div>
         </aside>
       </div>

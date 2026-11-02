@@ -78,4 +78,4 @@ async function test() {
   }
 }
 
-insertMaster();
+test();

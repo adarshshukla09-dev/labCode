@@ -7,7 +7,8 @@ export const insertMaster = async () => {
   let connection;
 
   try {
-    const connectionString = process.env.SQL_DB_URL_2;
+    const connectionString =
+      process.env.MYSQL_URL || "mysql://root:root123@labcode-mysql:3306/sqllab";
 
     if (!connectionString) {
       throw new Error("SQL_DB_URL_2 is not defined");
@@ -50,3 +51,8 @@ export const insertMaster = async () => {
     }
   }
 };
+
+insertMaster().catch((error) => {
+  console.error("MySQL seed failed:", error);
+  process.exitCode = 1;
+});

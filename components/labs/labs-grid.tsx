@@ -13,7 +13,7 @@ const LABS = [
       "Learn the foundations of SQL by writing real queries and solving interactive challenges.",
     icon: Database,
     topics: ["SELECT & WHERE", "Filtering & Sorting", "Aggregations"],
-    href: "/labs/sql",
+    href: "/lab/sql",
   },
   {
     title: "MongoDB",
@@ -22,7 +22,7 @@ const LABS = [
       "Learn NoSQL fundamentals by writing aggregation pipelines and document queries.",
     icon: Database,
     topics: ["Find & Projection", "Query Operators", "Aggregation Framework"],
-    href: "/labs/mongodb",
+    href: "/lab/mongodb",
   },
 ];
 

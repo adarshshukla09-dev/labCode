@@ -79,7 +79,7 @@ export function HeroGridMinimal() {
         <BlurFade delay={0.3}>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="/labs/sql"
+              href="/lab/sql"
               className={buttonVariants({
                 size: "lg",
                 className:
@@ -91,7 +91,7 @@ export function HeroGridMinimal() {
             </Link>
 
             <Link
-              href="/labs"
+              href="/lab"
               className={buttonVariants({
                 variant: "outline",
                 size: "lg",

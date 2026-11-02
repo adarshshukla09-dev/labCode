@@ -6,7 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "worker:queue": "tsx queues/worker.ts",
+    "worker:mongo": "tsx queues/mongo/worker.ts",
+    "seed:sql": "tsx ingestion/insertToSql.ts",
+    "seed:mongo": "node mongodb-mongoose-sql-lab/seed.js",
+    "question:sql": "tsx ingestion/test-sql.ts",
+    "question:mongo": "tsx ingestion/test-mongodb.ts",
+    "db:push": "drizzle-kit push --config=drizzle.config.ts",
+    "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config=drizzle.config.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -40,6 +49,7 @@
     "react-dom": "19.3.0",
     "server-only": "^0.0.1",
     "shadcn": "^4.23.0",
+    "tsx": "^4.23.15",
     "tw-animate-css": "^1.4.0",
     "zod": "^4.6.7",
     "zustand": "^5.0.16"
@@ -47,14 +57,13 @@
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
     "@types/better-sqlite3": "^9.6.0",
-    "@types/node": "^20",
+    "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
-    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

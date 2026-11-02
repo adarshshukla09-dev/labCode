@@ -1,4 +1,3 @@
-import "dotenv/config";
 import net from "node:net";
 
 net.setDefaultAutoSelectFamily(false);

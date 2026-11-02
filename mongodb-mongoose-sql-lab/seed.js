@@ -13,9 +13,8 @@ const modelFiles = [
 ];
 
 async function seedDatabase({
-  uri = process.env.MONGO_DB_URL ||
-    "mongodb://root:YourMongoSecurePassword@localhost:27017/mongo_lab_master?authSource=admin",
-
+  uri = process.env.MONGO_URL ||
+    "mongodb://root:mongo123@localhost:27017/sqllab?authSource=admin",
   clear = true,
 } = {}) {
   if (!uri)

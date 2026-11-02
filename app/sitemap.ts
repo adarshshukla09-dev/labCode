@@ -7,9 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: seoConfig.siteUrl },
-    { url: `${seoConfig.siteUrl}/labs` },
-    { url: `${seoConfig.siteUrl}/labs/sql` },
-    { url: `${seoConfig.siteUrl}/labs/mongodb` },
+    { url: `${seoConfig.siteUrl}/lab` },
+    { url: `${seoConfig.siteUrl}/lab/sql` },
+    { url: `${seoConfig.siteUrl}/lab/mongodb` },
     { url: `${seoConfig.siteUrl}/Learn` },
     ...learnArticles.map((article) => ({
       url: `${seoConfig.siteUrl}/Learn/${article.slug}`,

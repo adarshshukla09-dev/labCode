@@ -30,8 +30,8 @@ export default async function LearnArticlePage({ params }: { params: Promise<{ s
   const next = currentIndex < learnArticles.length - 1 ? learnArticles[currentIndex + 1] : undefined;
   const related = article.related.map((relatedSlug) => getLearnArticle(relatedSlug)).filter((item) => item !== undefined);
   const breadcrumb = [{ name: article.title, item: `/Learn/${slug}` }];
-  const practiceHref = article.category === "MongoDB Guides" || slug.startsWith("mongodb-") ? "/labs/mongodb" : "/labs/sql";
-  const practiceLabel = practiceHref === "/labs/mongodb" ? "MongoDB lab" : "SQL practice lab";
+  const practiceHref = article.category === "MongoDB Guides" || slug.startsWith("mongodb-") ? "/lab/mongodb" : "/lab/sql";
+  const practiceLabel = practiceHref === "/lab/mongodb" ? "MongoDB lab" : "SQL practice lab";
 
   return (
     <main className="min-h-screen px-5 py-8 sm:px-8 sm:py-12">

@@ -6,6 +6,8 @@ export default defineConfig({
   schema: "./db/drizzle/schema/index.ts",
   dialect: "postgresql",
   dbCredentials: {
-    url: "postgresql://postgres:postgres@localhost:5432/sqllab", //change to process.env.DB_URL for neon
+    url:
+      process.env.DB_URL ||
+      "postgresql://postgres:postgres123@labcode-postgres:5432/sqllab", //change to process.env.DB_URL for neon
   },
 });

@@ -159,7 +159,7 @@ export function PricingSinglePlan() {
                   {/* CTA buttons */}
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                     <a
-                      href="/labs"
+                      href="/lab"
                       className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
                     >
                       Explore the labs

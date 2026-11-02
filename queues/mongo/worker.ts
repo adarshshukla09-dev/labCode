@@ -6,11 +6,12 @@ import { db } from "@/db/drizzle";
 import IORedis from "ioredis";
 import { evaluateMongo, MongoQuestion } from "./evaluate";
 
-const redisConnection = new IORedis({
-  host: process.env.VALKEY_HOST || "localhost",
-  port: Number(process.env.VALKEY_PORT || 6379),
-  maxRetriesPerRequest: null,
-});
+const redisConnection = new IORedis(
+  process.env.VALKEY_URL || "redis://localhost:6379",
+  {
+    maxRetriesPerRequest: null,
+  },
+);
 
 const worker = new Worker(
   "mongo-execution",
