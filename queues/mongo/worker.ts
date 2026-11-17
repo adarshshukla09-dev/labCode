@@ -1,17 +1,13 @@
 import "dotenv/config";
-import { Worker } from "bullmq";
-import { mongoQuestions } from "@/db/drizzle/schema";
-import { eq } from "drizzle-orm";
-import { db } from "@/db/drizzle";
-import IORedis from "ioredis";
-import { evaluateMongo, MongoQuestion } from "./evaluate";
 
-const redisConnection = new IORedis(
-  process.env.VALKEY_URL || "redis://localhost:6379",
-  {
-    maxRetriesPerRequest: null,
-  },
-);
+import { Worker } from "bullmq";
+import { eq } from "drizzle-orm";
+
+import { mongoQuestions } from "@/db/drizzle/schema";
+import { db } from "@/db/drizzle";
+
+import { evaluateMongo, MongoQuestion } from "./evaluate";
+import { createRedisConnection } from "@/queues/connection/redis";
 
 const worker = new Worker(
   "mongo-execution",
@@ -21,7 +17,6 @@ const worker = new Worker(
 
     console.log(`Processing MongoDB job: ${job.id}`);
 
-    // 1. Retrieve question from PostgreSQL (`mongo_queries` table).
     const [question] = await db
       .select({
         solution_query: mongoQuestions.solutionQuery,
@@ -36,27 +31,16 @@ const worker = new Worker(
       throw new Error("MongoDB Question not found");
     }
 
-    if (!question.solution_query) {
-      throw new Error("MongoDB Question solution query is missing");
+    if (!question.solution_query || !question.expected_output) {
+      throw new Error("Question solution or expected output is missing");
     }
 
-    if (!question.expected_output) {
-      throw new Error("MongoDB Question expected output is missing");
-    }
-
-    // 2. Create a validated MongoQuestion object.
     const validatedQuestion: MongoQuestion = {
       solution_query: question.solution_query,
       expected_output: question.expected_output,
       points: question.points,
     };
-    console.log("Question ID:", questionId);
-    console.log("Student query:", query);
 
-    console.log("Solution query:", question.solution_query);
-
-    console.log("Expected output:", question.expected_output);
-    // 3. Evaluate student MongoDB query.
     const result = await evaluateMongo(query, validatedQuestion);
 
     console.log("MongoDB Evaluation completed:", result);
@@ -65,12 +49,10 @@ const worker = new Worker(
   },
 
   {
-    connection: redisConnection,
+    connection: createRedisConnection(),
     concurrency: 3,
   },
 );
-
-// -------------------- EVENTS --------------------
 
 worker.on("completed", (job) => {
   console.log(`MongoDB Job ${job.id} completed`);

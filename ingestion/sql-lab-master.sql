@@ -1,21 +1,28 @@
+-- ======================================================
 -- SQL Lab Master Database
--- Engine: MySQL 8.0.16+
--- Storage Engine: InnoDB
--- Purpose: Starter dataset for:
--- SELECT, filtering, JOINs, aggregates, subqueries, set operators,
--- DML, CTEs, window functions, CASE, COALESCE, and constraints.
+-- Engine: PostgreSQL 14+
+-- Purpose: Starter dataset for SQL Labs
+--
+-- Topics:
+-- SELECT, filtering, JOINs, aggregates, subqueries,
+-- set operators, DML, CTEs, window functions,
+-- CASE, COALESCE, and constraints.
 --
 -- IMPORTANT:
 -- 1. Keep this master file immutable.
--- 2. Create a disposable database copy for each student attempt.
--- 3. MySQL supports GROUP BY WITH ROLLUP.
--- 4. Monetary values are stored as integer cents to avoid rounding errors.
--- 5. Dates use the DATE data type.
+-- 2. Create a disposable database for each student attempt.
+-- 3. Monetary values are stored as integer cents.
+-- 4. Dates use the DATE data type.
+-- 5. Compatible with PostgreSQL.
 --
 -- Run with:
--- mysql -u root -p sql_lab < sql-lab-master.sql
+-- psql -U postgres -d sqllab -f sql-lab-master-postgres.sql
+-- ======================================================
 
-SET FOREIGN_KEY_CHECKS = 0;
+
+-- ======================================================
+-- DROP EXISTING TABLES
+-- ======================================================
 
 DROP TABLE IF EXISTS order_items;
 DROP TABLE IF EXISTS orders;
@@ -26,20 +33,39 @@ DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS departments;
 DROP TABLE IF EXISTS regions;
 
-START TRANSACTION;
+
+BEGIN;
+
+
+-- ======================================================
+-- REGIONS
+-- ======================================================
 
 CREATE TABLE regions (
     id INT PRIMARY KEY,
     region_name VARCHAR(100) NOT NULL UNIQUE
-) ENGINE=InnoDB;
+);
+
+
+-- ======================================================
+-- DEPARTMENTS
+-- ======================================================
 
 CREATE TABLE departments (
     id INT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE,
     region_id INT,
-    budget_cents BIGINT NOT NULL DEFAULT 0 CHECK (budget_cents >= 0),
-    FOREIGN KEY (region_id) REFERENCES regions(id)
-) ENGINE=InnoDB;
+    budget_cents BIGINT NOT NULL DEFAULT 0
+        CHECK (budget_cents >= 0),
+
+    FOREIGN KEY (region_id)
+        REFERENCES regions(id)
+);
+
+
+-- ======================================================
+-- EMPLOYEES
+-- ======================================================
 
 CREATE TABLE employees (
     id INT PRIMARY KEY,
@@ -49,15 +75,31 @@ CREATE TABLE employees (
     department_id INT,
     manager_id INT,
     job_title VARCHAR(150) NOT NULL,
-    salary_cents BIGINT NOT NULL CHECK (salary_cents >= 0),
+    salary_cents BIGINT NOT NULL
+        CHECK (salary_cents >= 0),
     commission_cents BIGINT,
     hire_date DATE NOT NULL,
     birth_date DATE,
     employment_status VARCHAR(30) NOT NULL DEFAULT 'Active'
-        CHECK (employment_status IN ('Active', 'On Leave', 'Terminated')),
-    FOREIGN KEY (department_id) REFERENCES departments(id),
-    FOREIGN KEY (manager_id) REFERENCES employees(id)
-) ENGINE=InnoDB;
+        CHECK (
+            employment_status IN (
+                'Active',
+                'On Leave',
+                'Terminated'
+            )
+        ),
+
+    FOREIGN KEY (department_id)
+        REFERENCES departments(id),
+
+    FOREIGN KEY (manager_id)
+        REFERENCES employees(id)
+);
+
+
+-- ======================================================
+-- CUSTOMERS
+-- ======================================================
 
 CREATE TABLE customers (
     id INT PRIMARY KEY,
@@ -68,27 +110,51 @@ CREATE TABLE customers (
     country VARCHAR(100) NOT NULL,
     signup_date DATE NOT NULL,
     referred_by INT,
-    FOREIGN KEY (referred_by) REFERENCES customers(id)
-) ENGINE=InnoDB;
+
+    FOREIGN KEY (referred_by)
+        REFERENCES customers(id)
+);
+
+
+-- ======================================================
+-- CATEGORIES
+-- ======================================================
 
 CREATE TABLE categories (
     id INT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE,
     parent_id INT,
     description TEXT,
-    FOREIGN KEY (parent_id) REFERENCES categories(id)
-) ENGINE=InnoDB;
+
+    FOREIGN KEY (parent_id)
+        REFERENCES categories(id)
+);
+
+
+-- ======================================================
+-- PRODUCTS
+-- ======================================================
 
 CREATE TABLE products (
     id INT PRIMARY KEY,
     product_name VARCHAR(200) NOT NULL,
     category_id INT,
-    unit_price_cents BIGINT NOT NULL CHECK (unit_price_cents >= 0),
-    stock_quantity INT NOT NULL DEFAULT 0 CHECK (stock_quantity >= 0),
-    discontinued TINYINT NOT NULL DEFAULT 0 CHECK (discontinued IN (0, 1)),
+    unit_price_cents BIGINT NOT NULL
+        CHECK (unit_price_cents >= 0),
+    stock_quantity INT NOT NULL DEFAULT 0
+        CHECK (stock_quantity >= 0),
+    discontinued SMALLINT NOT NULL DEFAULT 0
+        CHECK (discontinued IN (0, 1)),
     created_date DATE NOT NULL,
-    FOREIGN KEY (category_id) REFERENCES categories(id)
-) ENGINE=InnoDB;
+
+    FOREIGN KEY (category_id)
+        REFERENCES categories(id)
+);
+
+
+-- ======================================================
+-- ORDERS
+-- ======================================================
 
 CREATE TABLE orders (
     id INT PRIMARY KEY,
@@ -97,38 +163,82 @@ CREATE TABLE orders (
     order_date DATE NOT NULL,
     shipped_date DATE,
     status VARCHAR(30) NOT NULL
-        CHECK (status IN ('Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled')),
+        CHECK (
+            status IN (
+                'Pending',
+                'Processing',
+                'Shipped',
+                'Delivered',
+                'Cancelled'
+            )
+        ),
     ship_city VARCHAR(100),
     ship_country VARCHAR(100),
     notes TEXT,
-    FOREIGN KEY (customer_id) REFERENCES customers(id),
-    FOREIGN KEY (employee_id) REFERENCES employees(id)
-) ENGINE=InnoDB;
+
+    FOREIGN KEY (customer_id)
+        REFERENCES customers(id),
+
+    FOREIGN KEY (employee_id)
+        REFERENCES employees(id)
+);
+
+
+-- ======================================================
+-- ORDER ITEMS
+-- ======================================================
 
 CREATE TABLE order_items (
     id INT PRIMARY KEY,
     order_id INT NOT NULL,
     product_id INT NOT NULL,
-    quantity INT NOT NULL CHECK (quantity > 0),
-    unit_price_cents BIGINT NOT NULL CHECK (unit_price_cents >= 0),
+    quantity INT NOT NULL
+        CHECK (quantity > 0),
+    unit_price_cents BIGINT NOT NULL
+        CHECK (unit_price_cents >= 0),
     discount_percent INT NOT NULL DEFAULT 0
         CHECK (discount_percent BETWEEN 0 AND 100),
+
     UNIQUE (order_id, product_id),
-    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES products(id)
-) ENGINE=InnoDB;
 
--- Indexes
+    FOREIGN KEY (order_id)
+        REFERENCES orders(id)
+        ON DELETE CASCADE,
 
-CREATE INDEX idx_employees_department ON employees(department_id);
-CREATE INDEX idx_employees_manager ON employees(manager_id);
-CREATE INDEX idx_customers_country ON customers(country);
-CREATE INDEX idx_orders_customer ON orders(customer_id);
-CREATE INDEX idx_orders_date ON orders(order_date);
-CREATE INDEX idx_order_items_order ON order_items(order_id);
-CREATE INDEX idx_products_category ON products(category_id);
+    FOREIGN KEY (product_id)
+        REFERENCES products(id)
+);
 
--- Regions
+
+-- ======================================================
+-- INDEXES
+-- ======================================================
+
+CREATE INDEX idx_employees_department
+    ON employees(department_id);
+
+CREATE INDEX idx_employees_manager
+    ON employees(manager_id);
+
+CREATE INDEX idx_customers_country
+    ON customers(country);
+
+CREATE INDEX idx_orders_customer
+    ON orders(customer_id);
+
+CREATE INDEX idx_orders_date
+    ON orders(order_date);
+
+CREATE INDEX idx_order_items_order
+    ON order_items(order_id);
+
+CREATE INDEX idx_products_category
+    ON products(category_id);
+
+
+-- ======================================================
+-- REGIONS DATA
+-- ======================================================
 
 INSERT INTO regions (id, region_name) VALUES
 (1, 'North America'),
@@ -136,9 +246,14 @@ INSERT INTO regions (id, region_name) VALUES
 (3, 'Asia Pacific'),
 (4, 'South America');
 
--- Departments
 
-INSERT INTO departments (id, name, region_id, budget_cents) VALUES
+-- ======================================================
+-- DEPARTMENTS DATA
+-- ======================================================
+
+INSERT INTO departments
+(id, name, region_id, budget_cents)
+VALUES
 (1, 'Executive', 1, 50000000),
 (2, 'Engineering', 3, 180000000),
 (3, 'Sales', 1, 90000000),
@@ -149,12 +264,27 @@ INSERT INTO departments (id, name, region_id, budget_cents) VALUES
 (8, 'Research', 3, 120000000),
 (9, 'Legal', NULL, 30000000);
 
--- Employees
+
+-- ======================================================
+-- EMPLOYEES DATA
 -- Managers are inserted before their reports.
+-- ======================================================
 
 INSERT INTO employees
-(id, first_name, last_name, email, department_id, manager_id, job_title,
- salary_cents, commission_cents, hire_date, birth_date, employment_status)
+(
+    id,
+    first_name,
+    last_name,
+    email,
+    department_id,
+    manager_id,
+    job_title,
+    salary_cents,
+    commission_cents,
+    hire_date,
+    birth_date,
+    employment_status
+)
 VALUES
 (1, 'Ava', 'Morgan', 'ava.morgan@example.com', 1, NULL, 'Chief Executive Officer', 24000000, NULL, '2015-01-12', '1980-04-15', 'Active'),
 (2, 'Noah', 'Patel', 'noah.patel@example.com', 2, 1, 'Engineering Director', 18000000, NULL, '2016-03-21', '1984-09-02', 'Active'),
@@ -185,10 +315,22 @@ VALUES
 (27, 'Wyatt', 'Baker', 'wyatt.baker@example.com', 3, 3, 'Sales Associate', 4900000, 300000, '2024-02-12', '2000-09-09', 'Active'),
 (28, 'Nora', 'Adams', 'nora.adams@example.com', 9, 1, 'Legal Counsel', 13500000, NULL, '2021-12-01', '1988-12-12', 'Active');
 
--- Customers
+
+-- ======================================================
+-- CUSTOMERS DATA
+-- ======================================================
 
 INSERT INTO customers
-(id, first_name, last_name, email, city, country, signup_date, referred_by)
+(
+    id,
+    first_name,
+    last_name,
+    email,
+    city,
+    country,
+    signup_date,
+    referred_by
+)
 VALUES
 (1, 'Arjun', 'Mehta', 'arjun.mehta@example.com', 'Mumbai', 'India', '2023-01-12', NULL),
 (2, 'Priya', 'Sharma', 'priya.sharma@example.com', 'Pune', 'India', '2023-02-18', 1),
@@ -212,9 +354,14 @@ VALUES
 (20, 'Isabella', 'Silva', 'isabella.silva@example.com', 'Sao Paulo', 'Brazil', '2024-01-17', NULL),
 (21, 'Unassigned', 'Customer', NULL, NULL, 'India', '2024-02-01', NULL);
 
--- Categories
 
-INSERT INTO categories (id, name, parent_id, description) VALUES
+-- ======================================================
+-- CATEGORIES DATA
+-- ======================================================
+
+INSERT INTO categories
+(id, name, parent_id, description)
+VALUES
 (1, 'Electronics', NULL, 'Electronic devices and accessories'),
 (2, 'Computers', 1, 'Computers and computing devices'),
 (3, 'Phones', 1, 'Mobile phones and accessories'),
@@ -225,10 +372,21 @@ INSERT INTO categories (id, name, parent_id, description) VALUES
 (8, 'Accessories', 2, 'Computer accessories'),
 (9, 'Clearance', NULL, 'Clearance items with no current products');
 
--- Products
+
+-- ======================================================
+-- PRODUCTS DATA
+-- ======================================================
 
 INSERT INTO products
-(id, product_name, category_id, unit_price_cents, stock_quantity, discontinued, created_date)
+(
+    id,
+    product_name,
+    category_id,
+    unit_price_cents,
+    stock_quantity,
+    discontinued,
+    created_date
+)
 VALUES
 (1, 'Laptop Pro 14', 7, 129999, 25, 0, '2023-01-15'),
 (2, 'Laptop Air 13', 7, 99999, 40, 0, '2023-02-10'),
@@ -251,10 +409,23 @@ VALUES
 (19, 'Standing Desk', 4, 32999, 12, 0, '2023-11-12'),
 (20, 'Gift Card', NULL, 2500, 999, 0, '2023-12-01');
 
--- Orders
+
+-- ======================================================
+-- ORDERS DATA
+-- ======================================================
 
 INSERT INTO orders
-(id, customer_id, employee_id, order_date, shipped_date, status, ship_city, ship_country, notes)
+(
+    id,
+    customer_id,
+    employee_id,
+    order_date,
+    shipped_date,
+    status,
+    ship_city,
+    ship_country,
+    notes
+)
 VALUES
 (1, 1, 13, '2024-01-03', '2024-01-05', 'Delivered', 'Mumbai', 'India', NULL),
 (2, 2, 14, '2024-01-08', '2024-01-10', 'Delivered', 'Pune', 'India', 'Gift wrap'),
@@ -282,10 +453,20 @@ VALUES
 (24, 3, 27, '2024-10-20', NULL, 'Processing', 'Delhi', 'India', NULL),
 (25, 21, NULL, '2024-11-11', NULL, 'Pending', NULL, 'India', 'Missing shipping city is intentional');
 
--- Order Items
+
+-- ======================================================
+-- ORDER ITEMS DATA
+-- ======================================================
 
 INSERT INTO order_items
-(id, order_id, product_id, quantity, unit_price_cents, discount_percent)
+(
+    id,
+    order_id,
+    product_id,
+    quantity,
+    unit_price_cents,
+    discount_percent
+)
 VALUES
 (1, 1, 1, 1, 129999, 0),
 (2, 1, 3, 2, 2499, 0),
@@ -331,12 +512,23 @@ VALUES
 (42, 24, 16, 1, 6999, 0),
 (43, 25, 13, 2, 899, 0);
 
+
 COMMIT;
 
-SET FOREIGN_KEY_CHECKS = 1;
 
--- Verification queries:
+-- ======================================================
+-- VERIFICATION QUERIES
+-- ======================================================
+
 -- SELECT COUNT(*) AS employee_count FROM employees;
 -- SELECT COUNT(*) AS customer_count FROM customers;
 -- SELECT COUNT(*) AS order_count FROM orders;
 -- SELECT COUNT(*) AS product_count FROM products;
+-- SELECT COUNT(*) AS order_item_count FROM order_items;
+-- SELECT COUNT(*) AS department_count FROM departments;
+-- SELECT COUNT(*) AS category_count FROM categories;
+-- SELECT COUNT(*) AS region_count FROM regions;
+
+-- ======================================================
+-- END OF MASTER DATABASE
+-- ======================================================

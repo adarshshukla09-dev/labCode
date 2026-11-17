@@ -1,4 +1,4 @@
-import { createTRPCRouter } from "../init";
+import { callerFactory, createTRPCRouter } from "../init";
 import { labContentRouter } from "./lab-content.router";
 import { sqlRouter } from "./sql/sql.router";
 import { mongodbRouter } from "./mongo/mongo.router";
@@ -10,4 +10,5 @@ export const labRouter = createTRPCRouter({
 });
 
 export const appRouter = createTRPCRouter({ lab: labRouter });
+export const createCaller = callerFactory(appRouter);
 export type AppRouter = typeof appRouter;

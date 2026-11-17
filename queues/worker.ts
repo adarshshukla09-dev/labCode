@@ -9,8 +9,7 @@ import { questions } from "@/db/drizzle/schema/labs";
 import { eq } from "drizzle-orm";
 import { db } from "@/db/drizzle";
 
-import { redisConnection } from "@/queues/redis";
-
+import { createRedisConnection } from "@/queues/connection/redis";
 const worker = new Worker(
   "sql-execution",
 
@@ -58,7 +57,7 @@ const worker = new Worker(
   },
 
   {
-    connection: redisConnection,
+    connection: createRedisConnection(),
     concurrency: 3,
   },
 );

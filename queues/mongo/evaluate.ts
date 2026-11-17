@@ -746,7 +746,10 @@ export const evaluateMongo = async (
   studentQuery: string,
   question: MongoQuestion,
 ): Promise<EvaluateResult> => {
-  const databaseName = `attempt_${randomUUID().replaceAll("-", "")}`;
+  const databaseName = `att_${randomUUID().replaceAll("-", "").slice(0, 30)}`;
+
+  console.log("Generated temporary database name:", databaseName);
+  console.log("Database name length:", databaseName.length);
   let temporaryDb: Db | null = null;
   const failed = (message: string): EvaluateResult => ({
     isCorrect: false,

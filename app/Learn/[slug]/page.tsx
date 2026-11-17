@@ -6,7 +6,6 @@ import { LearnBreadcrumbs } from "@/components/learn/breadcrumbs";
 import { LearnArticleJsonLd } from "@/components/learn/learn-article-json-ld";
 import { pageMetadata } from "@/lib/seo";
 import { getLearnArticle, learnArticles } from "@/lib/learn-articles";
-import { learnContent } from "@/lib/learn-content";
 
 export function generateStaticParams() {
   return learnArticles.map(({ slug }) => ({ slug }));
@@ -22,8 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function LearnArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getLearnArticle(slug);
-  const content = learnContent[slug];
-  if (!article || !content) notFound();
+  if (!article) notFound();
 
   const currentIndex = learnArticles.findIndex((item) => item.slug === slug);
   const previous = currentIndex > 0 ? learnArticles[currentIndex - 1] : undefined;
@@ -48,18 +46,10 @@ export default async function LearnArticlePage({ params }: { params: Promise<{ s
             </header>
 
             <div className="prose-learn max-w-3xl">
-              {content.sections.map((section) => (
-                <section key={section.id} id={section.id} aria-labelledby={`${section.id}-heading`} className="mb-10 scroll-mt-24">
-                  <h2 id={`${section.id}-heading`} className="mb-4 text-2xl font-semibold tracking-tight">{section.title}</h2>
-                  <div className="space-y-4 text-[15px] leading-7 text-foreground/90">{section.content}</div>
-                </section>
-              ))}
-
-              <section aria-labelledby="key-takeaways-heading" className="mb-10 rounded-2xl border border-border bg-muted/30 p-5 sm:p-6">
-                <h2 id="key-takeaways-heading" className="text-lg font-semibold">Key takeaways</h2>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
-                  {content.takeaways.map((item) => <li key={item}>{item}</li>)}
-                </ul>
+              <section id="gfg-guide" className="mb-10 rounded-2xl border border-border bg-muted/30 p-5 sm:p-6">
+                <h2 className="text-lg font-semibold">Read this guide on GeeksforGeeks</h2>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">This guide now uses the GeeksforGeeks resource for this topic. The article is hosted on GeeksforGeeks.</p>
+                <a href={article.gfgUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Open the GeeksforGeeks article <ExternalLink aria-hidden="true" className="size-4" /></a>
               </section>
 
               <section className="mb-10 rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6">
@@ -80,8 +70,7 @@ export default async function LearnArticlePage({ params }: { params: Promise<{ s
               <h2 className="text-sm font-semibold">On this page</h2>
               <nav aria-label="On this page" className="mt-3">
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {content.sections.map((section) => <li key={section.id}><a href={`#${section.id}`} className="block leading-5 hover:text-foreground">{section.title}</a></li>)}
-                  <li><a href="#key-takeaways-heading" className="block leading-5 hover:text-foreground">Key takeaways</a></li>
+                  <li><a href="#gfg-guide" className="block leading-5 hover:text-foreground">GeeksforGeeks guide</a></li>
                 </ul>
               </nav>
               <Link href="/Learn" className="mt-5 inline-flex items-center gap-2 border-t border-border pt-4 text-sm font-medium text-primary hover:underline"><ArrowLeft aria-hidden="true" className="size-4" /> All learning guides</Link>

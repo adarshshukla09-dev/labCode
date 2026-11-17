@@ -13,7 +13,7 @@ const t = initTRPC.context<Context>().create();
 
 export const createTRPCRouter = t.router;
 export const publicProcedure = t.procedure;
-
+export const callerFactory = t.createCallerFactory;
 export const protectedProcedure = t.procedure.use(({ next }) => {
   throw new TRPCError({
     code: "UNAUTHORIZED",
