@@ -1,12 +1,7 @@
 import "dotenv/config";
-import mysql from "mysql2/promise";
 import { spawn } from "node:child_process";
 import { createReadStream } from "node:fs";
 import path from "node:path";
-
-const DUMP_PATH = path.join(process.cwd(), "ingestion", "dumps", "master.sql");
-
-const CONTAINER = "sql-lab-mysql";
 
 export const insertMaster = async () => {
   const connectionString = process.env.SQL_DB_URL_2;
